@@ -35,32 +35,31 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1 style="text-align: center;">Welcome to "BD Data Insights".</h1>
-
-							
-
-							We are a team of dedicated data professionals committed to transforming raw data into valuable insights that drive business success. Our portfolio showcases a range of innovative projects and data solutions that have helped organizations across industries unlock the power of their data. From predictive modeling and advanced analytics to customized dashboards and data visualization, we provide tailored services designed to solve complex challenges and optimize business performance. Explore our work and discover how we can help your business make data-driven decisions with confidence.
-<!-- cut -->
-
+							<div>
+			
+							</div>
 <!-- Wrapper -->
 <div id="wrapper">
 
 	<!-- Intro -->
 	<section id="intro" class="wrapper style1 fullscreen fade-up">
-		<div class="inner">
-			<h1 style="text-align: center;">Welcome to "BD Data Insights".</h1>
-			<p>We are a team of dedicated data professionals committed to transforming raw data into valuable insights that drive business success. Our portfolio showcases a range of innovative projects and data solutions that have helped organizations across industries unlock the power of their data. From predictive modeling and advanced analytics to customized dashboards and data visualization, we provide tailored services designed to solve complex challenges and optimize business performance. Explore our work and discover how we can help your business make data-driven decisions with confidence.</p>
-		</div>
 
 		<!-- Add Image Below -->
-		<div class="background-image-container" style="text-align: center; margin-top: 20px;">
+		
+		<div class="background-image-container" style="text-align: center;">
 			<img src="datas.jpg" alt="Project Background Image" style="max-width: 100%; height: auto; opacity: 0.25;" />
+			<!-- text above the image -->
+			<div class="inner" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);color: white; z-index: 1; text-align: center;">
+				<h1 style="text-align: center;">Welcome to "BD Data Insights".</h1>
+				<p style="text-align: justify;">We are a team of dedicated data professionals committed to transforming raw data into valuable insights that drive business success. Our portfolio showcases a range of innovative projects and data solutions that have helped organizations across industries unlock the power of their data. From predictive modeling and advanced analytics to customized dashboards and data visualization, we provide tailored services designed to solve complex challenges and optimize business performance. Explore our work and discover how we can help your business make data-driven decisions with confidence.</p>
+			
+	
 		</div>
 	</section>
 
 </div>
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -80,11 +79,21 @@
             padding: 50px 0;
         }
 
-        .services-title {
+        /* Key Services Box */
+        .key-services-box {
+            background-color: rgba(29, 53, 87, 0.25); /* 25% opacity */
+            color: white;
+            padding: 30px;
             text-align: center;
+            margin-bottom: 40px; /* Adds space between the title box and the white boxes */
+            width: 60%; /* Adjust the width to make it closer to the content */
+            margin-left: auto;
+            margin-right: auto; /* Centers the box */
+        }
+
+        .key-services-title {
             font-size: 36px;
             margin-bottom: 20px;
-            color: #fff; /* White color for the title */
         }
 
         .services {
@@ -157,16 +166,20 @@
 <body>
 
     <div class="container">
-        <h1 class="services-title">Our Key Services</h1>
+        <!-- Key Services Box -->
+        <div class="key-services-box">
+            <h1 class="key-services-title">Our Key Services</h1>
+        </div>
+
+        <!-- Services Section -->
         <div class="services">
             <div class="service-box">
                 <h3>Advanced Analytics</h3>
                 <p>Unlock actionable insights with our data-driven approach to complex business challenges.</p>
                 <p class="service-price">$1,500</p>
-				<a href="learnmore.html" class="cta">
-					Learn More
-				</a>
-				
+                <a href="learnmore.html" class="cta">
+                    Details 
+                </a>
             </div>
 
             <div class="service-box">
@@ -174,19 +187,17 @@
                 <p>Leverage cutting-edge predictive models to forecast trends and make data-backed decisions.</p>
                 <p class="service-price">$2,000</p>
                 <a href="learnmore.html" class="cta">
-					Learn More
-				</a>
-				
+                    Details 
+                </a>
             </div>
-			
+
             <div class="service-box">
-                <h3>Data Visualization</Data></h3>
+                <h3>Data Visualization</h3>
                 <p>Unlock actionable insights with our data-driven approach to complex business challenges.</p>
                 <p class="service-price">$1,500</p>
-				<a href="visualization.html" class="cta">
-					Learn More
-				</a>
-				
+                <a href="visualization.html" class="cta">
+                    Details 
+                </a>
             </div>
 
             <div class="service-box">
@@ -194,17 +205,15 @@
                 <p>Leverage cutting-edge predictive models to forecast trends and make data-backed decisions.</p>
                 <p class="service-price">$2,000</p>
                 <a href="learnmore.html" class="cta">
-					Learn More
-				</a>
-				
+                    Details 
+                </a>
             </div>
-			
         </div>
-        <!-- <a href="/pricing-details" class="pricing-link">View Full Price Breakdown</a> -->
     </div>
 
 </body>
 </html>
+
 
 <!-- cut -->
 							<!-- <ul class="actions">
