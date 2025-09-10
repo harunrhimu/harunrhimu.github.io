@@ -67,30 +67,95 @@ resumeBtns.forEach((btn, idex) => {
     });
 });
 
-// Existing code for portfolio carousel (if any) - KEEP THIS PART
-// Make sure this part is also included if it was present in your original script.js
-// For example:
-// const arrowRight = document.querySelectorAll('.portfolio-box .navigation .arrow-right');
-// const arrowLeft = document.querySelectorAll('.portfolio-box .navigation .arrow-left');
-// let index = 0;
-// const activePortfolio = () =>{
-//     const imgSlide = document.querySelectorAll('.portfolio-carousel .img-slide');
-//     const portfolioDetails = document.querySelectorAll('.portfolio-detail');
-//     imgSlide.style.transform = `translateX(calc(${index * -100}% -${index *2}rem))`;
-//     portfolioDetails.forEach(detail =>{
-//         detail.classList.remove('active');
-//     })
-//     portfolioDetails[index].classList.add('active')
-// }
-// arrowRight.addEventListener('click', () => {
-//     if(index < imgSlide.length -1){
-//         index++;
-//         activePortfolio();
-//     }
-// });
-// arrowLeft.addEventListener('click', () => {
-//     if(index > 0){
-//         index--;
-//         activePortfolio();
-//     }
-// });
+
+// নিউ পার্ট
+
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceBoxes = document.querySelectorAll('.services-box');
+    
+    // Close popup functionality
+    function closePopup(popup) {
+        popup.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+    
+    // Open popup on service box click (but not on close button or popup content)
+    serviceBoxes.forEach((box) => {
+        box.addEventListener('click', function(e) {
+            // Don't open popup if clicking on close button or inside popup content
+            if (e.target.classList.contains('popup-close') || 
+                e.target.closest('.popup-content') || 
+                e.target.closest('.popup-btn')) {
+                return;
+            }
+            
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const popup = box.querySelector('.service-popup');
+            if (popup) {
+                popup.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+    });
+    
+    // Handle all close button clicks using event delegation
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('popup-close')) {
+            e.preventDefault();
+            e.stopPropagation();
+            const popup = e.target.closest('.service-popup');
+            if (popup) {
+                closePopup(popup);
+            }
+        }
+    });
+    
+    // Close popup when clicking on popup background (outside content)
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('service-popup')) {
+            closePopup(e.target);
+        }
+    });
+    
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const activePopup = document.querySelector('.service-popup.active');
+            if (activePopup) {
+                closePopup(activePopup);
+            }
+        }
+    });
+    
+    // Handle quote button clicks
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('popup-btn')) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const popup = e.target.closest('.service-popup');
+            const serviceName = popup.closest('.services-box').querySelector('h3').textContent;
+            
+            // Close popup first
+            closePopup(popup);
+            
+            // Scroll to contact section
+            setTimeout(() => {
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Pre-fill subject field if it exists
+                    setTimeout(() => {
+                        const subjectField = document.querySelector('input[placeholder="email subject"]');
+                        if (subjectField) {
+                            subjectField.value = `Quote Request: ${serviceName}`;
+                        }
+                    }, 1000);
+                }
+            }, 100);
+        }
+    });
+});
