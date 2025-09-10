@@ -84,72 +84,72 @@
 
 
     <!-- নিউ পার্ট -->
-<!-- SIMPLIFIED HTML: Replace your services section with this -->
-<section id="services" class="services active">
-    <h2 class="heading">My <span>Services</span></h2>
-    <div class="services-container">
-        <div class="services-box" onclick="openServicePopup('dashboard')">
-            <div class="icon">
-                <i class='bx bxs-pie-chart-alt-2 bx-flip-vertical'></i>
-                <a href=""><i class="bx bx-arrow-back"></i></a>
+    <!-- SIMPLIFIED HTML: Replace your services section with this -->
+    <section id="services" class="services active">
+        <h2 class="heading">My <span>Services</span></h2>
+        <div class="services-container">
+            <div class="services-box" onclick="openServicePopup('dashboard')">
+                <div class="icon">
+                    <i class='bx bxs-pie-chart-alt-2 bx-flip-vertical'></i>
+                    <a href=""><i class="bx bx-arrow-back"></i></a>
+                </div>
+                <h3>Dashboard Design</h3>
+                <p>Interactive and insightful dashboards...</p>
             </div>
-            <h3>Dashboard Design</h3>
-            <p>Interactive and insightful dashboards...</p>
-        </div>
 
-        <div class="services-box" onclick="openServicePopup('webscraping')">
-            <div class="icon">
-                <!-- <i class='bx bxs-pie-chart-alt bx-tada'></i> -->
-                <!-- <a href=""><i class="bx bx-arrow-back"></i></a> -->
+            <div class="services-box" onclick="openServicePopup('webscraping')">
+                <div class="icon">
+                    <i class='bx bxs-pie-chart-alt bx-tada'></i>
+                    <a href=""><i class="bx bx-arrow-back"></i></a>
+                </div>
+                <h3>Web Scraping</h3>
+                <p>Automated data extraction solutions...</p>
             </div>
-            <h3>Web Scraping</h3>
-            <p>Automated data extraction solutions...</p>
-        </div>
 
-        <div class="services-box" onclick="openServicePopup('segmentation')">
-            <div class="icon">
-                <i class='bx bx-bar-chart'></i>
-                <a href=""><i class="bx bx-arrow-back"></i></a>
+            <div class="services-box" onclick="openServicePopup('segmentation')">
+                <div class="icon">
+                    <i class='bx bx-bar-chart'></i>
+                    <a href=""><i class="bx bx-arrow-back"></i></a>
+                </div>
+                <h3>Power BI Customer Segmentation</h3>
+                <p>Advanced customer analytics...</p>
             </div>
-            <h3>Power BI Customer Segmentation</h3>
-            <p>Advanced customer analytics...</p>
-        </div>
 
-        <div class="services-box" onclick="openServicePopup('datacleaning')">
-            <div class="icon">
-                <i class='bx bxs-pie-chart-alt-2 bx-flip-vertical'></i>
-                <a href=""><i class="bx bx-arrow-back"></i></a>
+            <div class="services-box" onclick="openServicePopup('datacleaning')">
+                <div class="icon">
+                    <i class='bx bxs-pie-chart-alt-2 bx-flip-vertical'></i>
+                    <a href=""><i class="bx bx-arrow-back"></i></a>
+                </div>
+                <h3>Python Data Cleaning Project</h3>
+                <p>Professional data preprocessing...</p>
             </div>
-            <h3>Python Data Cleaning Project</h3>
-            <p>Professional data preprocessing...</p>
-        </div>
 
-        <div class="services-box" onclick="openServicePopup('timeseries')">
-            <div class="icon">
-                <i class='bx bxs-pie-chart-alt bx-tada'></i>
-                <a href=""><i class="bx bx-arrow-back"></i></a>
+            <div class="services-box" onclick="openServicePopup('timeseries')">
+                <div class="icon">
+                    <i class='bx bxs-pie-chart-alt bx-tada'></i>
+                    <a href=""><i class="bx bx-arrow-back"></i></a>
+                </div>
+                <h3>Time Series Analysis</h3>
+                <p>Forecasting and trend analysis...</p>
             </div>
-            <h3>Time Series Analysis</h3>
-            <p>Forecasting and trend analysis...</p>
+        </div>
+    </section>
+
+    <!-- POPUP OVERLAY - Add this right before closing </body> tag -->
+    <div id="service-popup-overlay" class="service-popup-overlay" onclick="closeServicePopup()">
+        <div id="service-popup" class="service-popup-container" onclick="event.stopPropagation()">
+            <div class="service-popup-header">
+                <h4 id="popup-title">Service Details</h4>
+                <span class="service-popup-close" onclick="closeServicePopup()">&times;</span>
+            </div>
+            <div class="service-popup-body">
+                <div id="popup-content" class="service-popup-content">
+                    <!-- Content will be inserted here by JavaScript -->
+                </div>
+                <button class="service-popup-btn" onclick="requestQuote()"> View Demos</button>
+            </div>
         </div>
     </div>
-</section>
-
-<!-- POPUP OVERLAY - Add this right before closing </body> tag -->
-<div id="service-popup-overlay" class="service-popup-overlay" onclick="closeServicePopup()">
-    <div id="service-popup" class="service-popup-container" onclick="event.stopPropagation()">
-        <div class="service-popup-header">
-            <h4 id="popup-title">Service Details</h4>
-            <span class="service-popup-close" onclick="closeServicePopup()">&times;</span>
-        </div>
-        <div class="service-popup-body">
-            <div id="popup-content" class="service-popup-content">
-                <!-- Content will be inserted here by JavaScript -->
-            </div>
-            <button class="service-popup-btn" onclick="requestQuote()"> View Demos</button>
-        </div>
-    </div>
-</div>
 
 
     <!-- projects -->
