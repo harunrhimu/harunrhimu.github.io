@@ -68,94 +68,174 @@ resumeBtns.forEach((btn, idex) => {
 });
 
 
-// নিউ পার্ট
-// Service popup functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const serviceBoxes = document.querySelectorAll('.services-box');
-    
-    // Close popup functionality
-    function closePopup(popup) {
-        popup.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Restore scrolling
+// নিউ 
+
+// Service data
+const serviceData = {
+    dashboard: {
+        title: "Dashboard Design Services",
+        features: [
+            "Interactive Power BI Dashboards",
+            "Real-time Data Visualization", 
+            "Custom KPI Metrics",
+            "Mobile Responsive Design"
+        ],
+        duration: "2-4 weeks",
+        technologies: "Power BI, DAX, SQL",
+        price: "$500"
+    },
+    webscraping: {
+        title: "Web Scraping Services",
+        features: [
+            "Automated Data Collection",
+            "E-commerce Price Monitoring",
+            "Social Media Data Mining", 
+            "API Integration & ETL"
+        ],
+        duration: "1-3 weeks",
+        technologies: "Python, Selenium, BeautifulSoup",
+        price: "$300"
+    },
+    segmentation: {
+        title: "Customer Segmentation Analysis",
+        features: [
+            "RFM Analysis Implementation",
+            "Behavioral Pattern Analysis",
+            "Customer Lifetime Value",
+            "Predictive Modeling"
+        ],
+        duration: "3-5 weeks", 
+        technologies: "Power BI, Python, SQL",
+        price: "$700"
+    },
+    datacleaning: {
+        title: "Data Cleaning & Preprocessing",
+        features: [
+            "Missing Data Handling",
+            "Outlier Detection & Treatment",
+            "Data Standardization",
+            "Quality Assurance Reports"
+        ],
+        duration: "1-2 weeks",
+        technologies: "Python, Pandas, NumPy", 
+        price: "$250"
+    },
+    timeseries: {
+        title: "Time Series Analysis & Forecasting",
+        features: [
+            "Trend & Seasonality Analysis",
+            "ARIMA & Prophet Models", 
+            "Demand Forecasting",
+            "Statistical Validation"
+        ],
+        duration: "2-4 weeks",
+        technologies: "Python, R, Statistics",
+        price: "$600"
     }
+};
+
+// Global variables
+let currentService = '';
+
+// Open popup function
+function openServicePopup(serviceId) {
+    const overlay = document.getElementById('service-popup-overlay');
+    const titleElement = document.getElementById('popup-title');
+    const contentElement = document.getElementById('popup-content');
     
-    // Open popup on service box click (but not on close button or popup content)
-    serviceBoxes.forEach((box) => {
-        box.addEventListener('click', function(e) {
-            // Don't open popup if clicking on close button or inside popup content
-            if (e.target.classList.contains('popup-close') || 
-                e.target.closest('.popup-content') || 
-                e.target.closest('.popup-btn')) {
-                return;
-            }
-            
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const popup = box.querySelector('.service-popup');
-            if (popup) {
-                popup.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
-        });
+    if (!overlay || !titleElement || !contentElement) return;
+    
+    currentService = serviceId;
+    const service = serviceData[serviceId];
+    
+    if (!service) return;
+    
+    // Set title
+    titleElement.textContent = service.title;
+    
+    // Build content
+    let contentHTML = '<div class="service-features">';
+    service.features.forEach(feature => {
+        contentHTML += `
+            <div class="service-detail-item">
+                <i class="bx bxs-check-circle"></i>
+                <span>${feature}</span>
+            </div>
+        `;
     });
+    contentHTML += '</div>';
     
-    // Handle all close button clicks using event delegation
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('popup-close')) {
-            e.preventDefault();
-            e.stopPropagation();
-            const popup = e.target.closest('.service-popup');
-            if (popup) {
-                closePopup(popup);
-            }
-        }
-    });
+    contentHTML += `
+        <div class="service-info-box">
+            <div class="service-info-row">
+                <span class="service-info-label">Duration:</span>
+                <span class="service-info-value">${service.duration}</span>
+            </div>
+            <div class="service-info-row">
+                <span class="service-info-label">Technologies:</span>
+                <span class="service-info-value">${service.technologies}</span>
+            </div>
+            <div class="service-info-row">
+                <span class="service-info-label">Starting at:</span>
+                <span class="service-info-value service-price">${service.price}</span>
+            </div>
+        </div>
+    `;
     
-    // Close popup when clicking on popup background (outside content)
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('service-popup')) {
-            closePopup(e.target);
-        }
-    });
+    contentElement.innerHTML = contentHTML;
     
-    // Close popup with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            const activePopup = document.querySelector('.service-popup.active');
-            if (activePopup) {
-                closePopup(activePopup);
-            }
-        }
-    });
+    // Show popup
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close popup function
+function closeServicePopup() {
+    const overlay = document.getElementById('service-popup-overlay');
+    if (overlay) {
+        overlay.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Request quote function
+function requestQuote() {
+    if (!currentService) return;
     
-    // Handle quote button clicks
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('popup-btn')) {
-            e.preventDefault();
-            e.stopPropagation();
+    const service = serviceData[currentService];
+    closeServicePopup();
+    
+    // Scroll to contact section
+    setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
             
-            const popup = e.target.closest('.service-popup');
-            const serviceName = popup.closest('.services-box').querySelector('h3').textContent;
-            
-            // Close popup first
-            closePopup(popup);
-            
-            // Scroll to contact section
+            // Pre-fill subject field
             setTimeout(() => {
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                    
-                    // Pre-fill subject field if it exists
-                    setTimeout(() => {
-                        const subjectField = document.querySelector('input[placeholder="email subject"]');
-                        if (subjectField) {
-                            subjectField.value = `Quote Request: ${serviceName}`;
-                        }
-                    }, 1000);
+                const subjectField = document.querySelector('input[placeholder="email subject"]');
+                if (subjectField) {
+                    subjectField.value = `Quote Request: ${service.title}`;
+                    subjectField.focus();
                 }
-            }, 100);
+            }, 1000);
         }
-    });
+    }, 100);
+}
+
+// Close popup with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeServicePopup();
+    }
+});
+
+// Prevent popup from closing when clicking inside it
+document.addEventListener('DOMContentLoaded', function() {
+    const popupContainer = document.getElementById('service-popup');
+    if (popupContainer) {
+        popupContainer.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
 });
