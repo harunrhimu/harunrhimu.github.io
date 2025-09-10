@@ -1456,50 +1456,233 @@ font-size: 1.6rem;
 /* নিউ পার্ট */
 
 
-    <section id="services" class="services active">
-        <h2 class="heading">My <span>Services</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx  bxs-pie-chart-alt-2 bx-flip-vertical'></i>
-                    <a href=""><i class="bx bx-arrow-back"></i></a>
-                </div>
-                <h3>Dashboard Design</h3>
-                <p>Description comming soon..</p>
-            </div>
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx  bxs-pie-chart-alt bx-tada'></i>
-                    <a href=""><i class="bx bx-arrow-back"></i></a>
-                </div>
-                <h3>Web Scraping</h3>
-                <p>Description comming soon..</p>
-            </div>
-            <div class="services-box">
-                <div class="icon">
-                    <!-- <i class='bx  bxs-line-chart-square bx-flip-vertical'></i>  -->
-                    <i class='bx  bx-bar-chart'></i>
-                    <a href=""><i class="bx bx-arrow-back"></i></a>
-                </div>
-                <h3>Power BI Customer Segmentation</h3>
-                <p>Description comming soon.. </p>
-            </div>
-            <div class="services-box">
-                <div class="icon">
+/* Service Popup Styles */
+.service-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
 
-                    <i class='bx  bxs-pie-chart-alt-2 bx-flip-vertical'></i>
-                    <a href=""><i class="bx bx-arrow-back"></i></a>
-                </div>
-                <h3>Python data cleaning project</h3>
-                <p>Description comming soon..</p>
-            </div>
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx  bxs-pie-chart-alt bx-tada'></i>
-                    <a href=""><i class="bx bx-arrow-back"></i></a>
-                </div>
-                <h3>Time Series Analysis</h3>
-                <p>Description comming soon.. </p>
-            </div>
-        </div>
-    </section>
+.service-popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: var(--second-bg-color);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: scale(0.8) translateY(50px);
+    transition: all 0.3s ease;
+    border: 2px solid var(--main-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.service-popup.active .popup-content {
+    transform: scale(1) translateY(0);
+}
+
+.popup-header {
+    padding: 2rem 2.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--main-color), #5dbf2a);
+    border-radius: 18px 18px 0 0;
+    color: var(--bg-color);
+}
+
+.popup-header h4 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.popup-close {
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.popup-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.popup-body {
+    padding: 2.5rem;
+}
+
+.service-details {
+    margin-bottom: 2.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    color: var(--white-color);
+    font-size: 1.5rem;
+}
+
+.detail-item i {
+    color: var(--main-color);
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.service-info {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(124, 240, 61, 0.2);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+.info-row .label {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.info-row .value {
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+.info-row .price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.popup-btn {
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--main-color), #5dbf2a);
+    border: none;
+    border-radius: 12px;
+    color: var(--bg-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.popup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 240, 61, 0.3);
+    background: linear-gradient(135deg, #5dbf2a, var(--main-color));
+}
+
+/* Hover effect enhancement for service boxes */
+.services-box {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Add overlay backdrop when popup is active */
+.services-box .popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.services-box .popup-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.services-box::after {
+    content: 'Click for details';
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.services-box:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .popup-header {
+        padding: 1.5rem 2rem 1rem;
+    }
+    
+    .popup-header h4 {
+        font-size: 1.8rem;
+    }
+    
+    .popup-body {
+        padding: 2rem;
+    }
+    
+    .popup-close {
+        font-size: 2.5rem;
+        width: 35px;
+        height: 35px;
+    }
+}

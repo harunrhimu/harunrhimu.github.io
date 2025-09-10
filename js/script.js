@@ -69,7 +69,7 @@ resumeBtns.forEach((btn, idex) => {
 
 
 // নিউ পার্ট
-
+// Service popup functionality
 document.addEventListener('DOMContentLoaded', function() {
     const serviceBoxes = document.querySelectorAll('.services-box');
     
