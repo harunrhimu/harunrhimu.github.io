@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:sjanalytics.com)",
+      "Bash(npm install react-router-dom)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")"
+    ]
+  }
+}

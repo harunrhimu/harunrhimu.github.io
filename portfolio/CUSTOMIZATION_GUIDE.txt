@@ -1,0 +1,868 @@
+============================================================
+   PORTFOLIO CUSTOMIZATION & DEPLOYMENT GUIDE
+   Md Harun Or Roshid - Fabric & BI Professional Portfolio
+============================================================
+
+This guide covers EVERY customizable part of your portfolio.
+Your site is a multi-page React + Vite + Tailwind app with:
+  - Home page with 10 sections
+  - 8 dedicated sub-pages (Services, Case Studies, Skills, Blog, Videos, Contact, + detail pages)
+  - All content lives in easy-to-edit data files
+
+
+============================================================
+TABLE OF CONTENTS
+============================================================
+ 1.  Your Name, Title & Bio
+ 2.  Profile Photo
+ 3.  Social Links (LinkedIn, GitHub, YouTube)
+ 4.  Hero Section (Typing Roles & Tagline)
+ 5.  Stats & Marquee Banner
+ 6.  About Section
+ 7.  Services
+ 8.  Case Studies / Projects
+ 9.  Skills, Certifications & Experience
+10.  Blog Posts
+11.  YouTube Videos
+12.  Testimonials
+13.  Contact Info & Form
+14.  Navbar & Footer
+15.  Colors & Theme
+16.  Fonts
+17.  Favicon & Page Title
+18.  Adding Your Resume / CV
+19.  Connecting the Contact Form (EmailJS / Formspree)
+20.  Adding / Removing Pages
+21.  Deploy to GitHub Pages
+22.  Deploy to Vercel (Easiest)
+23.  File Map (Quick Reference)
+24.  Helpful Links
+
+
+============================================================
+1. YOUR NAME, TITLE & BIO
+============================================================
+
+Your name appears in MULTIPLE files. Search-and-replace
+across all of them when changing:
+
+  "Md Harun"         --> Your display name
+  "Md Harun Or Roshid" --> Your full name
+  "Harun"            --> Your short name (logo, navbar, footer)
+
+Files to update:
+  src/components/Hero.jsx     Line ~62 ("Md Harun")
+  src/components/About.jsx    Line ~39 ("Md Harun Or Roshid")
+  src/components/Navbar.jsx   Line ~93 ("Harun" logo text)
+  src/components/Footer.jsx   Line ~17 ("Harun" logo text)
+                              Line ~102 (copyright line)
+  index.html                  Line ~8 (page <title> tag)
+                              Line ~7 (<meta> description)
+
+
+============================================================
+2. PROFILE PHOTO
+============================================================
+
+Your photo: public/harunrhimu.jpg
+
+To replace it:
+  Step 1: Put your photo in the "public/" folder
+  Step 2: Update the filename in these files:
+    src/components/Hero.jsx     Line ~119:  src="/harunrhimu.jpg"
+    src/components/About.jsx    Line ~37:   src="/harunrhimu.jpg"
+
+  Recommended: Square image, at least 400x400px, JPG or PNG.
+  Keep the same filename to avoid editing code.
+
+
+============================================================
+3. SOCIAL LINKS (LinkedIn, GitHub, YouTube)
+============================================================
+
+Social links appear with href="#" (placeholder). Replace '#'
+with your real URLs in these files:
+
+File: src/components/Hero.jsx (Line ~96-98)
+----------------------------------------------
+  Find the social array with names 'LinkedIn', 'GitHub', 'YouTube'.
+  Each has:  href="#"
+  Replace '#' with:
+    LinkedIn --> 'https://www.linkedin.com/in/YOUR-PROFILE/'
+    GitHub   --> 'https://github.com/YOUR-USERNAME'
+    YouTube  --> 'https://www.youtube.com/@YOUR-CHANNEL'
+
+File: src/components/Footer.jsx (Line ~26-28)
+----------------------------------------------
+  Same social icons array with href="#" -- update all three.
+
+File: src/components/Contact.jsx (Line ~41)
+----------------------------------------------
+  LinkedIn value:  'linkedin.com/in/yourprofile'
+  LinkedIn href:   '#'
+  --> Change both to your real LinkedIn URL.
+
+
+============================================================
+4. HERO SECTION (Typing Roles & Tagline)
+============================================================
+
+File: src/components/Hero.jsx
+-------------------------------
+
+TYPING ANIMATION ROLES (Line ~4):
+  const roles = ['Fabric Analytics Engineer', 'Power BI Developer', 'Data Analyst', 'BI Consultant', 'Dashboard Architect']
+
+  - These cycle with a typewriter effect on the homepage
+  - Edit, add, or remove roles in this array
+  - The FIRST role appears when the page loads
+  - Keep roles short (2-4 words) for best visual effect
+
+TAGLINE (Line ~72-74):
+  "I build end-to-end analytics solutions on Microsoft Fabric & Power BI --
+   from Lakehouse architecture to compelling dashboards..."
+
+  - This is the paragraph below your name
+  - Keep it 1-2 sentences, max ~25 words for readability
+
+AVAILABILITY TAG (Line ~56):
+  "Available for new projects"
+  - Change this text or the green dot indicator
+
+
+============================================================
+5. STATS & MARQUEE BANNER
+============================================================
+
+File: src/components/MarqueeBanner.jsx (Line ~2-8)
+----------------------------------------------------
+  const items = [
+    { value: '50+', label: 'Dashboards Built' },
+    { value: '3+', label: 'Years Experience' },
+    { value: '20+', label: 'Happy Clients' },
+    { value: '10M+', label: 'Data Rows Processed' },
+    { value: '100%', label: 'Client Satisfaction' },
+    { value: '40%', label: 'Avg. Reporting Time Saved' },
+  ]
+
+  - This is the scrolling banner below the hero
+  - Update the numbers and labels to match your stats
+  - Add or remove items (keep at least 4 for smooth scrolling)
+
+File: src/components/Hero.jsx (Line ~127-167)
+----------------------------------------------
+  The floating cards next to your photo show:
+    "Dashboards 50+"    (Line ~135-136)
+    "Experience 3+ Years"  (Line ~148-149)
+    "Clients 20+"       (Line ~163-164)
+  Update these values to match your actual stats.
+
+File: src/components/About.jsx (Line ~47-53)
+----------------------------------------------
+  The stats grid shows:
+    "50+" Dashboards Built
+    "20+" Happy Clients
+  Update these numbers.
+
+
+============================================================
+6. ABOUT SECTION
+============================================================
+
+File: src/components/About.jsx
+-------------------------------
+
+BIO TEXT (Line ~24-34):
+  Two paragraphs describing you. Current text highlights:
+    - Microsoft Fabric enthusiast
+    - Power BI Developer
+    - Data Analyst
+    - DP-600 & DP-700 certification prep
+  Rewrite these to match your story.
+
+SUBTITLE (Line ~40):
+  "Fabric & BI Professional"
+  Change to your preferred title.
+
+INFO CARDS (Line ~57-63):
+  Location    --> "Dhaka, Bangladesh"  --> your city
+  Education   --> "B.Sc. in CSE"       --> your degree
+
+MY APPROACH STEPS (Line ~69-74):
+  Five steps shown in a pipeline visual:
+    01 Discover  --> "Understand business needs"
+    02 Extract   --> "Gather & connect data"
+    03 Transform --> "Clean & model data"
+    04 Visualize --> "Build dashboards"
+    05 Deliver   --> "Insights & training"
+  Customize these to match your actual workflow.
+
+
+============================================================
+7. SERVICES
+============================================================
+
+File: src/data/services.js
+----------------------------
+This is a PURE DATA FILE -- just edit the array of objects.
+
+Each service has these fields:
+  title:           'Service Name'
+  description:     'Short description for card view (1-2 sentences)'
+  longDescription: 'Detailed description for the expanded/detail view'
+  iconPath:        SVG path string (heroicons.com for icons)
+  deliverables:    ['Item 1', 'Item 2', 'Item 3']
+  process:         ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']
+  accent:          'brand' (green) or 'warm' (yellow)
+
+CURRENT SERVICES (7 total):
+  1. Microsoft Fabric Solutions   <-- NEW: Fabric-first service
+  2. Dashboard Development
+  3. Data Analysis & Reporting
+  4. ETL & Data Pipelines
+  5. Data Modeling & Architecture
+  6. Training & Consultation
+  7. Automation Solutions
+
+TO ADD a service:
+  Copy an existing object, paste it, and change all fields.
+
+TO REMOVE a service:
+  Delete the entire { ... } block and its trailing comma.
+
+TO REORDER:
+  Cut-paste objects in the array. First item = first displayed.
+
+ICON PATHS:
+  Get SVG paths from https://heroicons.com
+  Click an icon --> copy the <path d="..."> value
+
+
+============================================================
+8. CASE STUDIES / PROJECTS
+============================================================
+
+File: src/data/caseStudies.js
+-------------------------------
+Each case study has:
+  slug:       'url-friendly-name'        (used in /case-studies/slug URL)
+  title:      'Project Title'
+  client:     'Client Name'
+  industry:   'Industry Category'
+  challenge:  'What problem they had'     (1-2 sentences)
+  solution:   'What you built'            (1-2 sentences)
+  details:    [                           (array of bullet points)
+    'Detail 1 about what you did...',
+    'Detail 2...',
+  ]
+  results:    [                           (metrics shown as cards)
+    { metric: '60%', label: 'Faster Reporting' },
+    { metric: '5', label: 'Regions Tracked' },
+  ]
+  tags:       ['Power BI', 'DAX', 'SQL Server']
+  featured:   true/false                  (featured ones get highlighted)
+  image:      'URL or /local-path.jpg'    (cover image)
+
+CURRENT CASE STUDIES (5):
+  1. Sales Performance Dashboard (featured)
+  2. HR Analytics & Attrition Prediction
+  3. Financial Reporting Suite
+  4. Supply Chain Visibility Dashboard
+  5. Customer Segmentation Analysis
+
+TO USE LOCAL IMAGES:
+  Put images in public/ folder, then use:
+  image: '/my-project-screenshot.png'
+
+TO ADD a case study:
+  Copy an existing object, update the slug (must be unique),
+  and fill in all fields.
+
+IMPORTANT: The slug becomes the URL:
+  slug: 'my-new-project' --> yoursite.com/case-studies/my-new-project
+
+
+============================================================
+9. SKILLS, CERTIFICATIONS & EXPERIENCE
+============================================================
+
+File: src/data/skills.js
+--------------------------
+This single file controls THREE sections on the Skills page.
+
+--- SKILL CATEGORIES (Line ~1-27) ---
+  export const categories = [
+    {
+      title: 'Microsoft Fabric',
+      skills: ['Fabric Lakehouse', 'Fabric Data Warehouse', ...],
+      accent: 'brand',       ('brand' = green, 'warm' = yellow)
+    },
+    ...
+  ]
+
+  CURRENT CATEGORIES (5):
+    1. Microsoft Fabric (Lakehouse, Warehouse, Pipelines, Dataflows Gen2, Notebooks, OneLake, Semantic Models, Direct Lake)
+    2. Data Visualization (Power BI, DAX, Power Query, Paginated Reports, Excel, SSRS)
+    3. Data Engineering (SQL Server, PostgreSQL, ETL/SSIS, ADF, Data Modeling, SSAS, Spark SQL)
+    4. Programming & Analysis (Python, Pandas, NumPy, SQL, PySpark, R, Jupyter)
+    5. Cloud & Tools (Azure, Power Automate, Git, SharePoint, REST APIs, Azure DevOps)
+
+  To add a skill: add a string to the skills array
+  To add a category: add a new { title, skills, accent } object
+  To reorder: move objects up/down in the array
+
+--- CERTIFICATIONS (Line ~29-35) ---
+  export const certifications = [
+    'Microsoft Certified: Power BI Data Analyst Associate (PL-300)',
+    'Microsoft Azure Data Fundamentals (DP-900)',
+    'Google Data Analytics Professional Certificate',
+    'Preparing: Fabric Analytics Engineer Associate (DP-600)',
+    'Preparing: Fabric Data Engineer Associate (DP-700)',
+  ]
+
+  Just add/remove strings. When you pass DP-600 or DP-700,
+  change "Preparing:" to "Microsoft Certified:" (or remove the prefix).
+
+--- WORK EXPERIENCE (Line ~37-74) ---
+  export const experiences = [
+    {
+      role:        'Power BI & Fabric Analytics Engineer',
+      company:     'Your Company Name',        <-- CHANGE THIS
+      period:      '2023 - Present',
+      location:    'Dhaka, Bangladesh',
+      description: [ ... ],                    (array of bullet points)
+      tags:        ['Microsoft Fabric', 'Power BI', ...],
+      current:     true,                       (true = shows green dot)
+    },
+    ...
+  ]
+
+  IMPORTANT: Replace 'Your Company Name' with your actual company.
+  Keep experiences in reverse chronological order (newest first).
+
+--- EDUCATION (Line ~76-83) ---
+  export const education = [
+    {
+      degree:      'Bachelor of Science in Computer Science & Engineering',
+      institution: 'Your University Name',     <-- CHANGE THIS
+      period:      '2017 - 2021',
+      details:     'Focused on Data Science, Statistics, and Database Management',
+    },
+  ]
+
+
+============================================================
+10. BLOG POSTS
+============================================================
+
+File: src/data/blog.js
+------------------------
+Each blog post:
+  slug:       'url-friendly-title'
+  title:      'Full Blog Title'
+  excerpt:    'Short summary for card preview (1-2 sentences)'
+  content:    [                            (array of paragraphs)
+    'Paragraph 1 text...',
+    'Paragraph 2 text...',
+  ]
+  category:   'Power BI' / 'Microsoft Fabric' / 'Data Engineering' / etc.
+  date:       'Mar 1, 2026'
+  readTime:   '10 min read'
+  image:      'URL or /local-path.jpg'
+
+CURRENT POSTS (6):
+  1. 5 DAX Patterns Every Power BI Developer Must Know
+  2. Building a Data Pipeline with Python and Azure
+  3. Why Your Dashboard Isn't Telling the Right Story
+  4. Getting Started with Microsoft Fabric for BI Professionals
+  5. Power Query Tips for Handling Messy Real-World Data
+  6. Implementing Row-Level Security in Power BI
+
+The slug becomes the URL:
+  slug: 'my-new-post' --> yoursite.com/blog/my-new-post
+
+TO ADD a blog post:
+  Copy an existing object, change the slug (must be unique),
+  and fill in all fields. Add it at the TOP of the array
+  so it appears first.
+
+
+============================================================
+11. YOUTUBE VIDEOS
+============================================================
+
+File: src/data/videos.js
+--------------------------
+Each video:
+  title:       'Video Title'
+  description: 'Short description'
+  thumbnail:   'URL or /local-path.jpg'
+  youtubeUrl:  'https://www.youtube.com/watch?v=YOUR_VIDEO_ID'
+  duration:    '18:24'
+  category:    'Tutorial' / 'Tips & Tricks' / 'Deep Dive' / etc.
+
+CURRENT VIDEOS (6) - all have placeholder youtubeUrl values.
+Replace 'example1', 'example2', etc. with your real YouTube
+video IDs.
+
+  Example: If your video URL is
+    https://www.youtube.com/watch?v=dQw4w9WgXcQ
+  Then set:
+    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+
+For thumbnails, you can use YouTube's auto-thumbnail:
+  thumbnail: 'https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg'
+
+
+============================================================
+12. TESTIMONIALS
+============================================================
+
+File: src/data/testimonials.js
+-------------------------------
+Each testimonial:
+  quote:   'What the client said about you...'
+  name:    'Client Name'
+  role:    'Their Job Title'
+  company: 'Company Name'
+  rating:  5                              (1-5 stars)
+
+CURRENT TESTIMONIALS (4):
+  All use placeholder names (Sarah M., James K., etc.)
+  Replace with real client testimonials when you have them.
+
+TO ADD: Copy an object, paste, change values.
+TO REMOVE: Delete the entire { ... } block.
+
+
+============================================================
+13. CONTACT INFO & FORM
+============================================================
+
+File: src/components/Contact.jsx
+----------------------------------
+
+CONTACT INFO CARDS (Line ~39-42):
+  Email:    'your.email@example.com'       <-- CHANGE THIS
+            href: 'mailto:your.email@example.com'  <-- AND THIS
+  LinkedIn: 'linkedin.com/in/yourprofile'  <-- CHANGE THIS
+            href: '#'                       <-- AND THIS
+  Location: 'Dhaka, Bangladesh'            <-- CHANGE THIS
+
+CONTACT FORM:
+  Currently shows an alert on submit (Line ~12).
+  See Section 19 below for connecting to EmailJS or Formspree.
+
+File: src/components/Footer.jsx
+---------------------------------
+  Line ~85: 'your.email@example.com'       <-- CHANGE THIS
+  Line ~86: 'Dhaka, Bangladesh'            <-- CHANGE THIS
+
+
+============================================================
+14. NAVBAR & FOOTER
+============================================================
+
+File: src/components/Navbar.jsx
+---------------------------------
+
+LOGO TEXT (Line ~93-95):
+  "Harun." with subtitle "DATA & BI"
+  Change to your name and tagline.
+
+NAVIGATION LINKS (Line ~4-11):
+  const links = [
+    { name: 'About', to: '/#about' },
+    { name: 'Services', to: '/services' },
+    { name: 'Case Studies', to: '/case-studies' },
+    { name: 'Skills', to: '/skills' },
+    { name: 'Blog', to: '/blog' },
+    { name: 'Contact', to: '/contact' },
+  ]
+  Add, remove, or rename navigation items here.
+
+AVAILABILITY BADGE (Line ~118):
+  "Open to work" -- change text or remove this div entirely.
+
+File: src/components/Footer.jsx
+---------------------------------
+
+FOOTER TAGLINE (Line ~22):
+  "Turning raw data into business intelligence.
+   Power BI Developer & Data Analyst based in Dhaka."
+  --> Update to match your Fabric-focused identity.
+
+FOOTER SERVICES LIST (Line ~73):
+  ['Dashboard Development', 'Data Analysis', 'ETL Pipelines',
+   'Data Modeling', 'BI Training', 'Automation']
+  --> Update to match your current services (add 'Fabric Solutions').
+
+COPYRIGHT (Line ~102):
+  "Md Harun Or Roshid" -- change to your name.
+
+
+============================================================
+15. COLORS & THEME
+============================================================
+
+File: tailwind.config.js
+--------------------------
+
+COLOR SYSTEM:
+  brand:   Green shades (brand-400 = #34d399, brand-600 = #059669)
+           Used for: buttons, links, accents, gradients
+  warm:    Yellow/amber (warm-400 = #fbbf24)
+           Used for: secondary accents, alternating sections
+  surface: Dark slate shades (surface-950 = #080d1a background)
+           Used for: backgrounds, cards, borders, text
+
+TO CHANGE THE MAIN ACCENT COLOR:
+  Replace all "brand" hex values with your color palette.
+  Use https://tailwindcss.com/docs/customizing-colors for palettes.
+
+  Example - Change green to blue:
+    brand: {
+      400: '#60a5fa',    (was #34d399)
+      500: '#3b82f6',    (was #10b981)
+      600: '#2563eb',    (was #059669)
+      ...
+    }
+
+TO CHANGE THE BACKGROUND:
+  Edit surface-950 (darkest) through surface-50 (lightest).
+  Current: Very dark navy (#080d1a).
+
+GRADIENT TEXT:
+  Defined in src/index.css as:
+    .text-gradient     --> brand gradient
+    .text-gradient-warm --> warm gradient
+  Edit CSS to change gradient directions/colors.
+
+
+============================================================
+16. FONTS
+============================================================
+
+File: index.html (Line ~9-11)
+-------------------------------
+  Currently loads from Google Fonts:
+    Inter        --> body text, headings
+    JetBrains Mono --> code/mono elements
+
+  To change fonts:
+    1. Go to https://fonts.google.com
+    2. Select your fonts, copy the <link> tag
+    3. Replace the Google Fonts <link> in index.html
+    4. Update tailwind.config.js fontFamily:
+         sans: ['Your Font', 'system-ui', 'sans-serif'],
+
+
+============================================================
+17. FAVICON & PAGE TITLE
+============================================================
+
+File: public/favicon.svg
+--------------------------
+  Replace with your own SVG favicon.
+  Or use a PNG: rename to favicon.png and update index.html:
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+File: index.html
+-----------------
+  Line ~8: <title>Harun | Data Analyst & BI Consultant</title>
+  --> Change to your preferred page title.
+
+  Line ~7: <meta name="description" content="..." />
+  --> Update the meta description for SEO.
+
+
+============================================================
+18. ADDING YOUR RESUME / CV
+============================================================
+
+Step 1: Put your resume PDF in the "public" folder:
+  public/resume.pdf
+
+Step 2: To add a download link anywhere, use:
+  <a href="/resume.pdf" download className="btn-primary">
+    Download Resume
+  </a>
+
+Good places to add it:
+  - Hero section (next to "View Case Studies" button)
+  - About section
+  - Footer
+
+
+============================================================
+19. CONNECTING THE CONTACT FORM
+============================================================
+
+The contact form currently shows a browser alert on submit.
+Here's how to make it actually send emails:
+
+OPTION A: EmailJS (Free, no backend needed)
+---------------------------------------------
+  1. Sign up at https://www.emailjs.com (free tier: 200 emails/month)
+  2. Create an email service (Gmail, Outlook, etc.)
+  3. Create an email template
+  4. Install: npm install @emailjs/browser
+  5. In src/components/Contact.jsx, replace handleSubmit:
+
+     import emailjs from '@emailjs/browser'
+
+     const handleSubmit = (e) => {
+       e.preventDefault()
+       emailjs.send(
+         'YOUR_SERVICE_ID',
+         'YOUR_TEMPLATE_ID',
+         formData,
+         'YOUR_PUBLIC_KEY'
+       ).then(() => {
+         alert('Message sent!')
+         setFormData({ name: '', email: '', subject: '', message: '' })
+       }).catch(() => {
+         alert('Failed to send. Please try again.')
+       })
+     }
+
+OPTION B: Formspree (Even simpler)
+------------------------------------
+  1. Sign up at https://formspree.io (free tier: 50 submissions/month)
+  2. Create a form and get your endpoint URL
+  3. In Contact.jsx, change the form's action:
+
+     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+  Or keep using React state and fetch:
+
+     const handleSubmit = async (e) => {
+       e.preventDefault()
+       const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(formData),
+       })
+       if (res.ok) {
+         alert('Message sent!')
+         setFormData({ name: '', email: '', subject: '', message: '' })
+       }
+     }
+
+
+============================================================
+20. ADDING / REMOVING PAGES
+============================================================
+
+Your site uses React Router. Pages are defined in:
+
+File: src/App.jsx
+-------------------
+  <Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/services" element={<ServicesPage />} />
+    <Route path="/case-studies" element={<CaseStudiesPage />} />
+    <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+    <Route path="/skills" element={<SkillsPage />} />
+    <Route path="/blog" element={<BlogPage />} />
+    <Route path="/blog/:slug" element={<BlogDetail />} />
+    <Route path="/videos" element={<VideosPage />} />
+    <Route path="/contact" element={<ContactPage />} />
+  </Routes>
+
+TO REMOVE A PAGE:
+  1. Delete the <Route> line in App.jsx
+  2. Remove the import at the top of App.jsx
+  3. Remove the link from Navbar.jsx links array
+  4. Remove the link from Footer.jsx
+  5. Optionally delete the page file from src/pages/
+
+TO ADD A NEW PAGE:
+  1. Create src/pages/MyNewPage.jsx:
+       export default function MyNewPage() {
+         return <main className="pt-24 pb-16"><div className="container-xl">...</div></main>
+       }
+  2. Import it in App.jsx:
+       import MyNewPage from './pages/MyNewPage'
+  3. Add a Route:
+       <Route path="/my-page" element={<MyNewPage />} />
+  4. Add to Navbar links array:
+       { name: 'My Page', to: '/my-page' }
+
+HOME PAGE SECTIONS:
+  File: src/pages/HomePage.jsx controls which sections
+  appear on the home page and in what order:
+    Hero --> MarqueeBanner --> About --> ServicesPreview -->
+    CaseStudiesPreview --> SkillsPreview --> VideoShowcase -->
+    BlogPreview --> Testimonials --> Contact
+
+  To remove a section: delete its import and its <Component /> tag.
+  To reorder: move the <Component /> tags up/down.
+
+
+============================================================
+21. DEPLOY TO GITHUB PAGES (FREE)
+============================================================
+
+STEP 1: Install dependencies (if not done)
+  cd portfolio
+  npm install
+
+STEP 2: Create a GitHub repo
+  - Go to https://github.com/new
+  - Name: your-username.github.io (for personal site)
+    OR any name like "portfolio" (for project site)
+  - Keep it PUBLIC, do NOT initialize with README
+
+STEP 3: If repo is NOT "username.github.io", add base path
+  In vite.config.js:
+    export default defineConfig({
+      plugins: [react()],
+      base: '/your-repo-name/',    <-- ADD THIS LINE
+      server: { port: 3000, host: '0.0.0.0', open: false }
+    })
+
+STEP 4: Install deployment tool
+  npm install -D gh-pages
+
+STEP 5: Add deploy scripts to package.json
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+
+STEP 6: Push to GitHub
+  git init
+  git add .
+  git commit -m "Initial portfolio commit"
+  git branch -M main
+  git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+  git push -u origin main
+
+STEP 7: Deploy
+  npm run deploy
+
+STEP 8: Enable GitHub Pages
+  - Go to repo Settings --> Pages
+  - Source: select "gh-pages" branch
+  - Click Save, wait 1-2 minutes
+
+STEP 9: Visit your site
+  username.github.io        (if repo = username.github.io)
+  username.github.io/portfolio  (if repo = portfolio)
+
+
+============================================================
+22. DEPLOY TO VERCEL (EASIEST)
+============================================================
+
+Step 1: Push code to GitHub (Step 6 above)
+Step 2: Go to https://vercel.com, sign in with GitHub
+Step 3: Click "Import Project", select your repo
+Step 4: Vercel auto-detects Vite and deploys
+Step 5: Live at: https://your-project.vercel.app
+
+Custom domain: add in Vercel dashboard --> Settings --> Domains
+
+
+============================================================
+23. FILE MAP (QUICK REFERENCE)
+============================================================
+
+portfolio/
+  public/
+    favicon.svg              --> Site favicon
+    harunrhimu.jpg           --> Your profile photo
+    (put resume.pdf here)    --> Resume download
+
+  src/
+    data/                    <-- EDIT THESE FIRST (all your content)
+      skills.js              --> Skills, certifications, experience, education
+      services.js            --> Service offerings (7 services)
+      caseStudies.js         --> Case study projects (5 projects)
+      blog.js                --> Blog posts (6 posts)
+      videos.js              --> YouTube videos (6 videos)
+      testimonials.js        --> Client testimonials (4 reviews)
+
+    components/              <-- UI components (edit for layout/text changes)
+      Hero.jsx               --> Landing hero (name, roles, tagline, photo, socials)
+      About.jsx              --> About me bento grid (bio, stats, approach)
+      MarqueeBanner.jsx      --> Scrolling stats banner
+      Navbar.jsx             --> Top navigation bar + mobile menu
+      Footer.jsx             --> Site footer (links, socials, copyright)
+      Contact.jsx            --> Contact form + info cards
+      Services.jsx           --> Full services list component
+      ServicesPreview.jsx     --> Home page services preview
+      CaseStudies.jsx        --> Case studies grid component
+      CaseStudiesPreview.jsx  --> Home page case studies preview
+      Skills.jsx             --> Skills display component
+      SkillsPreview.jsx      --> Home page skills preview
+      Blog.jsx               --> Blog cards component
+      BlogPreview.jsx        --> Home page blog preview
+      VideoShowcase.jsx      --> Video cards component
+      Testimonials.jsx       --> Testimonial carousel
+      Projects.jsx           --> (Legacy) Project cards
+      ProjectModal.jsx       --> Project detail modal
+      Experience.jsx         --> Work experience timeline
+      ScrollToTop.jsx        --> Auto-scroll on page change
+
+    pages/                   <-- Full page views
+      HomePage.jsx           --> / (assembles all home sections)
+      ServicesPage.jsx       --> /services
+      CaseStudiesPage.jsx    --> /case-studies
+      CaseStudyDetail.jsx    --> /case-studies/:slug
+      SkillsPage.jsx         --> /skills
+      BlogPage.jsx           --> /blog
+      BlogDetail.jsx         --> /blog/:slug
+      VideosPage.jsx         --> /videos
+      ContactPage.jsx        --> /contact
+
+    App.jsx                  --> Router + layout (Navbar/Footer wrapping)
+    main.jsx                 --> React entry point
+    index.css                --> Global CSS (gradients, glass effects, utilities)
+
+  index.html                 --> HTML shell (title, meta, fonts)
+  tailwind.config.js         --> Theme (colors, fonts, animations)
+  vite.config.js             --> Dev server & build config
+  package.json               --> Dependencies & scripts
+  postcss.config.js          --> PostCSS/Tailwind processing
+
+
+============================================================
+24. HELPFUL LINKS
+============================================================
+
+  Tailwind CSS docs:    https://tailwindcss.com/docs
+  React docs:           https://react.dev
+  Vite docs:            https://vitejs.dev
+  React Router docs:    https://reactrouter.com
+  Framer Motion docs:   https://www.framer.com/motion/
+  React Icons:          https://react-icons.github.io/react-icons/
+  Heroicons (SVG):      https://heroicons.com
+  Google Fonts:         https://fonts.google.com
+  Unsplash (images):    https://unsplash.com
+  GitHub Pages docs:    https://pages.github.com
+  Vercel docs:          https://vercel.com/docs
+  EmailJS docs:         https://www.emailjs.com/docs/
+  Formspree docs:       https://formspree.io/docs/
+
+============================================================
+  QUICK START CHECKLIST
+============================================================
+
+  [ ] Replace profile photo (public/harunrhimu.jpg)
+  [ ] Update name everywhere (Section 1)
+  [ ] Add real social links (Section 3)
+  [ ] Update company & university names in skills.js
+  [ ] Replace placeholder email (your.email@example.com)
+  [ ] Update YouTube video URLs with real IDs
+  [ ] Add real testimonials when available
+  [ ] Update page title & meta description (index.html)
+  [ ] Connect contact form to EmailJS or Formspree
+  [ ] Add resume PDF to public/ folder
+  [ ] Deploy!
+
+============================================================
