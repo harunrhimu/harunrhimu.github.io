@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import blogPosts from '../data/blog'
+import SEO from '../components/SEO'
+import SectionDivider from '../components/SectionDivider'
+import { getBreadcrumbSchema } from '../utils/structuredData'
 
 const blogCategories = ['All', ...new Set(blogPosts.map(p => p.category))]
 
@@ -10,20 +13,27 @@ export default function BlogPage() {
   const filtered = filter === 'All' ? blogPosts : blogPosts.filter(p => p.category === filter)
 
   return (
-    <main className="pt-24">
+    <main className="pt-20">
+      <SEO
+        title="Power BI & Data Analytics Blog | Tips, Tutorials & Best Practices"
+        description="Read expert articles on Power BI, DAX, Power Query, Microsoft Fabric, and data analytics best practices. Practical guides from a certified Power BI Developer."
+        jsonLd={[getBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog' }])]}
+      />
       {/* Hero Banner */}
-      <section className="section-pad pb-16">
+      <section className="pt-10 md:pt-14 pb-10">
         <div className="container-xl">
           <p className="label mb-3">Insights</p>
           <h1 className="heading-lg mb-4">
-            Blog &
-            <span className="text-gradient"> Articles</span>
+            Power BI & Data Analytics
+            <span className="text-gradient"> Blog</span>
           </h1>
           <p className="text-lg text-surface-400 max-w-2xl leading-relaxed">
             Thoughts on data analytics, Power BI best practices, Microsoft Fabric, and lessons learned from real projects.
           </p>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* Filters */}
       <section className="pb-8">
@@ -57,11 +67,12 @@ export default function BlogPage() {
                 className="group glass overflow-hidden hover:border-brand-500/30 transition-all duration-300"
               >
                 {/* Image */}
-                <div className="aspect-[16/10] overflow-hidden">
+                <div className="overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
 

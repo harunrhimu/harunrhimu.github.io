@@ -1,0 +1,405 @@
+============================================================
+  PORTFOLIO WEBSITE - COMPLETE SETUP & DEPLOYMENT GUIDE
+  For: Harun's Power BI Developer Portfolio
+  Stack: React 18 + Vite + Tailwind CSS
+============================================================
+
+
+============================================================
+SECTION 1: PREREQUISITES (Install These First)
+============================================================
+
+Before you can run this project, install the following on your PC:
+
+1. Node.js (v18 or higher)
+   - Download: https://nodejs.org/
+   - Choose the LTS (Long Term Support) version
+   - During install, check "Add to PATH"
+   - Verify: open terminal and type: node --version
+
+2. npm (comes with Node.js)
+   - Verify: npm --version
+
+3. Git (optional, for version control)
+   - Download: https://git-scm.com/
+   - Verify: git --version
+
+4. A Code Editor (recommended: VS Code)
+   - Download: https://code.visualstudio.com/
+
+
+============================================================
+SECTION 2: PROJECT DEPENDENCIES
+============================================================
+
+All dependencies are defined in package.json and will be
+installed automatically with one command (see Section 3).
+
+Here is what gets installed:
+
+--- Production Dependencies ---
+react             ^18.2.0    - UI framework
+react-dom         ^18.2.0    - React DOM renderer
+react-router-dom  ^7.13.1    - Page routing (URL navigation)
+react-helmet-async ^2.0.5    - SEO meta tags per page (must be v2, not v3)
+@emailjs/browser  ^4.4.1     - Contact form email sending
+react-icons       ^4.12.0    - Icon library
+
+--- Dev Dependencies ---
+vite              ^5.0.0     - Build tool & dev server
+@vitejs/plugin-react ^4.2.0  - React support for Vite
+tailwindcss       ^3.4.0     - CSS framework
+postcss           ^8.4.32    - CSS processing
+autoprefixer      ^10.4.16   - CSS vendor prefixes
+@types/react      ^18.2.0    - TypeScript types (for IDE)
+@types/react-dom  ^18.2.0    - TypeScript types (for IDE)
+
+
+============================================================
+SECTION 3: FIRST-TIME SETUP (New PC)
+============================================================
+
+Step 1: Copy the project folder to your new PC
+   - Copy the entire "portfolio" folder
+
+Step 2: Open a terminal/command prompt
+   - Navigate to the portfolio folder:
+     cd path/to/portfolio
+
+Step 3: Install all dependencies
+   - Run this ONE command:
+     npm install
+   - This reads package.json and installs everything
+   - Wait until it finishes (may take 1-2 minutes)
+   - A "node_modules" folder will be created
+
+Step 4: Verify installation
+   - You should see no red error messages
+   - If you see warnings (yellow), those are usually OK
+
+
+============================================================
+SECTION 4: RUNNING IN DEVELOPMENT MODE
+============================================================
+
+This is for editing and previewing changes locally.
+
+Step 1: Open terminal in the portfolio folder
+
+Step 2: Run the dev server:
+   npm run dev
+
+Step 3: Open your browser and go to:
+   http://localhost:3000
+
+Step 4: Edit any file in the src/ folder
+   - Changes appear instantly in the browser (hot reload)
+   - No need to restart the server
+
+Step 5: To stop the dev server:
+   - Press Ctrl+C in the terminal
+
+
+============================================================
+SECTION 5: BUILDING FOR PRODUCTION
+============================================================
+
+This creates optimized files ready for web hosting.
+
+Step 1: Open terminal in the portfolio folder
+
+Step 2: Build the project:
+   npm run build
+
+Step 3: Output goes to the "dist" folder:
+   portfolio/dist/
+     index.html         - Main HTML file
+     assets/             - CSS and JS bundles (minified)
+     favicon.svg         - Site icon
+     harunrhimu.jpg      - Profile photo
+     robots.txt          - Search engine instructions
+     sitemap.xml         - Page listing for Google
+
+Step 4: Preview the production build locally:
+   npm run preview
+   - Opens at http://localhost:4173
+
+
+============================================================
+SECTION 6: DEPLOYING TO A LIVE WEBSITE
+============================================================
+
+--- Option A: Netlify (Recommended - Free & Easy) ---
+
+1. Go to https://www.netlify.com/ and sign up
+2. Click "Add new site" > "Deploy manually"
+3. Drag and drop the "dist" folder
+4. Your site is live! Netlify gives you a URL
+5. To use harunrhimu.com:
+   - Go to Domain settings > Add custom domain
+   - Follow DNS instructions to point your domain
+
+--- Option B: Vercel (Also Free) ---
+
+1. Go to https://vercel.com/ and sign up
+2. Install Vercel CLI: npm install -g vercel
+3. In the portfolio folder, run: vercel
+4. Follow the prompts
+5. Add custom domain in Vercel dashboard
+
+--- Option C: Traditional Hosting (cPanel, etc.) ---
+
+1. Run: npm run build
+2. Upload ALL contents of the "dist" folder to your
+   hosting's public_html or www directory
+3. IMPORTANT: For SPA routing to work, you need a
+   redirect rule. Create a file called "_redirects"
+   in the dist folder with this content:
+     /*    /index.html   200
+   OR if using Apache, create .htaccess in dist:
+     <IfModule mod_rewrite.c>
+       RewriteEngine On
+       RewriteBase /
+       RewriteRule ^index\.html$ - [L]
+       RewriteCond %{REQUEST_FILENAME} !-f
+       RewriteCond %{REQUEST_FILENAME} !-d
+       RewriteRule . /index.html [L]
+     </IfModule>
+
+--- Option D: GitHub Pages ---
+
+1. Run: npm run build
+2. Push the dist folder to a gh-pages branch
+3. Or use the "gh-pages" npm package:
+   npm install -D gh-pages
+   Add to package.json scripts: "deploy": "gh-pages -d dist"
+   Run: npm run deploy
+
+
+============================================================
+SECTION 7: CONFIGURATION YOU MUST UPDATE
+============================================================
+
+Before going live, update these placeholder values:
+
+--- 7A: Contact Form (EmailJS) ---
+File: src/pages/ContactPage.jsx (lines 9-11)
+
+1. Go to https://www.emailjs.com/ and create a free account
+2. Create an Email Service (e.g., Gmail)
+3. Create an Email Template
+4. Replace in ContactPage.jsx:
+   EMAILJS_SERVICE_ID  = 'your_actual_service_id'
+   EMAILJS_TEMPLATE_ID = 'your_actual_template_id'
+   EMAILJS_PUBLIC_KEY  = 'your_actual_public_key'
+
+--- 7B: Domain URL for SEO ---
+File: src/components/SEO.jsx (line 4)
+File: src/utils/structuredData.js (line 1)
+
+If your domain is NOT harunrhimu.com, change:
+   const SITE_URL = 'https://yourdomain.com'
+
+Also update:
+   public/sitemap.xml - replace all "harunrhimu.com"
+   public/robots.txt  - update sitemap URL
+
+--- 7C: Social Media Links ---
+File: src/components/Hero.jsx (lines 76-78)
+File: src/components/Footer.jsx
+
+Update LinkedIn, GitHub, YouTube URLs to your own.
+
+--- 7D: Contact Info ---
+File: src/pages/ContactPage.jsx (lines 85-92)
+
+Update email address and LinkedIn URL.
+
+--- 7E: Social Sharing Image ---
+Create a 1200x630 pixel image named "og-image.jpg"
+Place it in: public/og-image.jpg
+This image appears when your site is shared on
+LinkedIn, Facebook, Twitter, etc.
+
+
+============================================================
+SECTION 8: PROJECT STRUCTURE
+============================================================
+
+portfolio/
+  public/                  - Static files (copied as-is)
+    favicon.svg            - Browser tab icon
+    harunrhimu.jpg         - Profile photo
+    robots.txt             - Search engine crawler rules
+    sitemap.xml            - URL listing for Google
+  src/
+    components/            - Reusable UI components
+      Navbar.jsx           - Top navigation bar
+      Footer.jsx           - Page footer
+      Hero.jsx             - Homepage hero section
+      SEO.jsx              - Meta tags for each page
+      Breadcrumb.jsx       - Breadcrumb navigation
+      SectionDivider.jsx   - Visual divider between sections
+      FAQ.jsx              - FAQ accordion
+      Contact.jsx          - Contact preview on homepage
+      CaseStudiesPreview.jsx - Case studies on homepage
+      SkillsPreview.jsx    - Skills on homepage
+      Testimonials.jsx     - Client testimonials
+      ScrollToTop.jsx      - Scroll to top on navigation
+      (and more...)
+    pages/                 - Full page components
+      HomePage.jsx         - / (landing page)
+      ServicesPage.jsx     - /services
+      CaseStudiesPage.jsx  - /case-studies
+      CaseStudyDetail.jsx  - /case-studies/:slug
+      AboutPage.jsx        - /about
+      BlogPage.jsx         - /blog
+      BlogDetail.jsx       - /blog/:slug
+      VideosPage.jsx       - /videos
+      ContactPage.jsx      - /contact
+      NotFoundPage.jsx     - /* (404 error page)
+    data/                  - Content data files
+      caseStudies.js       - Case study entries
+      blog.js              - Blog post entries
+      services.js          - Service offerings
+      skills.js            - Skills and certifications
+      faqs.js              - FAQ questions & answers
+    utils/
+      structuredData.js    - SEO JSON-LD schema generators
+    App.jsx                - Route definitions (lazy-loaded)
+    main.jsx               - App entry point
+    index.css              - Tailwind + custom styles
+  index.html               - HTML template
+  package.json             - Dependencies & scripts
+  vite.config.js           - Vite configuration
+  tailwind.config.js       - Tailwind CSS configuration
+  postcss.config.js        - PostCSS configuration
+
+
+============================================================
+SECTION 9: COMMON COMMANDS REFERENCE
+============================================================
+
+  npm install          - Install all dependencies
+  npm run dev          - Start development server (port 3000)
+  npm run build        - Build for production (output: dist/)
+  npm run preview      - Preview production build (port 4173)
+
+
+============================================================
+SECTION 10: TROUBLESHOOTING
+============================================================
+
+Problem: "npm install" fails
+  - Make sure Node.js is installed (node --version)
+  - Delete node_modules folder and package-lock.json
+  - Run: npm install
+
+Problem: "npm run dev" shows errors
+  - Delete node_modules/.vite folder
+  - Restart: npm run dev
+
+Problem: Page shows blank or 404 after deployment
+  - You need SPA redirect rules (see Section 6, Option C)
+  - Every URL must redirect to index.html
+
+Problem: Contact form doesn't send emails
+  - Check EmailJS credentials in ContactPage.jsx
+  - Make sure you're using the correct Service ID,
+    Template ID, and Public Key from emailjs.com
+
+Problem: SEO titles not changing per page
+  - Make sure react-helmet-async is version 2.x (not 3.x)
+  - Check: npm list react-helmet-async
+  - If v3, downgrade: npm install react-helmet-async@2.0.5
+
+Problem: Images not showing after build
+  - Images in public/ folder are served from root (/)
+  - Use paths like "/harunrhimu.jpg" not "./harunrhimu.jpg"
+
+Problem: Loading spinner shows briefly when navigating
+  - This is normal! Pages are lazy-loaded (code splitting)
+  - Each page only loads when you visit it for the first time
+  - This makes the initial page load much faster
+
+
+============================================================
+SECTION 11: PERFORMANCE OPTIMIZATIONS (Already Applied)
+============================================================
+
+These optimizations are already built into the project.
+No action needed -- this is for your reference.
+
+1. ROUTE CODE SPLITTING (App.jsx)
+   - All pages use React.lazy() + Suspense
+   - Only the visited page's code is loaded, not all pages
+   - Reduces initial JavaScript bundle by ~30%
+
+2. IMAGE LAZY LOADING
+   - All below-fold images have loading="lazy"
+   - Browser only loads images when they scroll into view
+   - Hero profile image loads immediately (above fold)
+
+3. SEO (Search Engine Optimization)
+   - Per-page meta titles, descriptions, canonical URLs
+   - Open Graph tags for social media sharing
+   - Twitter Card tags
+   - JSON-LD structured data (Person, Service, FAQ, Article)
+   - robots.txt and sitemap.xml for Google crawling
+   - Breadcrumb navigation on detail pages
+   - Keyword-optimized H1 tags on every page
+
+4. CUSTOM 404 PAGE
+   - Invalid URLs show a branded error page
+   - Includes navigation back to Home and Case Studies
+   - Has noindex meta tag so Google won't index it
+
+5. MINIMAL BUNDLE
+   - No unused dependencies
+   - Only essential packages installed
+
+
+============================================================
+SECTION 12: HOW TO ADD/EDIT CONTENT
+============================================================
+
+All content is stored in data files. Edit these to update
+your portfolio without touching any component code:
+
+--- Case Studies ---
+File: src/data/caseStudies.js
+Each entry has: slug, title, client, industry, image,
+challenge, solution, details, results, tags, videoUrl
+
+--- Blog Posts ---
+File: src/data/blog.js
+Each entry has: slug, title, category, date, dateISO,
+readTime, excerpt, image, content (array of paragraphs)
+
+--- Services ---
+File: src/data/services.js
+Each entry has: title, longDescription, deliverables,
+process, iconPath, accent
+
+--- FAQ ---
+File: src/data/faqs.js
+Each entry has: q (question), a (answer)
+
+--- Skills & Certifications ---
+File: src/data/skills.js
+Contains: certifications, experiences, education,
+onlineCourses arrays
+
+--- Personal Info to Update ---
+- Name/bio: src/components/Hero.jsx, Footer.jsx
+- Profile photo: public/harunrhimu.jpg (replace this file)
+- Social links: Hero.jsx, Footer.jsx
+- Contact email: src/pages/ContactPage.jsx
+
+When adding new case studies or blog posts, also update
+public/sitemap.xml with the new URLs for better SEO.
+
+
+============================================================
+END OF GUIDE
+============================================================

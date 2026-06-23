@@ -1,16 +1,24 @@
 import { Link } from 'react-router-dom'
 import services from '../data/services'
+import SEO from '../components/SEO'
+import SectionDivider from '../components/SectionDivider'
+import { getProfessionalServiceSchema, getBreadcrumbSchema } from '../utils/structuredData'
 
 export default function ServicesPage() {
   return (
-    <main className="pt-24">
+    <main className="pt-20">
+      <SEO
+        title="Power BI & Microsoft Fabric Services | Dashboard Development, ETL, Data Modeling"
+        description="Professional Power BI and Microsoft Fabric services including dashboard development, ETL data pipelines, data modeling, analytics consulting, and BI training. Get measurable results from your data."
+        jsonLd={[getProfessionalServiceSchema(), getBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Services', url: '/services' }])]}
+      />
       {/* Hero Banner */}
-      <section className="section-pad pb-16">
+      <section className="pt-10 md:pt-14 pb-10">
         <div className="container-xl">
           <p className="label mb-3">What I Offer</p>
           <h1 className="heading-lg mb-4">
-            Services That
-            <span className="text-gradient"> Drive Results</span>
+            Power BI & Fabric
+            <span className="text-gradient"> Services</span>
           </h1>
           <p className="text-lg text-surface-400 max-w-2xl leading-relaxed">
             From initial data discovery to polished dashboards, I provide end-to-end analytics services
@@ -18,6 +26,8 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* All Services */}
       <section className="section-pad pt-0">
@@ -70,6 +80,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* CTA */}
       <section className="section-pad bg-surface-900/20">

@@ -77,8 +77,11 @@ export default function Skills() {
             <div className="space-y-2">
               {[
                 'Microsoft Certified: Power BI Data Analyst Associate (PL-300)',
-                'Google Data Analytics Professional Certificate',
-                'Microsoft Azure Data Fundamentals (DP-900)',
+                'Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)',
+                'SQLBI Data Modeling for Power BI Video Course Completion (SQLBI)',
+                'Preparing: Fabric Data Engineer (DP-700)',
+                'Preparing: SQL AI Developer (DP-800)',
+                'Preparing: Azure AI (AI-901)'
               ].map((cert) => (
                 <div key={cert} className="flex items-center gap-2 text-sm text-surface-300">
                   <svg className="w-4 h-4 text-brand-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

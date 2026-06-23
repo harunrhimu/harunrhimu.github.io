@@ -50,6 +50,7 @@ export default function ProjectModal({ project, onClose }) {
             <img
               src={project.images[activeImg]}
               alt={`${project.title} - screenshot ${activeImg + 1}`}
+              loading="lazy"
               className="w-full h-64 sm:h-80 lg:h-96 object-cover"
             />
             {/* Nav arrows */}

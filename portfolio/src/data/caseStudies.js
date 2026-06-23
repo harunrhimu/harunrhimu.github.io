@@ -1,5 +1,29 @@
 const caseStudies = [
   {
+    slug: 'inventory-optimization-analysis',
+    title: 'Inventory Optimization Analysis',
+    client: 'Retail Business',
+    industry: 'Retail',
+    challenge: 'The business held 9.11M units of inventory with a Days Sales of Inventory of 167.54 days and an inventory turnover of only 2.18x per year — far below industry benchmarks. Stock levels at the beginning and end of the year were nearly identical, meaning purchases of $321.90M were not translating into sales velocity, locking $147.76M in idle inventory value.',
+    solution: 'Built a Power BI dashboard analysing inventory performance across all store brands, SKUs, and bottle sizes for the full 2016 fiscal year. Compared beginning-of-year vs. end-of-year on-hand quantities per product to expose which items were overstocked, and surfaced the size-mix imbalance (750mL alone accounted for 60.82% of total stock).',
+    details: [
+      'Modelled the full inventory dataset in Power BI Desktop with slicers for Date, Store, and Size for flexible drill-down.',
+      'Built KPI cards for Total On Hand (9.11M), Inventory Value ($147.76M), Total Purchases ($321.90M), Days Sales of Inventory (167.54), and Inventory Turnover (2.18).',
+      'Created side-by-side bar charts comparing On Hand by Inventory at beginning vs. end of year per InventoryId to pinpoint persistent surplus items.',
+      'Added a donut chart breaking total stock by bottle size, revealing 750mL dominance (60.82%) as a concentration risk.',
+      'Identified the top overstocked SKUs (MOUNTMEND_5609 at 3.7K, EANVERNESS_5111 at 3.2K) and recommended targeted reorder-point reductions.',
+    ],
+    results: [
+      { metric: '9.11M', label: 'Units On Hand' },
+      { metric: '167.54', label: 'Days of Inventory' },
+      { metric: '2.18x', label: 'Inventory Turnover' },
+    ],
+    tags: ['Power BI', 'DAX', 'Inventory Analysis', 'Retail Analytics'],
+    featured: true,
+    image: '/case-studies/inventory-thumbnail.png',
+    pdfUrl: '/case-studies/inventory-analysis.pdf',
+  },
+  {
     slug: 'sales-performance-dashboard',
     title: 'Sales Performance Dashboard',
     client: 'E-Commerce Retailer',
@@ -19,8 +43,9 @@ const caseStudies = [
       { metric: '100K+', label: 'Records Processed' },
     ],
     tags: ['Power BI', 'DAX', 'SQL Server', 'Data Modeling'],
-    featured: true,
+    featured: false,
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+    videoUrl: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_1',
   },
   {
     slug: 'hr-analytics-attrition',
@@ -44,6 +69,7 @@ const caseStudies = [
     tags: ['Python', 'Power BI', 'Azure', 'Machine Learning'],
     featured: false,
     image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=500&fit=crop',
+    videoUrl: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_2',
   },
   {
     slug: 'financial-reporting-suite',
@@ -67,6 +93,7 @@ const caseStudies = [
     tags: ['Power BI', 'DAX', 'SSAS', 'Row-Level Security'],
     featured: false,
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
+    videoUrl: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_3',
   },
   {
     slug: 'supply-chain-visibility',
@@ -90,6 +117,7 @@ const caseStudies = [
     tags: ['Power BI', 'SQL', 'Python', 'Microsoft Fabric', 'Forecasting'],
     featured: false,
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=500&fit=crop',
+    videoUrl: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_4',
   },
   {
     slug: 'customer-segmentation-analysis',
@@ -113,6 +141,7 @@ const caseStudies = [
     tags: ['Python', 'Power BI', 'K-Means', 'Pandas'],
     featured: false,
     image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=500&fit=crop',
+    videoUrl: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_5',
   },
 ]
 

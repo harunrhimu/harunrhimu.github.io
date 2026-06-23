@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const links = [
-  { name: 'About', to: '/#about' },
+  { name: 'Home', to: '/' },
   { name: 'Services', to: '/services' },
   { name: 'Case Studies', to: '/case-studies' },
-  { name: 'Skills', to: '/skills' },
   { name: 'Blog', to: '/blog' },
+  { name: 'About Me', to: '/about' },
   { name: 'Contact', to: '/contact' },
 ]
 
@@ -85,14 +85,16 @@ export default function Navbar() {
         <div className="container-xl">
           <div className="flex items-center justify-between h-18 py-4">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-shadow">
-                H
-              </div>
+            <Link to="/" className="flex items-center gap-2 group">
+              <img
+                src="/logo-icon.png"
+                alt="Pibric"
+                className="w-10 h-10 object-contain group-hover:scale-105 transition-transform"
+              />
               <div className="hidden sm:block">
-                <span className="text-white font-bold text-lg">Harun</span>
+                <span className="text-white font-bold text-lg">Pibric</span>
                 <span className="text-brand-400 font-bold text-lg">.</span>
-                <p className="text-[10px] text-surface-500 font-medium -mt-1 tracking-wider uppercase">Data & BI</p>
+                <p className="text-[10px] text-surface-500 font-medium -mt-1 tracking-wider uppercase">Power BI & Fabric</p>
               </div>
             </Link>
 

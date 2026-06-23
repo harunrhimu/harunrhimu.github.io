@@ -1,7 +1,7 @@
 const items = [
-  { value: '50+', label: 'Dashboards Built' },
-  { value: '3+', label: 'Years Experience' },
-  { value: '20+', label: 'Happy Clients' },
+  { value: '25+', label: 'Dashboards Built' },
+  { value: '2+', label: 'Years Experience' },
+  { value: '10+', label: 'Happy Clients' },
   { value: '10M+', label: 'Data Rows Processed' },
   { value: '100%', label: 'Client Satisfaction' },
   { value: '40%', label: 'Avg. Reporting Time Saved' },

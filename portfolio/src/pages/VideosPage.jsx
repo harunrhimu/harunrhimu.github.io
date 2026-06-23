@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import videos from '../data/videos'
+import SEO from '../components/SEO'
+import SectionDivider from '../components/SectionDivider'
+import { getBreadcrumbSchema } from '../utils/structuredData'
 
 const videoCategories = ['All', ...new Set(videos.map(v => v.category))]
 
@@ -9,16 +12,21 @@ export default function VideosPage() {
   const filtered = filter === 'All' ? videos : videos.filter(v => v.category === filter)
 
   return (
-    <main className="pt-24">
+    <main className="pt-20">
+      <SEO
+        title="Power BI Video Tutorials | Dashboard Walkthroughs & Deep Dives"
+        description="Watch Power BI tutorials, Microsoft Fabric walkthroughs, DAX deep dives, and dashboard development videos. Learn data analytics from a certified professional."
+        jsonLd={[getBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Videos', url: '/videos' }])]}
+      />
       {/* Hero Banner */}
-      <section className="section-pad pb-16">
+      <section className="pt-10 md:pt-14 pb-10">
         <div className="container-xl">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <p className="label mb-3">Watch & Learn</p>
               <h1 className="heading-lg mb-4">
-                Video
-                <span className="text-gradient"> Content</span>
+                Power BI
+                <span className="text-gradient"> Tutorials</span>
               </h1>
               <p className="text-lg text-surface-400 max-w-2xl leading-relaxed">
                 Tutorials, walkthroughs, and deep dives into data analytics, Power BI, and Microsoft Fabric development.
@@ -38,6 +46,8 @@ export default function VideosPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* Filters */}
       <section className="pb-8">
@@ -77,6 +87,7 @@ export default function VideosPage() {
                   <img
                     src={video.thumbnail}
                     alt={video.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Play button overlay */}

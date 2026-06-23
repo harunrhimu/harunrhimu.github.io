@@ -1,7 +1,7 @@
 const experiences = [
   {
     role: 'Senior Power BI Developer',
-    company: 'Your Company Name',
+    company: 'Data Crafters',
     period: '2023 - Present',
     location: 'Dhaka, Bangladesh',
     description: [
@@ -14,22 +14,8 @@ const experiences = [
     current: true,
   },
   {
-    role: 'Data Analyst',
-    company: 'Previous Company',
-    period: '2021 - 2023',
-    location: 'Dhaka, Bangladesh',
-    description: [
-      'Analyzed large datasets using Python and SQL to identify business trends and opportunities',
-      'Created weekly and monthly reports using Power BI, replacing manual Excel processes',
-      'Developed data quality monitoring dashboards to track data pipeline health',
-      'Conducted A/B testing analysis and presented findings to leadership team',
-    ],
-    tags: ['Python', 'SQL', 'Power BI', 'Excel'],
-    current: false,
-  },
-  {
-    role: 'Junior Data Analyst (Intern)',
-    company: 'First Company',
+    role: 'Power BI Developer Intern',
+    company: 'Data Crafters',
     period: '2020 - 2021',
     location: 'Dhaka, Bangladesh',
     description: [
@@ -46,16 +32,19 @@ const experiences = [
 const education = [
   {
     degree: 'Bachelor of Science in Computer Science & Engineering',
-    institution: 'Your University Name',
+    institution: 'University of Dhaka',
     period: '2017 - 2021',
-    details: 'Focused on Data Science, Statistics, and Database Management',
+    details: 'Focused on Data Literacy, Statistics',
   },
 ]
 
 const certifications = [
   'Microsoft Certified: Power BI Data Analyst Associate (PL-300)',
-  'Google Data Analytics Professional Certificate',
-  'Microsoft Azure Data Fundamentals (DP-900)',
+  'Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)',
+  'SQLBI Data Modeling for Power BI Video Course Completion (SQLBI)',
+  'Preparing: Fabric Data Engineer (DP-700)',
+  'Preparing: SQL AI Developer (DP-800)',
+  'Preparing: Azure AI (AI-901)',
 ]
 
 export default function Experience() {

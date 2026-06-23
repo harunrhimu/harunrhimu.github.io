@@ -16,7 +16,7 @@ export default function SkillsPreview() {
               The technologies I use daily to build data solutions and deliver business intelligence.
             </p>
           </div>
-          <Link to="/skills" className="btn-outline shrink-0 self-start">
+          <Link to="/about" className="btn-outline shrink-0 self-start">
             View Full Profile
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -64,12 +64,12 @@ export default function SkillsPreview() {
             </div>
             <div className="space-y-2">
               {certifications.map((cert) => (
-                <div key={cert} className="flex items-center gap-2 text-sm text-surface-300">
+                <a key={cert.name} href={cert.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-surface-300 hover:text-brand-400 transition-colors">
                   <svg className="w-4 h-4 text-brand-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
-                  {cert}
-                </div>
+                  {cert.name}
+                </a>
               ))}
             </div>
           </div>

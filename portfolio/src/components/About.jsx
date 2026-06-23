@@ -30,11 +30,11 @@ export default function About() {
               <p className="text-surface-400 leading-relaxed">
                 With a strong foundation in SQL, Python, DAX, and the Microsoft Fabric ecosystem, I build
                 complete data platforms — spanning data ingestion, transformation, modeling, and
-                compelling reports. Currently preparing for DP-600 & DP-700 certifications.
+                compelling reports. Currently preparing for DP-700 certifications.
               </p>
             </div>
             <div className="flex items-center gap-3 mt-6 pt-5 border-t border-surface-700/40">
-              <img src="/harunrhimu.jpg" alt="Harun" className="w-10 h-10 rounded-full object-cover" />
+              <img src="/harunrhimu.jpg" alt="Harun" loading="lazy" className="w-10 h-10 rounded-full object-cover" />
               <div>
                 <p className="text-sm font-semibold text-white">Md Harun Or Roshid</p>
                 <p className="text-xs text-surface-500">Fabric & BI Professional</p>
@@ -59,7 +59,7 @@ export default function About() {
           </div>
           <div className="glass p-5">
             <p className="text-[10px] text-surface-500 uppercase tracking-widest mb-2 font-semibold">Education</p>
-            <p className="text-sm text-white font-medium">B.Sc. in CSE</p>
+            <p className="text-sm text-white font-medium">B.S.S in Social Sciences (Demography) </p>
           </div>
 
           {/* Data pipeline visual - wide card */}

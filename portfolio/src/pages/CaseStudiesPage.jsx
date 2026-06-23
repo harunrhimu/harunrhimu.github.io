@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import caseStudies from '../data/caseStudies'
+import SEO from '../components/SEO'
+import SectionDivider from '../components/SectionDivider'
+import { getBreadcrumbSchema } from '../utils/structuredData'
 
 const industries = ['All', ...new Set(caseStudies.map(cs => cs.industry))]
 
@@ -10,20 +13,27 @@ export default function CaseStudiesPage() {
   const filtered = filter === 'All' ? caseStudies : caseStudies.filter(cs => cs.industry === filter)
 
   return (
-    <main className="pt-24">
+    <main className="pt-20">
+      <SEO
+        title="Power BI Case Studies | Real Dashboard Projects & Results"
+        description="Explore real Power BI dashboard projects with measurable business impact. See how I helped businesses reduce reporting time by 60-90% with Power BI and Microsoft Fabric solutions."
+        jsonLd={[getBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }])]}
+      />
       {/* Hero Banner */}
-      <section className="section-pad pb-16">
+      <section className="pt-10 md:pt-14 pb-10">
         <div className="container-xl">
           <p className="label mb-3">Portfolio</p>
           <h1 className="heading-lg mb-4">
-            Case
-            <span className="text-gradient"> Studies</span>
+            Power BI
+            <span className="text-gradient"> Case Studies</span>
           </h1>
           <p className="text-lg text-surface-400 max-w-2xl leading-relaxed">
             Real projects with measurable impact. Here's how I've helped businesses unlock the power of their data.
           </p>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* Filters */}
       <section className="pb-8">
@@ -51,19 +61,27 @@ export default function CaseStudiesPage() {
         <div className="container-xl">
           <div className="grid md:grid-cols-2 gap-6">
             {filtered.map((cs) => (
-              <Link
+              <div
                 key={cs.slug}
-                to={`/case-studies/${cs.slug}`}
                 className="group glass overflow-hidden hover:border-brand-500/30 transition-all duration-300"
               >
-                {/* Image */}
-                <div className="aspect-[16/10] overflow-hidden">
+                {/* Dashboard Image with hover overlay */}
+                <Link to={`/case-studies/${cs.slug}`} className="block relative aspect-[16/10] overflow-hidden">
                   <img
                     src={cs.image}
                     alt={cs.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-surface-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600/90 text-white text-sm font-semibold backdrop-blur-sm">
+                      See Full Case Study
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                  </div>
+                </Link>
 
                 {/* Content */}
                 <div className="p-7">
@@ -75,7 +93,7 @@ export default function CaseStudiesPage() {
                     <span className="text-xs text-surface-500">{cs.client}</span>
                   </div>
 
-                  <h2 className="text-xl font-bold text-white mb-3 group-hover:text-brand-300 transition-colors">
+                  <h2 className="text-xl font-bold text-white mb-3">
                     {cs.title}
                   </h2>
 
@@ -98,7 +116,7 @@ export default function CaseStudiesPage() {
                     ))}
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

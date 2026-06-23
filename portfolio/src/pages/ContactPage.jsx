@@ -1,27 +1,102 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
+import SEO from '../components/SEO'
+import SectionDivider from '../components/SectionDivider'
+import { getBreadcrumbSchema } from '../utils/structuredData'
+
+// EmailJS credentials from environment variables
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+// Keywords for keyword extraction
+const KEYWORDS_MAP = {
+  'pricing': ['price', 'cost', 'rate', 'budget', 'pricing', 'how much', 'fee'],
+  'services': ['services', 'offering', 'what do you', 'capability', 'can you do'],
+  'fabric': ['fabric', 'microsoft fabric', 'power bi fabric', 'fabric analytics'],
+  'power query': ['power query', 'powerquery', 'data transformation', 'etl', 'data cleaning'],
+  'dashboard': ['dashboard', 'visualization', 'report', 'visual', 'display'],
+  'data modeling': ['data model', 'data modeling', 'fact table', 'dimension', 'schema', 'relationships'],
+  'dax': ['dax', 'measure', 'calculated column', 'dax formula'],
+  'real-time': ['real-time', 'live', 'streaming', 'incremental'],
+  'analysis': ['analysis', 'analytics', 'insights', 'performance', 'optimization']
+}
+
+// Extract keywords from message
+const extractKeywords = (message) => {
+  const lowerMessage = message.toLowerCase()
+  const foundKeywords = []
+  
+  Object.entries(KEYWORDS_MAP).forEach(([keyword, terms]) => {
+    if (terms.some(term => lowerMessage.includes(term))) {
+      foundKeywords.push(keyword)
+    }
+  })
+  
+  return foundKeywords.length > 0 ? foundKeywords.join(' · ') : 'General Inquiry'
+}
 
 export default function ContactPage() {
+  const formRef = useRef()
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [errorMsg, setErrorMsg] = useState('')
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('Form submitted! Connect this to your preferred email service (EmailJS, Formspree, etc.)')
+    setStatus('sending')
+    setErrorMsg('')
+
+    try {
+      // Extract keywords from message
+      const keywords = extractKeywords(formData.message)
+      
+      // Create a hidden form field for keywords
+      const keywordsInput = document.createElement('input')
+      keywordsInput.type = 'hidden'
+      keywordsInput.name = 'keywords'
+      keywordsInput.value = keywords
+      formRef.current.appendChild(keywordsInput)
+      
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      )
+      
+      // Remove the temporary input
+      formRef.current.removeChild(keywordsInput)
+      
+      setStatus('success')
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      setTimeout(() => setStatus('idle'), 5000)
+    } catch (error) {
+      setStatus('error')
+      setErrorMsg(error?.text || 'Something went wrong. Please try again.')
+      setTimeout(() => setStatus('idle'), 5000)
+    }
   }
 
   return (
-    <main className="pt-24">
+    <main className="pt-20">
+      <SEO
+        title="Hire a Power BI Developer | Contact Harun for BI Solutions"
+        description="Looking to hire a Power BI developer or need a Microsoft Fabric solution? Contact Harun for a free consultation. Based in Dhaka, available worldwide for remote projects."
+        jsonLd={[getBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }])]}
+      />
       {/* Hero Banner */}
-      <section className="section-pad pb-16">
+      <section className="pt-10 md:pt-14 pb-10">
         <div className="container-xl">
           <p className="label mb-3">Get In Touch</p>
           <h1 className="heading-lg mb-4">
-            Let's Build Something
-            <span className="text-gradient"> Together</span>
+            Hire a Power BI Developer
+            <span className="text-gradient"> Today</span>
           </h1>
           <p className="text-lg text-surface-400 max-w-2xl leading-relaxed">
             Have a data challenge or need a BI solution? I'd love to hear about your project.
@@ -29,6 +104,8 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* Contact Content */}
       <section className="section-pad pt-0">
@@ -46,14 +123,14 @@ export default function ContactPage() {
                   {[
                     {
                       label: 'Email',
-                      value: 'your.email@example.com',
-                      href: 'mailto:your.email@example.com',
+                      value: 'harunrhimu@gmail.com',
+                      href: 'mailto:harunrhimu@gmail.com',
                       iconPath: 'M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75',
                     },
                     {
                       label: 'LinkedIn',
-                      value: 'linkedin.com/in/yourprofile',
-                      href: '#',
+                      value: 'linkedin.com/in/harunrhimu',
+                      href: 'https://linkedin.com/in/harunrhimu',
                       iconPath: 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-2.556a4.5 4.5 0 00-6.364-6.364L4.5 8.257m7.5 0L8.257 12',
                     },
                     {
@@ -115,7 +192,27 @@ export default function ContactPage() {
 
             {/* Form */}
             <div className="lg:col-span-3">
-              <form onSubmit={handleSubmit} className="glass p-7 space-y-5">
+              <form ref={formRef} onSubmit={handleSubmit} className="glass p-7 space-y-5">
+                {/* Success Message */}
+                {status === 'success' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-brand-500/10 border border-brand-500/30">
+                    <svg className="w-5 h-5 text-brand-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-sm text-brand-300">Message sent successfully! I'll get back to you soon.</p>
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {status === 'error' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/30">
+                    <svg className="w-5 h-5 text-red-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>
+                    <p className="text-sm text-red-300">{errorMsg}</p>
+                  </div>
+                )}
+
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-sm text-surface-400 mb-1.5 font-medium">Your Name</label>
@@ -126,7 +223,8 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-white text-sm placeholder:text-surface-600 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
+                      disabled={status === 'sending'}
+                      className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-white text-sm placeholder:text-surface-600 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                       placeholder="John Doe"
                     />
                   </div>
@@ -139,7 +237,8 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-white text-sm placeholder:text-surface-600 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
+                      disabled={status === 'sending'}
+                      className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-white text-sm placeholder:text-surface-600 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -153,7 +252,8 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-white text-sm placeholder:text-surface-600 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
+                    disabled={status === 'sending'}
+                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-white text-sm placeholder:text-surface-600 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Dashboard Project Inquiry"
                   />
                 </div>
@@ -165,16 +265,33 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={status === 'sending'}
                     rows={5}
-                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-white text-sm placeholder:text-surface-600 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/50 text-white text-sm placeholder:text-surface-600 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Tell me about your project..."
                   />
                 </div>
-                <button type="submit" className="btn-primary w-full justify-center">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                  </svg>
-                  Send Message
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {status === 'sending' ? (
+                    <>
+                      <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                      </svg>
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>

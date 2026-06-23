@@ -34,11 +34,12 @@ export default function BlogPreview() {
               className="group glass overflow-hidden hover:border-brand-500/30 transition-all duration-300"
             >
               {/* Image */}
-              <div className="aspect-[16/10] overflow-hidden">
+              <div className="overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 

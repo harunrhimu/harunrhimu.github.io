@@ -1,5 +1,8 @@
 import { useParams, Link } from 'react-router-dom'
 import caseStudies from '../data/caseStudies'
+import SEO from '../components/SEO'
+import Breadcrumb from '../components/Breadcrumb'
+import { getBreadcrumbSchema } from '../utils/structuredData'
 
 export default function CaseStudyDetail() {
   const { slug } = useParams()
@@ -7,7 +10,7 @@ export default function CaseStudyDetail() {
 
   if (!cs) {
     return (
-      <main className="pt-24 section-pad">
+      <main className="pt-20 section-pad">
         <div className="container-xl text-center">
           <h1 className="heading-md mb-4">Case Study Not Found</h1>
           <p className="text-surface-400 mb-8">The case study you're looking for doesn't exist.</p>
@@ -18,16 +21,19 @@ export default function CaseStudyDetail() {
   }
 
   return (
-    <main className="pt-24">
+    <main className="pt-20">
+      <SEO
+        title={`${cs.title} | Power BI Case Study`}
+        description={`${cs.challenge} See how Power BI and ${cs.tags.slice(0, 3).join(', ')} solved this ${cs.industry} data challenge.`}
+        image={cs.image}
+        type="article"
+        jsonLd={[getBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }, { name: cs.title, url: `/case-studies/${cs.slug}` }])]}
+      />
       {/* Hero */}
-      <section className="section-pad pb-10">
+      <article>
+      <section className="pt-10 md:pt-14 pb-10">
         <div className="container-xl">
-          <Link to="/case-studies" className="inline-flex items-center gap-2 text-sm text-surface-500 hover:text-brand-400 transition-colors mb-8">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-            </svg>
-            Back to Case Studies
-          </Link>
+          <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }, { name: cs.title, url: `/case-studies/${cs.slug}` }]} />
 
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="badge bg-brand-500/15 text-brand-300 border border-brand-500/20">{cs.industry}</span>
@@ -39,14 +45,35 @@ export default function CaseStudyDetail() {
         </div>
       </section>
 
-      {/* Image */}
+      {/* Dashboard Image / PDF */}
       <section className="pb-10">
         <div className="container-xl">
           <div className="rounded-2xl overflow-hidden border border-surface-700/40">
-            <img src={cs.image} alt={cs.title} className="w-full h-64 md:h-96 object-cover" />
+            <img src={cs.image} alt={cs.title} loading="lazy" className="w-full" />
           </div>
         </div>
       </section>
+
+      {/* Video Walkthrough */}
+      {cs.videoUrl && (
+        <section className="pb-10">
+          <div className="container-xl">
+            <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-3">Project Walkthrough</p>
+            <div className="rounded-2xl overflow-hidden border border-surface-700/40 bg-surface-900">
+              <div className="aspect-video">
+                <iframe
+                  src={cs.videoUrl}
+                  title={cs.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+            <p className="text-xs text-surface-500 mt-3 text-center">Watch the full project walkthrough and presentation</p>
+          </div>
+        </section>
+      )}
 
       {/* Results Bar */}
       <section className="pb-10">
@@ -130,6 +157,7 @@ export default function CaseStudyDetail() {
           </div>
         </div>
       </section>
+      </article>
     </main>
   )
 }

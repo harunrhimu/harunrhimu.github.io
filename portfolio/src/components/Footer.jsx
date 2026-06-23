@@ -19,7 +19,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-surface-400 leading-relaxed mb-4">
-              Turning raw data into business intelligence. Power BI Developer & Data Analyst based in Dhaka.
+              Turning raw data into business intelligence. Power BI & Fabric Developer & Data Analyst based in Dhaka.
             </p>
             <div className="flex gap-3">
               {[
@@ -44,11 +44,11 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Navigation</h4>
             <ul className="space-y-2.5">
               {[
-                { label: 'About', to: '/#about' },
+                { label: 'Home', to: '/' },
                 { label: 'Services', to: '/services' },
                 { label: 'Case Studies', to: '/case-studies' },
-                { label: 'Skills', to: '/skills' },
                 { label: 'Blog', to: '/blog' },
+                { label: 'About Me', to: '/about' },
                 { label: 'Contact', to: '/contact' },
               ].map((link) => (
                 <li key={link.label}>
@@ -82,7 +82,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Contact</h4>
             <ul className="space-y-2.5">
-              <li className="text-sm text-surface-400">your.email@example.com</li>
+              <li className="text-sm text-surface-400">harunrhimu@gmail.com</li>
               <li className="text-sm text-surface-400">Dhaka, Bangladesh</li>
               <li className="mt-4">
                 <Link to="/contact" className="inline-flex items-center gap-2 text-sm text-brand-400 hover:text-brand-300 font-medium transition-colors">
@@ -99,7 +99,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-surface-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-surface-500">
-            &copy; {currentYear} Md Harun Or Roshid. All rights reserved.
+            &copy; {currentYear} harunrhimu. All rights reserved.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

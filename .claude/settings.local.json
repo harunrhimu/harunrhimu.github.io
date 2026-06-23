@@ -4,7 +4,13 @@
       "mcp__Claude_Preview__preview_start",
       "WebFetch(domain:sjanalytics.com)",
       "Bash(npm install react-router-dom)",
-      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")"
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")",
+      "Bash(xargs grep -l \"emailjs\\\\|formspree\\\\|nodemailer\\\\|sendgrid\\\\|mailgun\\\\|smtp\\\\|email\")",
+      "Bash(npm install @emailjs/browser)",
+      "Bash(ls -la \"C:\\\\Users\\\\MdHarunOrRoshid\\\\OneDrive - Data Crafters\\\\Test\\\\portfolio\\\\public\"\" 2>/dev/null || echo \"No public folder found \")",
+      "Bash(npm install react-helmet-async)",
+      "Bash(npm install react-helmet-async@2.0.5)",
+      "Bash(npm uninstall framer-motion)"
     ]
   }
 }
