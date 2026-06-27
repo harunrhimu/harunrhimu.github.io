@@ -56,32 +56,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://harunrhimu.com/blog/5-dax-patterns-every-power-bi-developer-must-know</loc>
+    <loc>https://harunrhimu.com/blog/power-bi-report-with-claude-ai-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://harunrhimu.com/blog/power-bi-pbip-git-azure-devops-fabric-cicd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://harunrhimu.com/blog/medallion-architecture-microsoft-fabric</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://harunrhimu.com/blog/building-data-pipeline-python-azure</loc>
+    <loc>https://harunrhimu.com/blog/why-fabric-is-a-new-analytics-platform-in-the-age-of-ai</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://harunrhimu.com/blog/why-your-dashboard-isnt-telling-the-right-story</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://harunrhimu.com/blog/getting-started-with-microsoft-fabric</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://harunrhimu.com/blog/power-query-tips-for-messy-data</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://harunrhimu.com/blog/row-level-security-power-bi-guide</loc>
+    <loc>https://harunrhimu.com/blog/supercharging-power-bi-microsoft-fabric-development-with-ai-mcp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
