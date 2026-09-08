@@ -8,7 +8,7 @@ const steps = [
 
 export default function MyApproach() {
   return (
-    <section className="section-pad bg-surface-900/20">
+    <section className="section-pad bg-card/20">
       <div className="container-xl">
         <div className="text-center mb-14">
           <p className="label mb-3">My Process</p>
@@ -16,7 +16,7 @@ export default function MyApproach() {
             From Raw Data to{' '}
             <span className="text-gradient">Business Value</span>
           </h2>
-          <p className="text-surface-400 mt-4 max-w-xl mx-auto">
+          <p className="text-muted mt-4 max-w-xl mx-auto">
             A proven 5-step methodology that ensures every project delivers
             measurable results, on time and within budget.
           </p>
@@ -26,7 +26,7 @@ export default function MyApproach() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-0 relative">
             {/* Connecting line (desktop only) */}
-            <div className="hidden md:block absolute top-[30px] left-[10%] right-[10%] h-[2px] bg-surface-700/60" />
+            <div className="hidden md:block absolute top-[30px] left-[10%] right-[10%] h-[2px] bg-inset/60" />
 
             {steps.map((item) => (
               <div key={item.step} className="relative flex flex-col items-center text-center group">
@@ -40,7 +40,7 @@ export default function MyApproach() {
                 >
                   <span
                     className={`text-lg font-bold font-mono ${
-                      item.color === 'brand' ? 'text-brand-400' : 'text-warm-400'
+                      item.color === 'brand' ? 'text-accent' : 'text-accent-warm'
                     }`}
                   >
                     {item.step}
@@ -49,8 +49,8 @@ export default function MyApproach() {
 
                 {/* Label & Description */}
                 <div className="mt-4">
-                  <p className="text-sm font-semibold text-white mb-1">{item.label}</p>
-                  <p className="text-xs text-surface-500 max-w-[140px] mx-auto leading-relaxed">{item.desc}</p>
+                  <p className="text-sm font-semibold text-heading mb-1">{item.label}</p>
+                  <p className="text-xs text-muted max-w-[140px] mx-auto leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}

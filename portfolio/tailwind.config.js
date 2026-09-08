@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: ['selector', '[data-theme="dark"]'],
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
@@ -7,6 +8,29 @@ export default {
   theme: {
     extend: {
       colors: {
+        /* ---- semantic tokens (resolve to CSS vars, theme-aware) ----
+           Raw rgb channels + <alpha-value> so `bg-card/60` still works. */
+        page:          'rgb(var(--bg-page) / <alpha-value>)',
+        card:          'rgb(var(--bg-card) / <alpha-value>)',
+        band:          'rgb(var(--bg-band) / <alpha-value>)',
+        inset:         'rgb(var(--bg-inset) / <alpha-value>)',
+
+        heading:       'rgb(var(--text-heading) / <alpha-value>)',
+        body:          'rgb(var(--text-body) / <alpha-value>)',
+        muted:         'rgb(var(--text-muted) / <alpha-value>)',
+        subtle:        'rgb(var(--text-subtle) / <alpha-value>)',
+
+        line:          'rgb(var(--border) / <alpha-value>)',
+        'line-strong': 'rgb(var(--border-strong) / <alpha-value>)',
+
+        accent:             'rgb(var(--accent) / <alpha-value>)',
+        'accent-soft':      'rgb(var(--accent-soft) / <alpha-value>)',
+        'accent-fill':      'rgb(var(--accent-fill) / <alpha-value>)',
+        'accent-warm':      'rgb(var(--accent-warm) / <alpha-value>)',
+        'accent-warm-fill': 'rgb(var(--accent-warm-fill) / <alpha-value>)',
+        'on-accent':        'rgb(var(--on-accent) / <alpha-value>)',
+        overlay:            'rgb(var(--overlay) / <alpha-value>)',
+
         brand: {
           50: '#ecfdf5',
           100: '#d1fae5',

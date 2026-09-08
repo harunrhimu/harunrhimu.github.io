@@ -29,8 +29,8 @@ export const categories = [
 export const certifications = [
   { name: 'Microsoft Certified: Power BI Data Analyst Associate (PL-300)', url: 'https://learn.microsoft.com/api/credentials/share/en-us/harunrhimu/60DD26249883A611?sharingId=56CBB4DAE1F18D3', status: 'certified' },
   { name: 'Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)', url: 'https://learn.microsoft.com/api/credentials/share/en-us/harunrhimu/ACCF865A6394F20?sharingId=56CBB4DAE1F18D3', status: 'certified' },
+  { name: 'Microsoft Certified: Fabric Data Engineer Associate (DP-700)', url: 'https://learn.microsoft.com/api/credentials/share/en-us/harunrhimu/74B95A4F51334853?sharingId=56CBB4DAE1F18D3', status: 'certified' },
   { name: 'Preparing: SQL AI Developer (DP-800)', url: 'https://learn.microsoft.com/', status: 'preparing' },
-  { name: 'Preparing: Fabric Data Engineer (DP-700)', url: 'https://learn.microsoft.com/', status: 'preparing' },
   { name: 'Preparing: Azure AI Fundamentals (AI-901)', url: 'https://learn.microsoft.com/', status: 'preparing' },
   { name: 'SQLBI Data Modeling for Power BI Video Course Completion', url: 'https://www.sqlbi.com/cert/2iudiahp-260105/', status: 'certified', issued: 'Jan 5, 2026', certNo: '2IUDIAHP-63950' },
 
@@ -48,7 +48,7 @@ export const experiences = [
       'Leveraging Direct Lake mode and Semantic Models in Fabric for high-performance reporting',
       'Optimized DAX measures and data models, reducing report load times by 40%',
       'Built automated ETL/ELT pipelines using Fabric Data Pipelines, Dataflows Gen2, and Power Query',
-      'DP-700 (Fabric Data Engineer) certifications',
+      'Earned Microsoft Certified: Fabric Data Engineer Associate (DP-700)',
     ],
     tags: ['Microsoft Fabric', 'Power BI', 'DAX', 'Lakehouse', 'Direct Lake', 'Data Pipelines'],
     current: true,

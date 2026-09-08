@@ -69,7 +69,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-pad bg-surface-900/20">
+    <section id="services" className="section-pad bg-card/20">
       <div className="container-xl">
         <div className="mb-14">
           <p className="label mb-3">What I Offer</p>
@@ -77,7 +77,7 @@ export default function Services() {
             Services That
             <span className="text-gradient"> Drive Results</span>
           </h2>
-          <p className="text-surface-400 mt-4 max-w-2xl">
+          <p className="text-muted mt-4 max-w-2xl">
             From initial data discovery to polished dashboards, I provide end-to-end analytics services
             tailored to your business needs.
           </p>
@@ -87,16 +87,16 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="glass p-7 group hover:bg-surface-800/50 transition-all duration-300 hover:border-brand-500/30 flex flex-col"
+              className="glass p-7 group hover:bg-inset/50 transition-all duration-300 hover:border-brand-500/30 flex flex-col"
             >
-              <div className={`w-14 h-14 rounded-2xl ${service.accent === 'brand' ? 'bg-brand-500/10 border-brand-500/20 text-brand-400' : 'bg-warm-500/10 border-warm-500/20 text-warm-400'} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+              <div className={`w-14 h-14 rounded-2xl ${service.accent === 'brand' ? 'bg-brand-500/10 border-brand-500/20 text-accent' : 'bg-warm-500/10 border-warm-500/20 text-accent-warm'} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
                 {service.icon}
               </div>
-              <h3 className="text-lg font-bold text-white mb-3">{service.title}</h3>
-              <p className="text-sm text-surface-400 leading-relaxed mb-5 flex-1">{service.description}</p>
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-surface-700/40">
+              <h3 className="text-lg font-bold text-heading mb-3">{service.title}</h3>
+              <p className="text-sm text-muted leading-relaxed mb-5 flex-1">{service.description}</p>
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-line/40">
                 {service.deliverables.map((d) => (
-                  <span key={d} className="badge bg-surface-800/60 text-surface-300 border border-surface-700/40">
+                  <span key={d} className="badge bg-inset/60 text-body border border-line/40">
                     {d}
                   </span>
                 ))}

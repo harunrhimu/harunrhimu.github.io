@@ -27,7 +27,7 @@ export default function BlogPage() {
             Power BI & Data Analytics
             <span className="text-gradient"> Blog</span>
           </h1>
-          <p className="text-lg text-surface-400 max-w-2xl leading-relaxed">
+          <p className="text-lg text-muted max-w-2xl leading-relaxed">
             Thoughts on data analytics, Power BI best practices, Microsoft Fabric, and lessons learned from real projects.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function BlogPage() {
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                   filter === cat
                     ? 'bg-brand-600 text-white shadow-lg shadow-brand-500/20'
-                    : 'bg-surface-900/60 text-surface-400 border border-surface-700/40 hover:border-brand-500/30 hover:text-brand-400'
+                    : 'bg-card/60 text-muted border border-line/40 hover:border-brand-500/30 hover:text-accent'
                 }`}
               >
                 {cat}
@@ -79,18 +79,18 @@ export default function BlogPage() {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="badge bg-brand-500/10 text-brand-300 border border-brand-500/20">{post.category}</span>
-                    <span className="text-xs text-surface-500">{post.readTime}</span>
+                    <span className="badge bg-brand-500/10 text-accent-soft border border-brand-500/20">{post.category}</span>
+                    <span className="text-xs text-muted">{post.readTime}</span>
                   </div>
-                  <h2 className="text-lg font-bold text-white mb-2 group-hover:text-brand-300 transition-colors line-clamp-2">
+                  <h2 className="text-lg font-bold text-heading mb-2 group-hover:text-accent-soft transition-colors line-clamp-2">
                     {post.title}
                   </h2>
-                  <p className="text-sm text-surface-400 leading-relaxed line-clamp-3 mb-4">
+                  <p className="text-sm text-muted leading-relaxed line-clamp-3 mb-4">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between pt-4 border-t border-surface-700/40">
-                    <span className="text-xs text-surface-500">{post.date}</span>
-                    <span className="text-xs text-brand-400 font-medium group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                  <div className="flex items-center justify-between pt-4 border-t border-line/40">
+                    <span className="text-xs text-muted">{post.date}</span>
+                    <span className="text-xs text-accent font-medium group-hover:translate-x-1 transition-transform flex items-center gap-1">
                       Read More
                       <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

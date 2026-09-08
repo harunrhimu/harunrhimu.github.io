@@ -12,12 +12,13 @@ const AboutPage = lazy(() => import('./pages/AboutPage'))
 const BlogPage = lazy(() => import('./pages/BlogPage'))
 const BlogDetail = lazy(() => import('./pages/BlogDetail'))
 const VideosPage = lazy(() => import('./pages/VideosPage'))
+const DashboardGallery = lazy(() => import('./pages/DashboardGallery'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 function App() {
   return (
-    <div className="min-h-screen bg-surface-950 overflow-x-hidden">
+    <div className="min-h-screen bg-page overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
       <Suspense fallback={
@@ -34,6 +35,8 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/videos" element={<VideosPage />} />
+          <Route path="/dashboard-gallery" element={<DashboardGallery />} />
+          <Route path="/dashboard-gallery/:dashboardId" element={<DashboardGallery />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

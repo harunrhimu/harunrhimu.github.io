@@ -10,7 +10,38 @@
       "Bash(ls -la \"C:\\\\Users\\\\MdHarunOrRoshid\\\\OneDrive - Data Crafters\\\\Test\\\\portfolio\\\\public\"\" 2>/dev/null || echo \"No public folder found \")",
       "Bash(npm install react-helmet-async)",
       "Bash(npm install react-helmet-async@2.0.5)",
-      "Bash(npm uninstall framer-motion)"
+      "Bash(npm uninstall framer-motion)",
+      "Bash(curl -s \"https://data.jsdelivr.com/v1/packages/npm/@fabric-msft/svg-icons@8.1.0/flat\" -o flat.json)",
+      "Bash(python -c \"import json;d=json.load\\(open\\('flat.json'\\)\\);[print\\(f['name']\\) for f in d.get\\('files',[]\\) if 'fabric_48_color' in f['name']]\")",
+      "Bash(python -c \"import json;d=json.load\\(open\\('flat.json'\\)\\);print\\(list\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(python -c \"import sys,json;print\\(json.dumps\\(json.load\\(sys.stdin\\).get\\('scripts',{}\\),indent=2\\)\\)\")",
+      "Bash(node -e \"console.log\\(require\\('fs'\\).existsSync\\('node_modules/playwright'\\), require\\('fs'\\).existsSync\\('node_modules/puppeteer'\\)\\)\")",
+      "Bash(python3 -c \"import fitz; print\\('pymupdf ok'\\)\")",
+      "Bash(python -c \"import fitz; print\\('pymupdf ok'\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(npm run *)",
+      "Bash(copy \"G:\\\\Other computers\\\\My Laptop\\\\CyBrain\\\\vaults\\\\pibric\\\\Blogs\\\\onelake-security-thumbnail.png\" \"H:\\\\pibric\\\\portfolio\\\\public\\\\onelake-security-thumbnail.png\")",
+      "PowerShell(Copy-Item \"G:\\\\Other computers\\\\My Laptop\\\\CyBrain\\\\vaults\\\\pibric\\\\Blogs\\\\onelake-security-thumbnail.png\" \"H:\\\\pibric\\\\portfolio\\\\public\\\\onelake-security-thumbnail.png\" -Force)",
+      "Bash(ls -la \"/g/Other computers/My Laptop/CyBrain/vaults/Business Plan/resources\" 2>&1 || echo \"TRY_ALT\")",
+      "Read(//g/Other computers/My Laptop/CyBrain/vaults/Business Plan/resources/**)",
+      "Bash(wc -l \"/g/Other computers/My Laptop/CyBrain/vaults/Business Plan/resources/Alex Hormozi - 100M Offers.md\" \"/g/Other computers/My Laptop/CyBrain/vaults/Business Plan/resources/Alex Hormozi - 100M Leads.md\")",
+      "Read(//c/Users/harunrhimu/Downloads/**)",
+      "Bash(npx serve *)",
+      "Bash(curl -s -o /dev/null -w \"privacy.html: %{http_code}\\\\n\" http://localhost:4173/privacy.html)",
+      "Bash(curl -s -o /dev/null -w \"terms.html: %{http_code}\\\\n\" http://localhost:4173/terms.html)",
+      "Bash(curl -s http://localhost:4173/privacy.html)",
+      "Bash(curl -s http://localhost:4173/terms.html)",
+      "Bash(curl -s http://localhost:4173/)",
+      "Read(//tmp/**)",
+      "Bash(curl -sv http://localhost:4173/)",
+      "Bash(curl -s -L -o /dev/null -w \"privacy.html \\(follow\\): %{http_code}\\\\n\" http://localhost:4173/privacy.html)",
+      "Bash(curl -s -L http://localhost:4173/privacy.html)",
+      "Bash(curl -s -L http://localhost:4173/terms.html)",
+      "Bash(taskkill //F //IM node.exe //FI \"WINDOWTITLE eq *serve*\")",
+      "Bash(pkill -f \"serve dist\")"
+    ],
+    "additionalDirectories": [
+      "G:\\Other computers\\My Laptop\\CyBrain\\vaults\\Business Plan\\resources"
     ]
   }
 }

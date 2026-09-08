@@ -27,14 +27,14 @@ const industries = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-12 border-y border-surface-800/30">
+    <section className="py-12 border-y border-line/30">
       <div className="container-xl">
-        <p className="text-center text-xs text-surface-500 uppercase tracking-widest font-semibold mb-8">
+        <p className="text-center text-xs text-muted uppercase tracking-widest font-semibold mb-8">
           Trusted by businesses across industries
         </p>
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
           {industries.map((item) => (
-            <div key={item.name} className="flex items-center gap-2.5 text-surface-500 hover:text-surface-300 transition-colors">
+            <div key={item.name} className="flex items-center gap-2.5 text-muted hover:text-body transition-colors">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d={item.iconPath} />
               </svg>

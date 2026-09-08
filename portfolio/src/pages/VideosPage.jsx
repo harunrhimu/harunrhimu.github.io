@@ -28,7 +28,7 @@ export default function VideosPage() {
                 Power BI
                 <span className="text-gradient"> Tutorials</span>
               </h1>
-              <p className="text-lg text-surface-400 max-w-2xl leading-relaxed">
+              <p className="text-lg text-muted max-w-2xl leading-relaxed">
                 Tutorials, walkthroughs, and deep dives into data analytics, Power BI, and Microsoft Fabric development.
               </p>
             </div>
@@ -60,7 +60,7 @@ export default function VideosPage() {
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                   filter === cat
                     ? 'bg-brand-600 text-white shadow-lg shadow-brand-500/20'
-                    : 'bg-surface-900/60 text-surface-400 border border-surface-700/40 hover:border-brand-500/30 hover:text-brand-400'
+                    : 'bg-card/60 text-muted border border-line/40 hover:border-brand-500/30 hover:text-accent'
                 }`}
               >
                 {cat}
@@ -91,29 +91,29 @@ export default function VideosPage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Play button overlay */}
-                  <div className="absolute inset-0 bg-surface-950/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-page/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="w-16 h-16 rounded-full bg-brand-500/90 flex items-center justify-center shadow-lg">
-                      <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-7 h-7 text-heading ml-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
                       </svg>
                     </div>
                   </div>
                   {/* Duration */}
-                  <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-surface-950/80 rounded text-xs text-white font-mono font-medium">
+                  <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-page/80 rounded text-xs text-heading font-mono font-medium">
                     {video.duration}
                   </div>
                   {/* Category */}
                   <div className="absolute top-2 left-2">
-                    <span className="badge bg-surface-950/70 text-surface-200 backdrop-blur-sm">{video.category}</span>
+                    <span className="badge bg-page/70 text-body backdrop-blur-sm">{video.category}</span>
                   </div>
                 </div>
 
                 {/* Info */}
                 <div className="p-5">
-                  <h3 className="text-base font-semibold text-white mb-2 group-hover:text-brand-300 transition-colors line-clamp-2">
+                  <h3 className="text-base font-semibold text-heading mb-2 group-hover:text-accent-soft transition-colors line-clamp-2">
                     {video.title}
                   </h3>
-                  <p className="text-sm text-surface-500 line-clamp-2">{video.description}</p>
+                  <p className="text-sm text-muted line-clamp-2">{video.description}</p>
                 </div>
               </a>
             ))}

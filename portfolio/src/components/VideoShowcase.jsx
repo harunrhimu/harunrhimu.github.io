@@ -14,7 +14,7 @@ export default function VideoShowcase() {
               Video
               <span className="text-gradient"> Content</span>
             </h2>
-            <p className="text-surface-400 mt-4 max-w-xl">
+            <p className="text-muted mt-4 max-w-xl">
               Tutorials, walkthroughs, and deep dives into data analytics and Power BI development.
             </p>
           </div>
@@ -43,26 +43,26 @@ export default function VideoShowcase() {
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-surface-950/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-page/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-14 h-14 rounded-full bg-brand-500/90 flex items-center justify-center shadow-lg">
-                    <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-heading ml-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
                 </div>
-                <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-surface-950/80 rounded text-[10px] text-white font-mono font-medium">
+                <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-page/80 rounded text-[10px] text-heading font-mono font-medium">
                   {video.duration}
                 </div>
                 <div className="absolute top-2 left-2">
-                  <span className="badge bg-surface-950/70 text-surface-200 backdrop-blur-sm">{video.category}</span>
+                  <span className="badge bg-page/70 text-body backdrop-blur-sm">{video.category}</span>
                 </div>
               </div>
 
               <div className="p-4">
-                <h3 className="text-sm font-semibold text-white mb-1.5 line-clamp-2 group-hover:text-brand-300 transition-colors">
+                <h3 className="text-sm font-semibold text-heading mb-1.5 line-clamp-2 group-hover:text-accent-soft transition-colors">
                   {video.title}
                 </h3>
-                <p className="text-xs text-surface-500 line-clamp-2">{video.description}</p>
+                <p className="text-xs text-muted line-clamp-2">{video.description}</p>
               </div>
             </a>
           ))}

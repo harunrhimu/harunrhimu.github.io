@@ -16,55 +16,55 @@ export default function About() {
           <div className="col-span-2 row-span-2 glass p-7 flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-5">
-                <svg className="w-6 h-6 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                 </svg>
               </div>
               <h3 className="heading-sm mb-4">About Me</h3>
-              <p className="text-surface-400 leading-relaxed mb-4">
-                I'm a passionate <span className="text-white font-medium">Microsoft Fabric</span> enthusiast,{' '}
-                <span className="text-white font-medium">Power BI Developer</span>, and{' '}
-                <span className="text-white font-medium">Data Analyst</span> with expertise in building
+              <p className="text-muted leading-relaxed mb-4">
+                I'm a passionate <span className="text-heading font-medium">Microsoft Fabric</span> enthusiast,{' '}
+                <span className="text-heading font-medium">Power BI Developer</span>, and{' '}
+                <span className="text-heading font-medium">Data Analyst</span> with expertise in building
                 end-to-end analytics solutions — from Lakehouse architecture to interactive dashboards that drive business decisions.
               </p>
-              <p className="text-surface-400 leading-relaxed">
+              <p className="text-muted leading-relaxed">
                 With a strong foundation in SQL, Python, DAX, and the Microsoft Fabric ecosystem, I build
                 complete data platforms — spanning data ingestion, transformation, modeling, and
-                compelling reports. Currently preparing for DP-700 certifications.
+                compelling reports. Microsoft Certified in PL-300, DP-600 and DP-700, and currently preparing for DP-800.
               </p>
             </div>
-            <div className="flex items-center gap-3 mt-6 pt-5 border-t border-surface-700/40">
+            <div className="flex items-center gap-3 mt-6 pt-5 border-t border-line/40">
               <img src="/harunrhimu.jpg" alt="Harun" loading="lazy" className="w-10 h-10 rounded-full object-cover" />
               <div>
-                <p className="text-sm font-semibold text-white">Md Harun Or Roshid</p>
-                <p className="text-xs text-surface-500">Fabric & BI Professional</p>
+                <p className="text-sm font-semibold text-heading">Md Harun Or Roshid</p>
+                <p className="text-xs text-muted">Fabric & BI Professional</p>
               </div>
             </div>
           </div>
 
           {/* Stats - top right */}
-          <div className="glass p-6 flex flex-col justify-center items-center text-center group hover:bg-surface-800/40 transition-all">
-            <p className="text-3xl md:text-4xl font-extrabold text-gradient mb-1 group-hover:scale-110 transition-transform">50+</p>
-            <p className="text-xs text-surface-400 font-medium">Dashboards Built</p>
+          <div className="glass p-6 flex flex-col justify-center items-center text-center group hover:bg-inset/40 transition-all">
+            <p className="text-3xl md:text-4xl font-extrabold text-gradient mb-1 group-hover:scale-110 transition-transform">35+</p>
+            <p className="text-xs text-muted font-medium">Reports Built</p>
           </div>
-          <div className="glass p-6 flex flex-col justify-center items-center text-center group hover:bg-surface-800/40 transition-all">
+          <div className="glass p-6 flex flex-col justify-center items-center text-center group hover:bg-inset/40 transition-all">
             <p className="text-3xl md:text-4xl font-extrabold text-gradient-warm mb-1 group-hover:scale-110 transition-transform">20+</p>
-            <p className="text-xs text-surface-400 font-medium">Happy Clients</p>
+            <p className="text-xs text-muted font-medium">Happy Clients</p>
           </div>
 
           {/* Quick Info cards */}
           <div className="glass p-5">
-            <p className="text-[10px] text-surface-500 uppercase tracking-widest mb-2 font-semibold">Location</p>
-            <p className="text-sm text-white font-medium">Dhaka, Bangladesh</p>
+            <p className="text-[10px] text-muted uppercase tracking-widest mb-2 font-semibold">Location</p>
+            <p className="text-sm text-heading font-medium">Dhaka, Bangladesh</p>
           </div>
           <div className="glass p-5">
-            <p className="text-[10px] text-surface-500 uppercase tracking-widest mb-2 font-semibold">Education</p>
-            <p className="text-sm text-white font-medium">B.S.S in Social Sciences (Demography) </p>
+            <p className="text-[10px] text-muted uppercase tracking-widest mb-2 font-semibold">Education</p>
+            <p className="text-sm text-heading font-medium">B.S.S in Social Sciences (Demography) </p>
           </div>
 
           {/* Data pipeline visual - wide card */}
           <div className="col-span-2 md:col-span-4 glass p-6">
-            <p className="text-[10px] text-surface-500 uppercase tracking-widest mb-5 font-semibold">My Approach</p>
+            <p className="text-[10px] text-muted uppercase tracking-widest mb-5 font-semibold">My Approach</p>
             <div className="flex items-center justify-between gap-2 overflow-x-auto">
               {[
                 { step: '01', label: 'Discover', desc: 'Understand business needs', color: 'brand' },
@@ -76,13 +76,13 @@ export default function About() {
                 <div key={item.step} className="flex items-center gap-3 shrink-0">
                   <div className="text-center">
                     <div className={`w-12 h-12 rounded-xl ${item.color === 'brand' ? 'bg-brand-500/10 border-brand-500/20' : 'bg-warm-500/10 border-warm-500/20'} border flex items-center justify-center mb-2 mx-auto`}>
-                      <span className={`text-sm font-bold font-mono ${item.color === 'brand' ? 'text-brand-400' : 'text-warm-400'}`}>{item.step}</span>
+                      <span className={`text-sm font-bold font-mono ${item.color === 'brand' ? 'text-accent' : 'text-accent-warm'}`}>{item.step}</span>
                     </div>
-                    <p className="text-xs font-semibold text-white">{item.label}</p>
-                    <p className="text-[10px] text-surface-500 hidden sm:block">{item.desc}</p>
+                    <p className="text-xs font-semibold text-heading">{item.label}</p>
+                    <p className="text-[10px] text-muted hidden sm:block">{item.desc}</p>
                   </div>
                   {i < 4 && (
-                    <svg className="w-6 h-4 text-surface-700 shrink-0" fill="none" viewBox="0 0 24 16" stroke="currentColor" strokeWidth={1.5}>
+                    <svg className="w-6 h-4 text-subtle shrink-0" fill="none" viewBox="0 0 24 16" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" d="M0 8h20m0 0l-5-5m5 5l-5 5" />
                     </svg>
                   )}

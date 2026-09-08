@@ -1,5 +1,828 @@
 const blogPosts = [
 {
+  slug: 'onelake-security-business-strategy',
+  title: 'Why Microsoft Fabric\'s OneLake Security is a Business Strategy, Not Just an IT Feature',
+  excerpt: 'Security doesn\'t have to slow you down. OneLake\'s unified governance model, integrated Purview compliance, and safe data democratization transform security from a restrictive roadblock into a business accelerator that actually speeds up decision-making.',
+  preview: `
+    <p><strong>Every executive faces the same frustrating paradox:</strong> Lock down your data to protect it, and your business slows to a crawl. Open it up for speed, and you're gambling with your company's crown jewels.</p>
+    <p>What if there was a way to have both? <strong>Security that doesn't slow you down. Protection that actually accelerates growth.</strong> This is what <strong>Microsoft Fabric's OneLake Security</strong> delivers—transforming security from a restrictive roadblock into a <strong>business accelerator</strong>.</p>
+  `,
+  content: [
+    `
+    <section class="mb-12">
+      <div style="border-left:4px solid #a855f7;background:rgba(168,85,247,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:0 0 1.5rem;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">The Executive Dilemma</p>
+        <p style="margin:0;">Your IT team says, "We need stricter access controls." Your business teams say, "We need data now." Meanwhile, sensitive information lives scattered across Excel files, personal cloud drives, and email inboxes—places where your security team can't even see it.</p>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Pillar 1: Define Once, Enforce Everywhere — Cut IT Overhead by 50%</h2>
+      <h3>The Hidden Cost of Fragmented Security</h3>
+      <p>Most organizations don't have one data security model. They have five.</p>
+      <p>You maintain separate security rules in your <strong>SQL databases</strong>, different rules in your <strong>data warehouses</strong>, and yet another set in your <strong>Power BI</strong> infrastructure. Add cloud storage, legacy systems, and third-party tools, and you're managing security policies across a dozen different platforms—each with its own syntax, its own audit trail, and its own opportunities for human error.</p>
+      <p><strong>This fragmentation is expensive.</strong> Every time someone needs access, your security team spends hours tracing through multiple systems, manually updating permissions, and praying they didn't miss anything.</p>
+      <h3 class="mt-6">The OneLake Solution: Centralized, Automated, Consistent</h3>
+      <p>With OneLake, you define your security policy <strong>once</strong>—and it's enforced <strong>everywhere</strong>. A single security model automatically cascades across:</p>
+      <ul>
+        <li>Data stored in OneLake</li>
+        <li>Analytical engines (Power BI, Dataflows, Notebooks)</li>
+        <li>Shared dashboards and reports</li>
+        <li>Third-party applications connected to Fabric</li>
+      </ul>
+      <p><strong>The business impact is immediate:</strong></p>
+      <ul>
+        <li><strong>Cut IT administration hours by up to 50%</strong> — no more manual permission updates across fragmented systems</li>
+        <li><strong>Eliminate human error</strong> — consistent enforcement means no blind spots, no forgotten access removals</li>
+        <li><strong>Speed up onboarding and role changes</strong> — employees get access to the right data in minutes, not days</li>
+        <li><strong>Reduce compliance audit workload</strong> — one audit trail instead of a dozen, with clear proof of who accessed what, when</li>
+      </ul>
+      <p><strong>This isn't just an IT efficiency play. This is a direct reduction in operational cost and risk.</strong></p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Pillar 2: Compliance That Follows Your Data</h2>
+      <h3>The Real Cost of Data Leaks</h3>
+      <p>A customer in Germany discovers their personal data appeared in an analyst's spreadsheet sent via personal email. GDPR fine? <strong>Up to €20 million.</strong></p>
+      <p>Your competitor somehow has access to your proprietary pricing strategy. Turns out a junior analyst copied it to OneDrive to work from home. No encryption, no audit trail, no way to revoke access retroactively.</p>
+      <p>A healthcare provider fails a compliance audit because data exported to Excel lost its classification labels—IT can't prove patient data was handled properly.</p>
+      <p><strong>These aren't hypothetical scenarios. They happen every week.</strong></p>
+      <h3 class="mt-6">OneLake + Microsoft Purview: Security That Follows Your Data</h3>
+      <p>OneLake integrates with <strong>Microsoft Purview</strong>, a unified data governance platform that ensures <strong>security classifications follow your data wherever it goes</strong>.</p>
+      <p><strong>Here's how it works:</strong></p>
+      <ol>
+        <li><strong>Classify once.</strong> You mark certain data as "Confidential - PII" or "High Business Impact."</li>
+        <li><strong>Enforce everywhere.</strong> Those classifications stick to the data. When someone exports a report to Excel, the data remains marked. When it's shared, Purview enforces the appropriate protections.</li>
+        <li><strong>Audit everything.</strong> You have a complete record of who accessed the data, when, and what they did with it.</li>
+      </ol>
+      <p><strong>The business advantage:</strong></p>
+      <ul>
+        <li><strong>Eliminate regulatory fines</strong> — demonstrate GDPR, HIPAA, SOX, and industry compliance automatically</li>
+        <li><strong>Protect intellectual property</strong> — data classifications prevent accidental (or intentional) IP theft</li>
+        <li><strong>Enable safe sharing</strong> — teams can collaborate confidently, knowing sensitive data is protected even outside the system</li>
+        <li><strong>Build customer trust</strong> — prove you take data security seriously through certified compliance programs</li>
+      </ul>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Pillar 3: Safe Data Democratization</h2>
+      <h3>The Bottleneck: Central IT Gatekeeping</h3>
+      <p>Traditionally, every data request flows through a central IT team. Someone in Sales needs a dashboard? They file a ticket. Someone in HR wants to analyze employee trends? Ticket. Marketing needs demographic data to refine their strategy? Another ticket.</p>
+      <p>Meanwhile, your IT team becomes a bottleneck. <strong>Your teams move slower. Decisions take weeks instead of days. Competitors using self-service data win.</strong></p>
+      <h3 class="mt-6">The OneLake Answer: "Deny by Default"</h3>
+      <p>OneLake enables a <strong>"deny-by-default" security model</strong>—the gold standard in security architecture.</p>
+      <p><strong>Instead of IT controlling all data access, individual departments control their own data safely.</strong> You empower the VP of Sales to own the Sales data lake. The HR Director manages employee data. The CFO controls financial metrics. Each department owner can grant access to their teams and revoke it instantly—without waiting for central IT approval.</p>
+      <p><strong>But here's the critical part: The system denies all access by default.</strong> An employee in Marketing cannot accidentally stumble into Finance data. A contractor working on the Sales team cannot browse HR records. The default is locked—access must be explicitly granted.</p>
+      <p><strong>The result:</strong></p>
+      <ul>
+        <li><strong>Data teams move at business speed</strong> — self-service reports, quick insights, fast decision-making</li>
+        <li><strong>Departments own their data</strong> — the Sales team understands Sales data best; let them manage it safely</li>
+        <li><strong>IT becomes an enabler, not a blocker</strong> — your IT team focuses on architecture and compliance, not manually processing access requests</li>
+        <li><strong>Competitive advantage:</strong> Your teams uncover market insights in days, not months</li>
+      </ul>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Pillar 4: Eliminating Data Sprawl and Redundant Costs</h2>
+      <h3>The Data Duplication Problem: Security Risk + Financial Drain</h3>
+      <p>Finance creates a data lake. Engineering builds their own analytics environment. Marketing exports customer data into a separate system. Sales has another copy in their CRM analytics warehouse. HR maintains employee data for their own reporting.</p>
+      <p><strong>You now have five copies of overlapping data.</strong> Each copy consumes storage. Each copy needs separate security maintenance. Each copy becomes another potential attack surface.</p>
+      <p>You've created a security nightmare. You're spending millions on storage and maintenance. You're exposing your data to copies and locations you can't fully monitor or control.</p>
+      <h3 class="mt-6">OneLake Shortcuts: Unified Access Without Duplication</h3>
+      <p>OneLake introduces <strong>Shortcuts</strong>—a capability that fundamentally changes how organizations share data.</p>
+      <p>Instead of copying data, a Shortcut is a <strong>unified reference</strong> to data wherever it lives—in other cloud services, on-premises databases, third-party systems, or other OneLake environments.</p>
+      <p><strong>The transformative benefits:</strong></p>
+      <ul>
+        <li><strong>Eliminate data duplication</strong> — no more copies scattered across systems</li>
+        <li><strong>Reduce storage costs dramatically</strong> — one copy of data vs. five or ten</li>
+        <li><strong>Cut security attack surface</strong> — fewer copies means fewer places where breaches can happen</li>
+        <li><strong>Ensure data consistency</strong> — everyone sees the single source of truth, not divergent copies</li>
+        <li><strong>Maintain lineage and compliance</strong> — you can trace every insight back to the original data source</li>
+      </ul>
+      <p><strong>A typical mid-market company might save $500K to $2M annually</strong> simply by eliminating redundant data copies and their associated storage, security, and governance costs.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Conclusion: Security as a Competitive Advantage</h2>
+      <p>Here's the uncomfortable truth that most organizations ignore: <strong>Security is treated as a cost center.</strong> It's something you invest in because you have to—for compliance, for risk mitigation, because a breach would be catastrophic.</p>
+      <p><strong>But OneLake Security changes the equation.</strong> With OneLake, your data security infrastructure becomes a <strong>value driver</strong>:</p>
+      <ul>
+        <li>It accelerates time-to-insight (teams move faster with self-service data)</li>
+        <li>It reduces operational costs (unified governance, eliminated data duplication)</li>
+        <li>It protects revenue (compliance, IP protection, avoided fines)</li>
+        <li>It enables growth (safe data democratization, confident collaboration)</li>
+      </ul>
+      <p><strong>Modern data security shouldn't slow your business. It should supercharge it.</strong></p>
+      <div style="border-left:4px solid #10b981;background:rgba(16,185,129,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">Your Next Step: Audit Your Current Risk</p>
+        <p style="margin:0.5rem 0;"><strong>1. How many separate places do you maintain data?</strong> If more than three, you have fragmentation risk.</p>
+        <p style="margin:0.5rem 0;"><strong>2. How many copies of sensitive data exist outside your secure systems?</strong> If you can't answer with confidence, you have visibility risk.</p>
+        <p style="margin:0.5rem 0;"><strong>3. How long does a typical data access request take?</strong> If more than a few days, you have velocity risk.</p>
+        <p style="margin:0.5rem 0;"><strong>4. When was your last audit?</strong> If you don't know your answer confidently, you have compliance risk.</p>
+      </div>
+    </section>
+    `
+  ],
+  category: 'Microsoft Fabric',
+  date: 'Jul 21, 2026',
+  dateISO: '2026-07-21',
+  readTime: '8 min read',
+  image: '/onelake-security-thumbnail.png'
+},
+{
+  slug: 'power-bi-report-with-claude-ai-mcp',
+  title: 'How I Built a Power BI Report From Scratch with Claude AI and the Power BI MCP Server',
+  excerpt: 'A step-by-step case study of taking a messy, real-world Power BI model and using Claude AI + the Power BI Modeling MCP server to diagnose it, re-architect it into a clean star schema, plan a 6-page sales report, and build it from scratch.',
+  preview: `
+    <p>I took a messy, real-world Power BI model built on the Brazilian Olist e-commerce dataset and used <strong>Claude AI</strong> connected to the <strong>Power BI Modeling MCP server</strong> to diagnose it, re-architect it into a clean <strong>star schema</strong>, plan a 6-page sales report, and then build that report from scratch.</p>
+    <p>This post walks through the entire workflow — what the AI did, what I directed, and where human judgment still mattered.</p>
+  `,
+  content: [
+    `
+    <section class="mb-12">
+      <div style="border-left:4px solid #a855f7;background:rgba(168,85,247,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:0 0 1.5rem;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">TL;DR</p>
+        <p style="margin:0;">I took a messy, real-world Power BI model built on the Brazilian Olist e-commerce dataset, and used <strong>Claude AI</strong> connected to the <strong>Power BI Modeling MCP server</strong> to diagnose it, re-architect it into a clean <strong>star schema</strong>, plan a 6-page sales report, and then build that report from scratch. This post walks through the entire workflow — what the AI did, what I directed, and where human judgment still mattered.</p>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>1. Introduction — Can AI Build a Full Power BI Report?</h2>
+      <p>Every data analyst has heard the question by now: <em>"Will AI take over BI work?"</em> I wanted a more useful question — <strong>"Can I use AI as a power tool to do BI work better and faster?"</strong> — so I ran a real experiment instead of guessing.</p>
+      <p>The challenge I set myself was deliberately end-to-end:</p>
+      <ol>
+        <li>Start with a genuinely flawed Power BI semantic model (no cherry-picked toy data).</li>
+        <li>Use <strong>Claude AI</strong> — driving the <strong>Power BI Modeling MCP server</strong> — to review the model, fix the architecture, and build a full report.</li>
+        <li>Build the report <strong>from scratch</strong>: pages, visuals, measures, navigation, the lot.</li>
+        <li>Be honest about where the AI excelled and where I had to take the wheel.</li>
+      </ol>
+      <p>The dataset is the public <strong>Olist Brazilian E-Commerce</strong> set — roughly <strong>100,000 orders across 9 CSV files</strong>, covering orders, order items, payments, reviews, customers, products, sellers, geolocation, and category translations. It's messy in exactly the ways real client data is messy, which is what made it a fair test.</p>
+      <p>The result: a <strong>clean star schema</strong> (1 fact, 5 dimensions) and a <strong>6-page interactive sales report</strong> — modeled, planned, and authored with Claude in the loop the entire way. Here's how it came together.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>2. The Toolset: Claude + Power BI Modeling MCP</h2>
+      <p>The thing that makes this more than "ask ChatGPT for DAX" is <strong>MCP — the Model Context Protocol</strong>.</p>
+      <p>MCP is an open standard that lets an AI assistant connect to external tools and data sources through a consistent interface. Instead of the AI only <em>talking about</em> your work, an MCP server gives it <strong>hands</strong> — the ability to read and act on real systems.</p>
+      <p>The <strong>Power BI Modeling MCP server</strong> exposes the Power BI semantic model to Claude as a set of operations. In practice, that meant Claude could:</p>
+      <ul>
+        <li><strong>Read the live model</strong> — tables, columns, relationships, measures, partitions.</li>
+        <li><strong>Inspect the schema</strong> — identify cardinality, cross-filter direction, hidden auto-date tables, snowflake branches.</li>
+        <li><strong>Edit the model</strong> — add tables and columns, rewrite relationships, create and test DAX measures.</li>
+        <li><strong>Run DAX queries</strong> — to validate logic and profile the data directly.</li>
+      </ul>
+      <p>My role was the <strong>director</strong>: I set the goal, made the architectural calls, reviewed every change, and kept the work honest. Claude's role was the <strong>fast, tireless engineer</strong> that could read the whole model at once, explain its own reasoning, and apply changes precisely. That division of labor — human judgment, AI execution — is the real story of this project.</p>
+      <pre><code>┌─────────┐      directs       ┌─────────┐      MCP tools      ┌──────────────────┐
+│   Me    │ ─────────────────▶ │ Claude  │ ─────────────────▶ │  Power BI Model  │
+│(analyst)│ ◀───────────────── │  (AI)   │ ◀───────────────── │   (.pbip / TMDL) │
+└─────────┘   reviews/approves └─────────┘   reads & verifies  └──────────────────┘
+      </code></pre>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>3. The Starting Point — A Model That "Worked" but Was Wrong</h2>
+      <p>The original model rendered visuals just fine. That's the trap — it <em>looked</em> functional while hiding structural problems that would bite later with slow queries, double-counting, and fragile logic.</p>
+      <p>When Claude read the model through MCP, it surfaced a hybrid that was <strong>part snowflake, part galaxy, pretending to be a star</strong>. The specific problems:</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Problem</th><th>Why it's a problem</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>P1</td><td><strong>Auto date/time enabled</strong> — 8+ hidden <code>LocalDateTable_*</code> tables</td><td>Model bloat, no conformed calendar, no control over date logic</td></tr>
+          <tr><td>P2</td><td><strong>Snowflake:</strong> <code>Dim Product Category</code> hanging off <code>Dim Product</code></td><td>Extra hop, slower filters, harder to read</td></tr>
+          <tr><td>P3</td><td><strong>Snowflake:</strong> <code>Dim Geography</code> shared by Customer &amp; Seller</td><td>Extra hop and ambiguity risk</td></tr>
+          <tr><td>P4</td><td><strong>Fact-to-fact relationships</strong> — Items, Payment, Review all pointing at <code>Fact Order</code></td><td>Classic anti-pattern; fragile filter propagation</td></tr>
+          <tr><td>P5</td><td><strong>Four fact tables at three grains</strong> (order / line / payment / review)</td><td>Over-fragmented; invites double-counting</td></tr>
+          <tr><td>P6</td><td><strong>Bi-directional cross-filter</strong> on Order→Customer</td><td>Ambiguity and circular filter paths</td></tr>
+          <tr><td>P7</td><td><strong>A "review" table mislabeled</strong> and date fields not modeled</td><td>Inconsistent naming, no usable date keys</td></tr>
+        </tbody>
+      </table>
+      <p>One line of diagnosis: <em>this was a snowflake/galaxy hybrid pretending to be a star.</em> The value of having the AI read the <strong>entire</strong> model at once is that it caught all seven at the same time, with the reasoning attached — not one error message at a time.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>4. Step 1 — AI-Assisted Schema Review</h2>
+      <p>The first deliverable wasn't code — it was <strong>understanding</strong>. I asked Claude to produce a written schema review I could stand behind: not just "this is wrong," but <em>why</em>, and <em>what the correct target looks like</em>.</p>
+      <p>Claude walked the model table by table and classified each one by its <strong>real role versus its labeled role</strong> — which is where a lot of the trouble lived:</p>
+      <ul>
+        <li><code>Dim Review</code> was named a dimension but held <code>review_score</code> and joined on <code>order_id</code> → it's actually a <strong>fact</strong> (a review event).</li>
+        <li><code>Dim Geography</code> had <strong>no relationship at all</strong> → an <strong>orphan</strong> dimension.</li>
+        <li><code>Fact Order</code> had no additive numeric facts — just five date columns → it behaves like an <strong>order header</strong>, i.e. a dimension in disguise.</li>
+      </ul>
+      <p>That review became a documented artifact (<code>Star_Schema_Documentation.md</code>) covering the current relationships, the anti-patterns, and a target design. The point worth stressing for anyone evaluating AI in BI: <strong>the AI didn't just rename things — it justified the grain and role of every table.</strong> That reasoning is exactly what makes a model review trustworthy instead of a black box.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>5. Step 2 — Re-Architecting Snowflake → Star Schema</h2>
+      <p>With the diagnosis agreed, we rebuilt the model. The key insight — the one that turns a fact-to-fact mess into a clean star — was simple once stated:</p>
+      <blockquote><strong>An order header is "one row per order," which is exactly the grain of a dimension. So the header isn't a fact at all — promote it to <code>Dim Order</code>.</strong></blockquote>
+      <p>That reframing dissolved the hardest problem (P4/P5) in one move. The conversion played out in a few deliberate steps, each applied through MCP and verified.</p>
+      <p><strong>Replace auto date/time with a real <code>Dim Date</code>.</strong> Off went auto date/time; out went the hidden date tables; in came one conformed calendar built in Power Query:</p>
+      <pre><code class="language-m">let
+    Source  = List.Dates(#date(2016,1,1),
+                Duration.Days(#date(2018,12,31) - #date(2016,1,1)) + 1,
+                #duration(1,0,0,0)),
+    ToTable = Table.FromList(Source, Splitter.SplitByNothing(), {"Date"}),
+    Typed   = Table.TransformColumnTypes(ToTable, {{"Date", type date}}),
+    Cols    = Table.AddColumn(Typed, "Year", each Date.Year([Date]), Int64.Type)
+    // + MonthNo, Month, YearMonth, Quarter, DayOfWeek ...
+in
+    Cols
+      </code></pre>
+      <p>Then <strong>Mark as Date Table</strong> so DAX time intelligence is reliable.</p>
+      <p><strong>De-snowflake the category.</strong> The PT→EN translation was folded directly into <code>Dim Product</code> as a single <code>product_category_name_english</code> column, and the standalone category table was removed.</p>
+      <p><strong>Collapse the extra facts into the header.</strong> Payments and reviews are <em>attributes of an order</em>, not independent fact grains — but they sit at different grains, so a naive 1:1 join would have been wrong:</p>
+      <ul>
+        <li><strong>Payments</strong> are <em>finer</em> than orders (split payments → multiple rows per order). Aggregated to order grain: payment value (sum), installments (max), payment count, and the primary payment type.</li>
+        <li><strong>Reviews</strong> are <em>~1:1 but with duplicates</em>. Deduplicated to the latest review per order before joining.</li>
+      </ul>
+      <pre><code class="language-m">PaymentsAgg = Table.Group(Payments, {"order_id"}, {
+    {"Payment Value",        each List.Sum([payment_value]),  type number},
+    {"Payment Installments", each List.Max([payment_installments]), Int64.Type},
+    {"Payment Count",        each Table.RowCount(_),          Int64.Type},
+    {"Payment Type",         each let s = Table.Sort(_, {{"payment_sequential", Order.Ascending}})
+                                   in try s{0}[payment_type] otherwise null, type text}
+})
+      </code></pre>
+      <p><strong>Promote the header and carry keys down.</strong> <code>Fact Order</code> became <code>Dim Order</code>, and the foreign keys (<code>customer_id</code>, <code>Order Purchase Date</code>) were pushed down onto each order line so the single fact joins straight to its dimensions — a <em>pure</em> star, not a snowflake:</p>
+      <pre><code class="language-m">JoinOrders   = Table.NestedJoin(Items, {"order_id"}, OrderKeys, {"order_id"}, "Ord", JoinKind.LeftOuter),
+ExpandOrders = Table.ExpandTableColumn(JoinOrders, "Ord", {"customer_id", "order_purchase_timestamp"})
+      </code></pre>
+      <p>That one decision <strong>eliminated all three fact-to-fact relationships at once.</strong> Add single-direction relationships and consistent <code>Dim *</code> / <code>Fact *</code> naming, and the model landed here:</p>
+      <pre><code>            ┌───────────┐   ┌─────────────┐   ┌────────────┐
+            │ Dim Date  │   │ Dim Customer│   │ Dim Product│
+            └─────┬─────┘   └──────┬──────┘   └─────┬──────┘
+                  │                │                │
+                  └────────────┐   │   ┌────────────┘
+                               ▼   ▼   ▼
+                        ┌────────────────────┐
+                        │  Fact Orders Items │   ◀── grain: one order line
+                        └────────┬───────────┘
+                            ▲    │    ▲
+                  ┌─────────┘    │    └─────────┐
+            ┌─────┴─────┐   ┌────┴─────┐  ┌─────┴─────┐
+            │ Dim Seller│   │ Dim Order│  │   (...)   │
+            └───────────┘   └──────────┘  └───────────┘
+      </code></pre>
+      <p><strong>1 fact · 5 dimensions · 0 fact-to-fact joins · 0 snowflake hops · 1 conformed calendar.</strong></p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>6. Step 3 — The Grain Investigation (Was the Data Broken?)</h2>
+      <p>Mid-conversion, the row counts between the two order tables didn't line up, and it looked like missing data. This is the moment that separates a careful analyst from a careless one — and it's where I watched the AI do the <em>right</em> thing: <strong>profile the raw files instead of guessing.</strong></p>
+      <table>
+        <thead>
+          <tr><th></th><th>Rows</th><th>Distinct <code>order_id</code></th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>orders_dataset</code></td><td>99,441</td><td>99,441</td></tr>
+          <tr><td><code>order_items_dataset</code></td><td>112,650</td><td>98,666</td></tr>
+        </tbody>
+      </table>
+      <p>Claude ran the numbers and found two legitimate, <em>non-bug</em> reasons for the gap:</p>
+      <ol>
+        <li><strong>One order → many lines.</strong> 88,863 orders have a single line; the rest have 2–21 lines, which pushes item rows above order rows.</li>
+        <li><strong>775 orders have no lines at all</strong> — and 767 of them are <code>unavailable</code> or <code>canceled</code>. These are <strong>genuinely failed orders</strong>: placed but never fulfilled, so no product, price, or delivery ever existed.</li>
+      </ol>
+      <p>Integrity check: <strong>0 orphan items</strong> — every line maps to a real order. And 96,478 of 99,441 orders are <code>delivered</code>, a healthy real-world distribution.</p>
+      <div style="border-left:4px solid #22c55e;background:rgba(34,197,94,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">✅ Conclusion: the data wasn't broken.</p>
+        <p style="margin:0;">The "missing price / missing delivery" rows are the <em>truth</em> about cancelled orders, not gaps. So those failed orders are <strong>preserved in <code>Dim Order</code></strong> (countable via status) even though they correctly have no rows in the sales fact. That's a modeling decision a naive cleanup would have silently destroyed.</p>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>7. Step 4 — Planning the Report Before Building</h2>
+      <p>Here's a discipline I refused to skip just because AI makes building fast: <strong>plan the report before authoring a single visual.</strong> A fast wrong report is still a wrong report.</p>
+      <p>I had Claude produce a full <strong>report plan</strong> first — a document I could review and approve like a spec. It defined:</p>
+      <ul>
+        <li><strong>Six pages</strong>, each with a clear analytical purpose:
+          <ol>
+            <li><strong>Executive Overview</strong> — one-screen business health check (KPIs, revenue trend, map, top categories).</li>
+            <li><strong>Sales Trends</strong> — growth, seasonality, YoY/MoM momentum.</li>
+            <li><strong>Product &amp; Category</strong> — what sells, at what price profile.</li>
+            <li><strong>Customer Analysis</strong> — new vs. returning, value, geography.</li>
+            <li><strong>Delivery &amp; Operations</strong> — fulfilment speed, on-time rate, order funnel.</li>
+            <li><strong>Reviews &amp; Satisfaction</strong> — sentiment and its link to delivery speed.</li>
+          </ol>
+        </li>
+        <li>A <strong>reusable layout skeleton</strong> — left nav, synced top-band slicers (Date / State / Category / Status), and a KPI card row.</li>
+        <li><strong>Measure design</strong> — which KPIs each page needs and which new measures or columns the model required (a <code>DayOfWeekNo</code> sort key, new-vs-returning logic, order-value bands).</li>
+        <li><strong>Formatting standards</strong> — currency, percentages, a single accent color, consistent titles.</li>
+        <li><strong>Interactivity</strong> — cross-filtering, slicer sync, a drill-through detail page, custom tooltips, and a reset-filters bookmark.</li>
+      </ul>
+      <p>Planning first did two things: it forced the <strong>model additions</strong> to surface <em>before</em> build (so I wasn't patching the model mid-report), and it gave me an approval gate. Nothing got built until the blueprint was right.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>8. Step 5 — Building the Report From Scratch</h2>
+      <p>With the plan approved, the build followed a clean sequence — model additions first, then theme, then a reusable page skeleton, then page-by-page visuals, then interactivity, then QA.</p>
+      <p>What Claude authored, with me directing and reviewing each step:</p>
+      <ul>
+        <li><strong>Supporting model objects</strong> — the <code>DayOfWeekNo</code> sort key, new-vs-returning customer logic, and order-value bands the plan had flagged.</li>
+        <li><strong>DAX measures</strong> — the KPI library (Total Revenue, Order Count, AOV, Unique Customers, Avg Review Score, On-Time Delivery Rate) plus time-intelligence measures (YoY %, MoM %, YTD) — written, then validated by running DAX queries through MCP.</li>
+        <li><strong>The page skeleton</strong> — left-nav buttons with page-navigation actions, the synced slicer band, and the KPI row, built once and reused across pages.</li>
+        <li><strong>Per-page visuals</strong> — line/column trends, a filled map of Brazil, treemaps, matrices with conditional formatting, a delivery-vs-review scatter, funnels, and Top-N tables.</li>
+        <li><strong>Interactivity</strong> — drill-through to an order/product detail page, a custom report-page tooltip with a mini revenue trend, and a reset-filters bookmark.</li>
+      </ul>
+      <p>The honest division of labor: <strong>I made the design and modeling decisions; Claude executed them at speed and kept the implementation consistent.</strong> When a measure needed to avoid double-counting (order count via <code>DISTINCTCOUNT(order_id)</code> on the fact vs. <code>COUNTROWS(Dim Order)</code> for all orders including failed ones), that was a judgment call I made and the AI implemented — exactly as it should be.</p>
+      <p>QA closed it out: cross-filter checks, number-format consistency, and totals sanity to confirm no double-counting had crept in.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>9. What Worked, What Didn't — My Honest Take on AI + BI</h2>
+      <p>No hype. Here's the real assessment after shipping this end-to-end.</p>
+      <div style="border-left:4px solid #22c55e;background:rgba(34,197,94,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">Where Claude + MCP genuinely shone</p>
+        <ul style="margin:0;">
+          <li><strong>Whole-model comprehension.</strong> Reading every table, relationship, and measure at once caught structural problems a click-by-click review misses.</li>
+          <li><strong>Reasoning, not just output.</strong> Each change came with a justification I could check — the schema review reads like a senior analyst wrote it.</li>
+          <li><strong>Speed on the mechanical work.</strong> Power Query merges, repetitive measures, consistent naming, and page skeletons — fast and tireless.</li>
+          <li><strong>Documentation for free.</strong> The case-study write-ups were a byproduct of the process, not an afterthought.</li>
+        </ul>
+      </div>
+      <div style="border-left:4px solid #f59e0b;background:rgba(245,158,11,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">Where I had to step in</p>
+        <ul style="margin:0;">
+          <li><strong>Architectural calls.</strong> "Promote the header to a dimension" was a human decision; the AI executed it well once directed.</li>
+          <li><strong>Domain judgment.</strong> Deciding that failed orders must be <em>preserved</em>, not cleaned away, needed business context.</li>
+          <li><strong>Verification discipline.</strong> I reviewed every model edit and DAX result. MCP lets the AI act — which means you must check what it acted on.</li>
+        </ul>
+      </div>
+      <p><strong>Guardrails I used:</strong> work on a backup of the <code>.SemanticModel</code> folder, close Power BI before structural edits, validate measures by querying real data, and keep an approval gate between <em>plan</em> and <em>build</em>. AI accelerates the work; it doesn't absolve you of owning it.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>10. Skills This Project Demonstrates</h2>
+      <p>For anyone reading this as a portfolio piece, here's what it actually proves I can do:</p>
+      <ul>
+        <li><strong>AI tooling &amp; agent direction</strong> — connecting Claude to the Power BI MCP server and driving it to deliver real, verified BI work.</li>
+        <li><strong>Dimensional modeling</strong> — diagnosing snowflake/galaxy anti-patterns and designing a clean star with a header/detail pattern.</li>
+        <li><strong>Grain analysis</strong> — the discipline that prevents double-counting and explains "missing" data correctly.</li>
+        <li><strong>Power Query (M)</strong> — conformed date tables, merges, grain-aware aggregation, key propagation.</li>
+        <li><strong>DAX</strong> — KPI and time-intelligence measures, validated against real data.</li>
+        <li><strong>Report design</strong> — purpose-driven pages, reusable layout, interactivity, and formatting standards.</li>
+        <li><strong>Communication</strong> — turning the whole process into documented, reviewable case studies.</li>
+      </ul>
+      <p>The modern data analyst isn't <em>replaced</em> by AI — they're <strong>amplified</strong> by it, provided they still own the judgment.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>11. Key Takeaways &amp; How You Can Try This</h2>
+      <p>A few transferable lessons from building a Power BI report end-to-end with AI:</p>
+      <ol>
+        <li><strong>Grain first.</strong> Every modeling decision falls out of nailing the grain.</li>
+        <li><strong>A "header" is usually a dimension.</strong> Header/detail problems dissolve when you stop treating the header as a fact — the clean alternative to fact-to-fact.</li>
+        <li><strong>Star beats snowflake for BI.</strong> Flatten lookups unless there's a compelling reason not to.</li>
+        <li><strong>Plan before you build.</strong> AI makes building fast, which makes a good blueprint <em>more</em> valuable, not less.</li>
+        <li><strong>Profile before you "fix."</strong> The 775 "broken" orders weren't broken — they were cancelled. Verify with raw data.</li>
+        <li><strong>AI acts — so you must verify.</strong> MCP gives the AI hands; keep yours on the wheel.</li>
+      </ol>
+      <p><strong>Want to try this workflow?</strong> You'll need Power BI Desktop with a <code>.pbip</code> (PBIR/TMDL) project, the <strong>Power BI Modeling MCP server</strong> connected to <strong>Claude</strong>, and a real dataset to test on — the public <strong>Olist Brazilian E-Commerce</strong> set on Kaggle is perfect.</p>
+      <p><em>Built with Power BI, Power Query (M), and DAX on the public Olist Brazilian E-Commerce dataset — modeled and authored with Claude AI via the Power BI Modeling MCP server.</em></p>
+      <p><strong>Let's connect</strong> — if you're hiring a data analyst who pairs solid BI fundamentals with modern AI tooling, <a href="/contact">get in touch</a>.</p>
+    </section>
+    `
+  ],
+  category: 'Power BI',
+  date: 'Jun 27, 2026',
+  dateISO: '2026-06-27',
+  readTime: '12 min read',
+  image: '/power-bi-claude-mcp-cover.png'
+},
+{
+  slug: 'power-bi-dirty-secret-pbix-vs-pbip',
+  title: 'The Power BI Dirty Secret: PBIX vs PBIP',
+  excerpt: 'Almost every Power BI team ships with "click-and-pray" publishing — and for years that was simply how Power BI worked. The reason traces back to one design decision: the file format. Here is why .pbix holds you back and how .pbip turns Power BI into real source code.',
+  preview: `
+    <p>Almost every Power BI team ships the same way: open Power BI Desktop, hit <strong>Publish</strong>, pick the production workspace from a dropdown, and hope for the best. I call it <strong>click-and-pray deployment</strong>.</p>
+    <p>The root cause is the file format. This post (Part 1 of a 4-part CI/CD series) explains why <code>.pbix</code> is a dead end for serious teams and how the <strong>Power BI Project (.pbip)</strong> format finally turns Power BI into reviewable, diffable, deployable source code.</p>
+  `,
+  content: [
+    `
+    <section class="mb-12">
+      <p style="font-size:0.9rem;color:#a855f7;font-weight:600;margin:0 0 0.75rem;">PBIP CI/CD for Power BI · Part 1 of 4</p>
+      <p>Almost every Power BI team ships the same way, even if nobody admits it: someone opens Power BI Desktop, hits <strong>Publish</strong>, picks the production workspace from a dropdown, and hopes for the best.</p>
+      <p>I call it <strong>click-and-pray deployment</strong> — and for years it wasn't a bad habit, it was simply <em>how Power BI worked</em>. The reason traces back to a single design decision: the file format.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>The problem: <code>.pbix</code> is a binary blob</h2>
+      <p>A <code>.pbix</code> file is really a <strong>ZIP archive</strong> of compressed, partly-binary parts — the data model, the report layout, cached data, settings — all fused into one opaque file. That's wonderful for double-click-and-open simplicity, and terrible for everything a serious engineering team needs:</p>
+      <ul>
+        <li><strong>No diffs</strong> — change one measure and Git just sees "the binary changed." You can never see <em>what</em> changed.</li>
+        <li><strong>No real review</strong> — you can't review a pull request on a blob. "Code review" becomes "trust me, I tested it."</li>
+        <li><strong>No merging</strong> — two people can't safely work on the same report. Last save wins; the other person's work is gone.</li>
+        <li><strong>No audit trail</strong> — when a number is wrong in front of the board, nobody can prove what actually shipped or when.</li>
+      </ul>
+      <p>So "version control" quietly degrades into a shared drive full of:</p>
+      <pre><code>Sales_Final.pbix
+Sales_Final_v2.pbix
+Sales_Final_v2_REALLY_final.pbix
+Sales_Final_USE_THIS_ONE.pbix
+      </code></pre>
+      <p>For a hobby report, fine. For a business making decisions on these numbers, it's a liability that compounds with every release.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>The fix: <code>.pbip</code> turns Power BI into source code</h2>
+      <p>Microsoft's answer is the <strong>Power BI Project (PBIP)</strong> format. Instead of one sealed file, PBIP saves your work as a <strong>folder of plain-text files</strong> you can open, diff, and review:</p>
+      <pre><code>SalesReport/
+├── SalesReport.pbip                 ← the project entry point
+├── SalesReport.Report/              ← visuals & layout (JSON)
+│   └── definition/ ...
+└── SalesReport.SemanticModel/       ← the data model
+    └── definition/
+        └── tables/  *.tmdl          ← tables & measures as readable text
+      </code></pre>
+      <p>The model is described in <strong>TMDL</strong> (Tabular Model Definition Language) and the report in JSON. Both are human-readable text, which changes <em>everything</em>:</p>
+      <table>
+        <thead>
+          <tr><th></th><th><code>.pbix</code> (legacy)</th><th><code>.pbip</code> (project)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>On disk</strong></td><td>Single binary ZIP</td><td>Folder of text files</td></tr>
+          <tr><td><strong>Model definition</strong></td><td>Hidden, compiled</td><td>TMDL — readable &amp; editable</td></tr>
+          <tr><td><strong>Report definition</strong></td><td>Binary</td><td>JSON</td></tr>
+          <tr><td><strong>Git diff</strong></td><td>"binary changed"</td><td>line-by-line, per measure</td></tr>
+          <tr><td><strong>Pull-request review</strong></td><td>Impossible</td><td>Real code review</td></tr>
+          <tr><td><strong>Merge two people's work</strong></td><td>No</td><td>Yes</td></tr>
+          <tr><td><strong>Automated deploy</strong></td><td>Click &amp; pray</td><td>Pipeline-driven</td></tr>
+          <tr><td><strong>Bundled data</strong></td><td>Yes (bloats the file)</td><td>No — definition only</td></tr>
+        </tbody>
+      </table>
+      <p>A renamed measure now shows up as a one-line diff. A reviewer can comment on a DAX change before it ever reaches production. Two developers can branch, work, and merge like any other software team.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Why this is <em>the</em> Fabric-era shift</h2>
+      <p>PBIP isn't a niche convenience — it's the on-ramp to how analytics is built in <strong>Microsoft Fabric</strong>. Because the project is just text in a folder, it slots straight into the modern toolchain:</p>
+      <ul>
+        <li><strong>Git integration</strong> — Fabric workspaces connect directly to Azure DevOps or GitHub repos, syncing items in and out of source control.</li>
+        <li><strong>Deployment pipelines</strong> — promote Dev → Test → Prod as a governed, repeatable process instead of a manual republish.</li>
+        <li><strong>CI/CD automation</strong> — validate, test, and deploy with tools like <a href="https://tabulareditor.com/" target="_blank" rel="noopener noreferrer">Tabular Editor</a>, <a href="https://pbi.tools/" target="_blank" rel="noopener noreferrer">pbi-tools</a>, and <a href="https://github.com/microsoft/fabric-cicd" target="_blank" rel="noopener noreferrer">fabric-cicd</a> running in your pipeline.</li>
+        <li><strong>Real collaboration &amp; governance</strong> — branching, reviews, approvals, and a full audit trail of who changed what, when, and why.</li>
+      </ul>
+      <p>In other words, PBIP is what finally lets Power BI behave like the rest of your engineering stack — and Fabric is the platform that assumes you're working that way.</p>
+      <p>The click-and-pray era is over. The rest of this 4-part series shows how to leave it behind for good.</p>
+      <div style="border-left:4px solid #a855f7;background:rgba(168,85,247,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">Next — Part 2</p>
+        <p style="margin:0;">How PBIP turns Power BI into real source code (a hands-on tour of TMDL, the folder structure, and your first clean Git diff).</p>
+      </div>
+      <hr style="border:none;border-top:1px solid rgba(148,163,184,0.15);margin:2rem 0;" />
+      <p><em>I help data teams replace click-and-pray publishing with reviewed, automated Power BI deployments on Fabric. If <code>Final_v2_REALLY_final.pbix</code> hits a little too close to home — <a href="/contact">let's talk</a>.</em></p>
+    </section>
+    `
+  ],
+  category: 'Power BI',
+  date: 'Jun 23, 2026',
+  dateISO: '2026-06-23',
+  readTime: '5 min read',
+  image: '/cicd-1-pbix-vs-pbip.png'
+},
+{
+  slug: 'power-bi-pbip-git-azure-devops-fabric-cicd',
+  title: 'Power BI PBIP Git Integration with Azure DevOps — Multi-Stage Fabric CI/CD',
+  excerpt: 'With the Power BI Project format (PBIP), reports and semantic models become plain-text TMDL files you can diff and review. Here is how to wire PBIP into Azure DevOps with the fabric-cicd library for an automated, approval-gated Dev → Test → Prod Fabric deployment.',
+  content: [
+    `
+    <section class="mb-12">
+      <p>For years, Power BI development had a dirty secret: the <code>.pbix</code> file is a <strong>binary blob</strong>. You couldn't diff it, you couldn't review it in a pull request, and "version control" meant <code>Final_v2_REALLY_final.pbix</code> sitting in a shared drive. Deployment meant a human opening Power BI Desktop and clicking <strong>Publish</strong> — straight to production, fingers crossed.</p>
+      <p>That era is over.</p>
+      <p>With the <strong>Power BI Project format (PBIP)</strong> — where your report and semantic model are saved as <strong>plain-text TMDL files</strong> — Power BI finally behaves like real source code. And with Microsoft's open-source <strong><code>fabric-cicd</code></strong> Python library, you can wire it into <strong>Azure DevOps</strong> so that a single merged pull request flows automatically through <strong>Dev → Test → Prod</strong>, with a service principal doing the deployment and a human approval gate guarding production.</p>
+      <p>This guide shows you how to build that exact pipeline, end to end, with working code.</p>
+    </section>
+
+    <div style="border-left:4px solid #0284c7;background:rgba(2,132,199,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+      <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">📋 What you'll build</p>
+      <p>A Git-backed Power BI workflow where developers branch, raise PRs, and merge — and Azure Pipelines automatically deploys the <strong>same code</strong> to three Fabric workspaces (Dev, Test, Prod), parameterized per environment, authenticated by a service principal, with manual approval before Prod.</p>
+    </div>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Why PBIP Changes Everything</h2>
+      <p>The <code>.pbip</code> format saves your work as a <strong>folder of text files</strong> instead of one binary <code>.pbix</code>. The semantic model is serialized as <strong>TMDL</strong> (Tabular Model Definition Language), and the report as JSON-based definition files.</p>
+      <pre><code>SalesReport.pbip
+├─ SalesReport.Report/
+│   └─ definition.pbir
+└─ SalesReport.SemanticModel/
+    └─ definition/
+        ├─ model.tmdl
+        ├─ tables/
+        │   ├─ Sales.tmdl
+        │   └─ Date.tmdl
+        └─ relationships.tmdl
+      </code></pre>
+      <p>Why this matters:</p>
+      <table>
+        <thead>
+          <tr><th>Old way (<code>.pbix</code>)</th><th>New way (<code>.pbip</code> + TMDL)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Binary blob — no diffs</td><td>Plain text — line-by-line Git diffs</td></tr>
+          <tr><td>No meaningful code review</td><td>Real pull requests on measures &amp; model changes</td></tr>
+          <tr><td>Merge = overwrite &amp; pray</td><td>Branch, merge, resolve conflicts properly</td></tr>
+          <tr><td>Manual Publish to Prod</td><td>Automated, repeatable, audited deployment</td></tr>
+        </tbody>
+      </table>
+      <div style="border-left:4px solid #10b981;background:rgba(16,185,129,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">💡 Enable PBIP</p>
+        <p>In Power BI Desktop: <strong>File → Options and settings → Options → Preview features → Power BI Project (.pbip) save option</strong>. Then <strong>Save as → .pbip</strong>.</p>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>The Big Picture</h2>
+      <figure style="margin:1.5rem 0;">
+        <img src="/pbip-cicd-pipeline.png" alt="End-to-end PBIP CI/CD pipeline: Power BI Desktop to Azure Repos, pull request, multi-stage Azure Pipelines deploying Dev, Test and Prod Fabric workspaces with fabric-cicd" loading="lazy" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid rgba(148,163,184,0.15);" />
+        <figcaption style="text-align:center;font-size:0.85rem;color:#64748b;margin-top:0.5rem;">End-to-end flow: author in Power BI Desktop → PR review → multi-stage Fabric deployment.</figcaption>
+      </figure>
+      <p>Here's the full flow the diagram above illustrates:</p>
+      <ol>
+        <li><strong>Author</strong> the report/model in Power BI Desktop, save as <code>.pbip</code>.</li>
+        <li><strong>Branch &amp; push</strong> to Azure Repos on a <code>feature/*</code> branch.</li>
+        <li><strong>Pull Request</strong> → teammates review the TMDL diff; a CI build validates it.</li>
+        <li><strong>Merge to <code>main</code></strong> — this is the <strong>trigger</strong>.</li>
+        <li>Azure Pipelines runs a <strong>multi-stage</strong> deployment: Dev → Test → (approval) → Prod.</li>
+        <li>Each stage runs <code>deploy.py</code>, which calls <strong><code>fabric-cicd</code></strong>, authenticates with a <strong>service principal</strong>, and uses <strong><code>parameter.yml</code></strong> to point at the correct workspace and data sources.</li>
+      </ol>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem;margin:1.5rem 0;font-size:0.85rem;">
+        <span style="background:rgba(2,132,199,0.15);border:1px solid rgba(2,132,199,0.3);color:#e2e8f0;padding:0.4rem 0.7rem;border-radius:0.5rem;">Power BI Desktop (.pbip)</span>
+        <span style="color:#64748b;">→</span>
+        <span style="background:rgba(2,132,199,0.15);border:1px solid rgba(2,132,199,0.3);color:#e2e8f0;padding:0.4rem 0.7rem;border-radius:0.5rem;">Azure Repos (feature branch)</span>
+        <span style="color:#64748b;">→</span>
+        <span style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#e2e8f0;padding:0.4rem 0.7rem;border-radius:0.5rem;">Pull Request (review + CI)</span>
+        <span style="color:#64748b;">→</span>
+        <span style="background:rgba(2,132,199,0.15);border:1px solid rgba(2,132,199,0.3);color:#e2e8f0;padding:0.4rem 0.7rem;border-radius:0.5rem;">Azure Pipelines (trigger: main)</span>
+        <span style="color:#64748b;">→</span>
+        <span style="background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:#e2e8f0;padding:0.4rem 0.7rem;border-radius:0.5rem;">DEV</span>
+        <span style="color:#64748b;">→</span>
+        <span style="background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:#e2e8f0;padding:0.4rem 0.7rem;border-radius:0.5rem;">TEST</span>
+        <span style="color:#64748b;">→</span>
+        <span style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#e2e8f0;padding:0.4rem 0.7rem;border-radius:0.5rem;">Manual Approval</span>
+        <span style="color:#64748b;">→</span>
+        <span style="background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3);color:#e2e8f0;padding:0.4rem 0.7rem;border-radius:0.5rem;">PROD Workspace</span>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Prerequisites</h2>
+      <div style="border-left:4px solid #0ea5e9;background:rgba(14,165,233,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">ℹ️ What you need before starting</p>
+        <ul>
+          <li>A <strong>Microsoft Fabric</strong> capacity (or Power BI Premium / Fabric trial) with <strong>three workspaces</strong>: Dev, Test, Prod.</li>
+          <li>An <strong>Azure DevOps</strong> project with a Git repo.</li>
+          <li>An <strong>Entra ID service principal</strong> (app registration) added as a <strong>Member/Admin</strong> on all three workspaces.</li>
+          <li>Tenant setting <strong>"Service principals can use Fabric APIs"</strong> enabled.</li>
+          <li>Python 3.9+ available on the pipeline agent (the Microsoft-hosted <code>ubuntu-latest</code> agent works).</li>
+        </ul>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Step 1 — Connect the Repo &amp; Structure It</h2>
+      <p>Put your PBIP project under a clear source folder so the pipeline knows what to deploy:</p>
+      <pre><code>repo-root/
+├─ src/
+│   ├─ SalesReport.Report/
+│   └─ SalesReport.SemanticModel/
+├─ deploy.py
+├─ parameter.yml
+├─ requirements.txt
+└─ azure-pipelines.yml
+      </code></pre>
+      <p><code>requirements.txt</code>:</p>
+      <pre><code>fabric-cicd&gt;=0.1.0
+      </code></pre>
+      <p>Developers work locally, commit to a <code>feature/*</code> branch, and open a PR into <code>main</code>. Because TMDL is text, reviewers see exactly which measure or column changed.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Step 2 — Parameterize Per Environment (<code>parameter.yml</code>)</h2>
+      <p>The core idea of multi-stage deployment is <strong>one set of code, many environments</strong>. You never hardcode a workspace ID or a connection string — <code>fabric-cicd</code> swaps them at deploy time using <code>parameter.yml</code>.</p>
+      <pre><code class="language-yaml"># parameter.yml
+find_replace:
+  # Re-point the data source connection per environment
+  - find_value: "dev-sql.database.windows.net"
+    replace_value:
+      DEV: "dev-sql.database.windows.net"
+      TEST: "test-sql.database.windows.net"
+      PROD: "prod-sql.database.windows.net"
+
+  # Swap a referenced semantic model GUID (e.g. in a thin report)
+  - find_value: "00000000-dev-model-guid"
+    replace_value:
+      DEV: "00000000-dev-model-guid"
+      TEST: "11111111-test-model-guid"
+      PROD: "22222222-prod-model-guid"
+      </code></pre>
+      <div style="border-left:4px solid #6366f1;background:rgba(99,102,241,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">📝 How it works</p>
+        <p><code>fabric-cicd</code> scans your TMDL/report files, finds each <code>find_value</code>, and replaces it with the value matching the <strong>current <code>environment</code></strong> before publishing. The same commit therefore deploys correctly to Dev, Test, and Prod.</p>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Step 3 — The Deployment Script (<code>deploy.py</code>)</h2>
+      <p>This single script is reused by every stage. The environment name is passed in, so the script stays identical across Dev/Test/Prod.</p>
+      <pre><code class="language-python"># deploy.py
+import os
+from fabric_cicd import FabricWorkspace, publish_all_items
+
+# These come from pipeline variables / variable groups
+workspace_id = os.environ["FABRIC_WORKSPACE_ID"]
+environment  = os.environ["TARGET_ENVIRONMENT"]   # DEV | TEST | PROD
+
+target_workspace = FabricWorkspace(
+    workspace_id=workspace_id,
+    environment=environment,
+    repository_directory="./src",
+    item_type_in_scope=["SemanticModel", "Report"],
+)
+
+# Publishes/updates all in-scope items, applying parameter.yml swaps
+publish_all_items(target_workspace)
+
+print(f"✅ Deployed PBIP items to {environment} workspace {workspace_id}")
+      </code></pre>
+      <div style="border-left:4px solid #10b981;background:rgba(16,185,129,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">💡 Service principal authentication</p>
+        <p><code>fabric-cicd</code> builds on <code>azure-identity</code>. When you set the standard env vars <code>AZURE_CLIENT_ID</code>, <code>AZURE_CLIENT_SECRET</code>, and <code>AZURE_TENANT_ID</code>, <code>DefaultAzureCredential</code> picks them up automatically — no interactive login on the agent. Store the secret in a <strong>Variable Group linked to Azure Key Vault</strong>, never in the YAML.</p>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Step 4 — The Multi-Stage Pipeline (<code>azure-pipelines.yml</code>)</h2>
+      <p>This is where it all comes together. One YAML file, <strong>triggered on merge to <code>main</code></strong>, with three stages. Test depends on Dev; Prod depends on Test <strong>and</strong> a manual approval (configured via a DevOps <strong>Environment</strong>).</p>
+      <pre><code class="language-yaml"># azure-pipelines.yml
+trigger:
+  branches:
+    include:
+      - main          # fires when a PR is merged into main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  - group: fabric-cicd-secrets   # holds AZURE_CLIENT_SECRET (from Key Vault)
+
+stages:
+# ───────────────────────────── DEV ─────────────────────────────
+- stage: Deploy_DEV
+  displayName: "Deploy to DEV"
+  jobs:
+    - job: deploy
+      steps:
+        - template: templates/deploy-steps.yml
+          parameters:
+            targetEnv: DEV
+            workspaceId: $(DEV_WORKSPACE_ID)
+
+# ───────────────────────────── TEST ────────────────────────────
+- stage: Deploy_TEST
+  displayName: "Deploy to TEST"
+  dependsOn: Deploy_DEV
+  condition: succeeded()
+  jobs:
+    - job: deploy
+      steps:
+        - template: templates/deploy-steps.yml
+          parameters:
+            targetEnv: TEST
+            workspaceId: $(TEST_WORKSPACE_ID)
+
+# ───────────────────────────── PROD ────────────────────────────
+- stage: Deploy_PROD
+  displayName: "Deploy to PROD"
+  dependsOn: Deploy_TEST
+  condition: succeeded()
+  jobs:
+    - deployment: deploy
+      environment: fabric-prod      # ← attach approval checks here
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - template: templates/deploy-steps.yml
+                parameters:
+                  targetEnv: PROD
+                  workspaceId: $(PROD_WORKSPACE_ID)
+      </code></pre>
+      <p>The reusable step template keeps each stage to a few lines:</p>
+      <pre><code class="language-yaml"># templates/deploy-steps.yml
+parameters:
+  - name: targetEnv
+    type: string
+  - name: workspaceId
+    type: string
+
+steps:
+  - checkout: self
+
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.11'
+
+  - script: pip install -r requirements.txt
+    displayName: "Install fabric-cicd"
+
+  - script: python deploy.py
+    displayName: "Deploy to \${{ parameters.targetEnv }}"
+    env:
+      TARGET_ENVIRONMENT: \${{ parameters.targetEnv }}
+      FABRIC_WORKSPACE_ID: \${{ parameters.workspaceId }}
+      AZURE_CLIENT_ID: $(AZURE_CLIENT_ID)
+      AZURE_TENANT_ID: $(AZURE_TENANT_ID)
+      AZURE_CLIENT_SECRET: $(AZURE_CLIENT_SECRET)   # from Key Vault-linked group
+      </code></pre>
+      <div style="border-left:4px solid #f59e0b;background:rgba(245,158,11,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">⚠️ The approval gate is the whole point</p>
+        <p>The Prod stage uses a <code>deployment</code> job bound to an <strong>Environment</strong> named <code>fabric-prod</code>. In Azure DevOps, open <strong>Pipelines → Environments → fabric-prod → Approvals and checks</strong>, and add a required approver. Now Dev and Test deploy automatically, but <strong>nothing reaches Prod until a human clicks Approve.</strong></p>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Step 5 — The Trigger in Action</h2>
+      <p>Once configured, the day-to-day loop is beautifully boring:</p>
+      <div style="border-left:4px solid #a855f7;background:rgba(168,85,247,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">🔧 A typical change</p>
+        <ol>
+          <li>Analyst adds a <code>Profit Margin %</code> measure in Power BI Desktop, saves the <code>.pbip</code>.</li>
+          <li><code>git commit</code> → <code>git push</code> on <code>feature/profit-margin</code>.</li>
+          <li>Opens a PR. A reviewer sees the <strong>exact TMDL diff</strong> for the new measure and approves.</li>
+          <li><strong>Merge to <code>main</code></strong> → the pipeline fires.</li>
+          <li>DEV deploys (seconds). TEST deploys. The pipeline <strong>pauses at the Prod gate</strong>.</li>
+          <li>The BI lead reviews TEST, clicks <strong>Approve</strong> → PROD updates. Done.</li>
+        </ol>
+      </div>
+      <p>No one opened Power BI Desktop to publish. No one touched production by hand.</p>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Best Practices &amp; Gotchas</h2>
+      <div style="border-left:4px solid #ef4444;background:rgba(239,68,68,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">🚫 Common pitfalls</p>
+        <ul>
+          <li><strong>Service principal not on the workspace</strong> → 401/403 errors. Add the SP as a workspace <strong>Admin/Member</strong> in all three.</li>
+          <li><strong>Tenant setting disabled</strong> → enable <em>"Service principals can use Fabric APIs"</em> in the admin portal (scoped to a security group).</li>
+          <li><strong>Secret in YAML</strong> → never. Use a Variable Group linked to <strong>Azure Key Vault</strong>.</li>
+          <li><strong>Data source credentials</strong> → <code>fabric-cicd</code> deploys the <em>definition</em>; you still bind gateway/cloud connection credentials once per workspace.</li>
+          <li><strong>Branch policies</strong> → protect <code>main</code> so the only way in is a reviewed PR. That's what makes the trigger trustworthy.</li>
+        </ul>
+      </div>
+      <div style="border-left:4px solid #22c55e;background:rgba(34,197,94,0.08);border-radius:0 0.5rem 0.5rem 0;padding:1rem 1.25rem;margin:1.5rem 0;">
+        <p style="font-weight:700;color:#fff;margin:0 0 0.5rem;">✅ Checklist</p>
+        <p style="margin:0.25rem 0;">✓ PBIP saved as text (TMDL) and committed</p>
+        <p style="margin:0.25rem 0;">✓ <code>parameter.yml</code> covers all per-environment values</p>
+        <p style="margin:0.25rem 0;">✓ <code>deploy.py</code> reads env + workspace from pipeline variables</p>
+        <p style="margin:0.25rem 0;">✓ Three stages with <code>dependsOn</code> chaining</p>
+        <p style="margin:0.25rem 0;">✓ Prod stage bound to an Environment with an approval check</p>
+        <p style="margin:0.25rem 0;">✓ Secrets sourced from Key Vault, not YAML</p>
+      </div>
+    </section>
+    `,
+    `
+    <section class="mb-12">
+      <h2>Conclusion</h2>
+      <p>PBIP turns Power BI into proper source code; <code>fabric-cicd</code> turns Azure DevOps into a proper deployment engine. Together they give you what every serious data team wants: <strong>reviewed changes, repeatable deployments, environment isolation, and a human gate on production</strong> — all kicked off by nothing more than merging a pull request.</p>
+      <p>Set it up once, and "publishing a report" becomes a code review instead of a click-and-pray.</p>
+    </section>
+    `
+  ],
+  category: 'Power BI',
+  date: 'Jun 23, 2026',
+  dateISO: '2026-06-23',
+  readTime: '11 min read',
+  image: '/pbip-cicd-cover.png'
+},
+{
   slug: 'medallion-architecture-microsoft-fabric',
   title: 'Medallion Architecture in Microsoft Fabric: A Complete Implementation Guide',
   excerpt: 'In the modern data engineering landscape, the challenge is rarely about getting data—it’s about making it trustworthy, organized, and ready for action. Enter the Medallion Architecture.',
@@ -17,6 +840,11 @@ const blogPosts = [
 
       <p>Whether you are a data engineer building robust pipelines or an architect mapping out an enterprise data estate, this comprehensive guide will show you how to design and build a Medallion Architecture natively in Microsoft Fabric.</p>
     </section>
+
+    <figure style="margin:1.5rem 0;">
+      <img src="/Medallion.png" alt="Microsoft Fabric Medallion Architecture: Bronze (raw data) to Silver (filtered, cleaned data) to Gold (business-level aggregates) feeding Power BI" loading="lazy" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid rgba(148,163,184,0.15);" />
+      <figcaption style="text-align:center;font-size:0.85rem;color:#64748b;margin-top:0.5rem;">The Medallion Architecture in Microsoft Fabric — Bronze → Silver → Gold, feeding Power BI.</figcaption>
+    </figure>
 
     <section class="mb-12">
       <h2>What is the Medallion Architecture?</h2>
@@ -193,7 +1021,7 @@ if df_silver.filter(col("total_amount") < 0).count() > 0:
   date: 'Jun 1, 2026',
   dateISO: '2026-06-01',
   readTime: '12 min read',
-  image: '/Medallion.png'
+  image: '/medallion-cover.png'
 },
 {
     slug: 'why-fabric-is-a-new-analytics-platform-in-the-age-of-ai',
@@ -204,6 +1032,7 @@ if df_silver.filter(col("total_amount") < 0).count() > 0:
       '<p>Generative AI and language model services are enabling customers to create everyday AI experiences that reinvent how employees spend their time. However, powering these organization-specific AI experiences requires a constant supply of clean, trusted data from a well-managed and highly integrated analytics system.</p>',
       '<p>Unfortunately, most legacy analytics environments have evolved into a highly complex landscape and a labyrinth of specialized, disconnected services from hundreds of vendors. Customers have traditionally been forced to stitch together separate tools for data integration (ETL), data warehouses, independent reporting platforms, data lakes, and AI tooling ecosystems. This fragmentation incurs massive operational overhead, integration complexity, data duplication, and skyrocketing cloud costs.</p>',
       '<p><strong>Microsoft Fabric</strong> emerges as a true disruptor for this shift. It is not simply another standalone analytics tool; it represents a major strategic shift toward a <strong>unified enterprise analytics operating model</strong> designed specifically for the AI era.</p>',
+      '<figure style="margin:1.5rem 0;"><img src="/Fabric.png" alt="Microsoft Fabric — the unified data platform for AI transformation: Data Factory, Analytics, Databases, Real-Time Intelligence, IQ, Power BI, plus Copilot, OneLake, and Governance" loading="lazy" style="width:100%;height:auto;border-radius:0.75rem;border:1px solid rgba(148,163,184,0.15);" /><figcaption style="text-align:center;font-size:0.85rem;color:#64748b;margin-top:0.5rem;">Microsoft Fabric — the unified data platform for AI transformation.</figcaption></figure>',
       '<hr />',
       '<h2>1. A Complete, Unified SaaS Experience</h2>',
       '<p>Instead of forcing enterprises to absorb the heavy burden of making disconnected services function together, Microsoft Fabric introduces a unified Software as a Service (SaaS) ecosystem. Everything is automatically integrated and optimized, allowing users to sign up within seconds and get real business value within minutes.</p>',
@@ -280,7 +1109,7 @@ if df_silver.filter(col("total_amount") < 0).count() > 0:
     date: 'Jun 1, 2026',
     dateISO: '2026-06-01',
     readTime: '10 min read',
-    image: '/Fabric.png' // Serves straight out of your public/ directory
+    image: '/fabric-ai-cover.png' // Serves straight out of your public/ directory
   },
 
   {
@@ -347,99 +1176,8 @@ if df_silver.filter(col("total_amount") < 0).count() > 0:
   date: 'May 30, 2026',
   dateISO: '2026-05-30',
   readTime: '6 min read',
-  image: '/mcp.png'
+  image: '/mcp-cover.png'
 },
-
-  {
-    slug: 'building-data-pipeline-python-azure',
-    title: 'Building a Data Pipeline with Python and Azure',
-    excerpt: 'A practical guide to setting up automated ETL workflows using Python scripts and Azure Data Factory for enterprise-scale data.',
-    content: [
-      'Modern data analytics requires reliable, automated data pipelines. In this guide, I walk through how to build a production-ready ETL pipeline using Python and Azure Data Factory.',
-      'The Architecture: Our pipeline follows a medallion architecture -- Bronze (raw data), Silver (cleaned), and Gold (analytics-ready). Azure Data Factory orchestrates the pipeline, while Python handles complex transformations.',
-      'Step 1: Ingestion with Azure Data Factory -- Set up linked services to your data sources (SQL Server, REST APIs, flat files) and create copy activities to land raw data in Azure Blob Storage.',
-      'Step 2: Transformation with Python -- Use Azure Functions or Databricks notebooks to run Python scripts that clean, validate, and transform the raw data. Libraries like Pandas and PySpark are your best friends here.',
-      'Step 3: Loading and Modeling -- Load the transformed data into your analytics layer (Azure SQL, Synapse, or a Power BI dataflow) with proper indexing and partitioning.',
-      'Step 4: Orchestration and Monitoring -- Configure ADF triggers for scheduled or event-driven execution. Set up alerts for pipeline failures and build a monitoring dashboard in Power BI.',
-    ],
-    category: 'Data Engineering',
-    date: 'Jan 15, 2026',
-    dateISO: '2026-01-15',
-    readTime: '12 min read',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop',
-  },
-  {
-    slug: 'why-your-dashboard-isnt-telling-the-right-story',
-    title: "Why Your Dashboard Isn't Telling the Right Story",
-    excerpt: 'Common data visualization mistakes that mislead stakeholders and how to design dashboards that drive action, not confusion.',
-    content: [
-      'A beautiful dashboard is not the same as an effective one. I have reviewed hundreds of dashboards across industries, and the most common problem is not ugly visuals -- it is unclear storytelling.',
-      'Mistake 1: Too Many Metrics -- When everything is highlighted, nothing stands out. Focus on 3-5 key metrics that directly tie to business objectives. Everything else should be accessible through drill-through or tooltip details.',
-      'Mistake 2: Wrong Chart Types -- Pie charts for 15 categories, line charts for unrelated dimensions, 3D effects that distort data. Choose chart types based on what comparison you are making: trends over time (line), part-to-whole (stacked bar), ranking (horizontal bar).',
-      'Mistake 3: No Clear Hierarchy -- Users should immediately know where to look first. Use size, color, and position to create visual hierarchy. The most important KPI should be the largest element in the top-left corner.',
-      'Mistake 4: Missing Context -- A number without context is meaningless. Always show targets, previous period comparisons, or benchmarks. Is 85% good or bad? Without a target of 90%, users cannot judge.',
-      'The Fix: Start every dashboard with a clear question it needs to answer. Design for the decision-maker, not the data. Test with real users and iterate based on their feedback.',
-    ],
-    category: 'Best Practices',
-    date: 'Dec 8, 2025',
-    dateISO: '2025-12-08',
-    readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
-  },
-  {
-    slug: 'getting-started-with-microsoft-fabric',
-    title: 'Getting Started with Microsoft Fabric for BI Professionals',
-    excerpt: 'Microsoft Fabric unifies data engineering, data science, and business intelligence. Here is what Power BI developers need to know.',
-    content: [
-      'Microsoft Fabric represents a major shift in how Microsoft approaches the data platform. For Power BI developers, it is both an evolution and a revolution in how we work with data.',
-      'What is Fabric? Think of it as an all-in-one analytics platform that brings together data engineering (Data Factory, Synapse), data science (notebooks, ML), real-time analytics, and Power BI under a single SaaS experience with OneLake storage.',
-      'OneLake: The Foundation -- OneLake is Fabric\'s unified storage layer. All data, regardless of which Fabric workload created it, lives in OneLake in Delta/Parquet format. This means your Power BI semantic models can directly query the same data used by data engineers.',
-      'Lakehouses and Warehouses -- Fabric offers both lakehouse (schema-on-read, great for exploration) and warehouse (schema-on-write, great for structured reporting) patterns. As a BI professional, you will likely use both.',
-      'Direct Lake Mode -- This is the game-changer for Power BI. Direct Lake lets Power BI read directly from Delta tables in OneLake without import or DirectQuery. You get import-like performance with DirectQuery-like freshness.',
-      'My Recommendation: Start by migrating one existing dataflow to a Fabric lakehouse. Connect Power BI using Direct Lake mode and compare the performance. The learning curve is manageable, and the benefits are significant.',
-    ],
-    category: 'Microsoft Fabric',
-    date: 'Mar 1, 2026',
-    dateISO: '2026-03-01',
-    readTime: '10 min read',
-    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&h=300&fit=crop',
-  },
-  {
-    slug: 'power-query-tips-for-messy-data',
-    title: 'Power Query Tips for Handling Messy Real-World Data',
-    excerpt: 'Practical techniques for cleaning inconsistent formats, handling nulls, and transforming chaotic data sources in Power Query.',
-    content: [
-      'Real-world data is messy. Dates in 5 different formats, names spelled inconsistently, missing values everywhere. Power Query (M language) is your first line of defense.',
-      'Tip 1: Use Table.TransformColumns for Bulk Cleaning -- Instead of adding a custom column and removing the original, use Table.TransformColumns to clean data in place. This keeps your query steps cleaner and more maintainable.',
-      'Tip 2: Error Handling with try...otherwise -- Wrap risky transformations in try...otherwise blocks. This prevents a single bad row from breaking your entire data refresh.',
-      'Tip 3: Parameterize Your Sources -- Use Power Query parameters for file paths, server names, and date ranges. This makes it easy to switch between development and production environments.',
-      'Tip 4: Use List.Accumulate for Complex Logic -- When you need to apply sequential transformations or build values iteratively, List.Accumulate is more powerful (and faster) than nested if-then-else chains.',
-      'Tip 5: Fold When Possible -- Query folding pushes transformations back to the source database, dramatically improving performance. Check if your steps fold by right-clicking and looking for "View Native Query".',
-    ],
-    category: 'Power Query',
-    date: 'Nov 22, 2025',
-    dateISO: '2025-11-22',
-    readTime: '7 min read',
-    image: 'https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=500&h=300&fit=crop',
-  },
-  {
-    slug: 'row-level-security-power-bi-guide',
-    title: 'Implementing Row-Level Security in Power BI: A Complete Guide',
-    excerpt: 'Step-by-step guide to setting up static and dynamic RLS in Power BI for secure, multi-tenant reporting.',
-    content: [
-      'Row-Level Security (RLS) is critical for any organization sharing dashboards across teams. It ensures users only see the data they are authorized to access, without creating separate reports for each group.',
-      'Static RLS: The Basics -- Static RLS uses hardcoded filter expressions. You create roles in Power BI Desktop, define DAX filter expressions (e.g., [Region] = "East"), and assign users to roles in the Power BI Service.',
-      'Dynamic RLS: The Scalable Approach -- Dynamic RLS uses the USERPRINCIPALNAME() function to match the logged-in user against a security table. This scales infinitely without needing to update role definitions.',
-      'Building a Security Table -- Create a mapping table with columns for UserEmail and the dimension values they should access (Region, Department, etc.). Relate this table to your fact data through the relevant dimension.',
-      'Testing RLS -- Always test using "View as Role" in Power BI Desktop before publishing. Test with multiple user scenarios and edge cases (users with access to all regions, users with no access, etc.).',
-      'Common Pitfalls -- Bidirectional cross-filtering can bypass RLS if not configured carefully. Always set security relationships to filter in a single direction, and enable bidirectional only on the security table relationship.',
-    ],
-    category: 'Power BI',
-    date: 'Oct 30, 2025',
-    dateISO: '2025-10-30',
-    readTime: '9 min read',
-    image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&h=300&fit=crop',
-  },
 ]
 
 export default blogPosts

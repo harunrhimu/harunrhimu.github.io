@@ -46,7 +46,7 @@ export default function WhyWorkWithMe() {
             Real Problems,{' '}
             <span className="text-gradient">Real Solutions</span>
           </h2>
-          <p className="text-surface-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-muted mt-4 max-w-2xl mx-auto">
             Every engagement is focused on delivering measurable business impact —
             not just pretty charts.
           </p>
@@ -56,7 +56,7 @@ export default function WhyWorkWithMe() {
           {valueProps.map((item) => (
             <div
               key={item.title}
-              className="glass p-7 group hover:bg-surface-800/50 transition-all duration-300 hover:border-brand-500/30 flex flex-col"
+              className="glass p-7 group hover:bg-inset/50 transition-all duration-300 hover:border-brand-500/30 flex flex-col"
             >
               {/* Icon */}
               <div
@@ -68,7 +68,7 @@ export default function WhyWorkWithMe() {
               >
                 <svg
                   className={`w-7 h-7 ${
-                    item.accent === 'brand' ? 'text-brand-400' : 'text-warm-400'
+                    item.accent === 'brand' ? 'text-accent' : 'text-accent-warm'
                   }`}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -79,32 +79,32 @@ export default function WhyWorkWithMe() {
                 </svg>
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-5">{item.title}</h3>
+              <h3 className="text-lg font-bold text-heading mb-5">{item.title}</h3>
 
               {/* Problem */}
               <div className="mb-4">
-                <p className="text-[10px] text-surface-500 uppercase tracking-widest font-semibold mb-1.5">
+                <p className="text-[10px] text-muted uppercase tracking-widest font-semibold mb-1.5">
                   The Problem
                 </p>
-                <p className="text-sm text-surface-400 leading-relaxed">{item.problem}</p>
+                <p className="text-sm text-muted leading-relaxed">{item.problem}</p>
               </div>
 
               {/* Solution */}
               <div className="mb-4">
-                <p className="text-[10px] text-surface-500 uppercase tracking-widest font-semibold mb-1.5">
+                <p className="text-[10px] text-muted uppercase tracking-widest font-semibold mb-1.5">
                   My Solution
                 </p>
-                <p className="text-sm text-surface-300 leading-relaxed">{item.solution}</p>
+                <p className="text-sm text-body leading-relaxed">{item.solution}</p>
               </div>
 
               {/* Benefit */}
-              <div className="mt-auto pt-4 border-t border-surface-700/40">
+              <div className="mt-auto pt-4 border-t border-line/40">
                 <p className={`text-[10px] uppercase tracking-widest font-semibold mb-1.5 ${
-                  item.accent === 'brand' ? 'text-brand-400' : 'text-warm-400'
+                  item.accent === 'brand' ? 'text-accent' : 'text-accent-warm'
                 }`}>
                   Your Benefit
                 </p>
-                <p className="text-sm text-white font-medium leading-relaxed">{item.benefit}</p>
+                <p className="text-sm text-heading font-medium leading-relaxed">{item.benefit}</p>
               </div>
             </div>
           ))}
@@ -118,7 +118,7 @@ export default function WhyWorkWithMe() {
             </svg>
             Let's Solve Your Data Challenge
           </Link>
-          <p className="text-sm text-surface-500 mt-3">Free initial consultation — no strings attached</p>
+          <p className="text-sm text-muted mt-3">Free initial consultation — no strings attached</p>
         </div>
       </div>
     </section>

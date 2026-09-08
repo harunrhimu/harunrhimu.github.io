@@ -27,7 +27,7 @@ export default function CaseStudiesPage() {
             Power BI
             <span className="text-gradient"> Case Studies</span>
           </h1>
-          <p className="text-lg text-surface-400 max-w-2xl leading-relaxed">
+          <p className="text-lg text-muted max-w-2xl leading-relaxed">
             Real projects with measurable impact. Here's how I've helped businesses unlock the power of their data.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function CaseStudiesPage() {
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                   filter === ind
                     ? 'bg-brand-600 text-white shadow-lg shadow-brand-500/20'
-                    : 'bg-surface-900/60 text-surface-400 border border-surface-700/40 hover:border-brand-500/30 hover:text-brand-400'
+                    : 'bg-card/60 text-muted border border-line/40 hover:border-brand-500/30 hover:text-accent'
                 }`}
               >
                 {ind}
@@ -73,7 +73,7 @@ export default function CaseStudiesPage() {
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-surface-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-page/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600/90 text-white text-sm font-semibold backdrop-blur-sm">
                       See Full Case Study
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -86,25 +86,25 @@ export default function CaseStudiesPage() {
                 {/* Content */}
                 <div className="p-7">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="badge bg-brand-500/10 text-brand-300 border border-brand-500/20">{cs.industry}</span>
+                    <span className="badge bg-brand-500/10 text-accent-soft border border-brand-500/20">{cs.industry}</span>
                     {cs.featured && (
-                      <span className="badge bg-warm-500/10 text-warm-300 border border-warm-500/20">Featured</span>
+                      <span className="badge bg-warm-500/10 text-accent-warm border border-warm-500/20">Featured</span>
                     )}
-                    <span className="text-xs text-surface-500">{cs.client}</span>
+                    <span className="text-xs text-muted">{cs.client}</span>
                   </div>
 
-                  <h2 className="text-xl font-bold text-white mb-3">
+                  <h2 className="text-xl font-bold text-heading mb-3">
                     {cs.title}
                   </h2>
 
-                  <p className="text-sm text-surface-400 leading-relaxed mb-5 line-clamp-2">{cs.challenge}</p>
+                  <p className="text-sm text-muted leading-relaxed mb-5 line-clamp-2">{cs.challenge}</p>
 
                   {/* Results */}
-                  <div className="flex gap-6 mb-5 pt-5 border-t border-surface-700/40">
+                  <div className="flex gap-6 mb-5 pt-5 border-t border-line/40">
                     {cs.results.map((r) => (
                       <div key={r.label}>
                         <p className="text-xl font-bold text-gradient">{r.metric}</p>
-                        <p className="text-[10px] text-surface-500 font-medium">{r.label}</p>
+                        <p className="text-[10px] text-muted font-medium">{r.label}</p>
                       </div>
                     ))}
                   </div>
@@ -112,7 +112,7 @@ export default function CaseStudiesPage() {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {cs.tags.map((tag) => (
-                      <span key={tag} className="text-[10px] font-medium px-2 py-1 rounded-md bg-surface-800/60 text-surface-400 border border-surface-700/30">{tag}</span>
+                      <span key={tag} className="text-[10px] font-medium px-2 py-1 rounded-md bg-inset/60 text-muted border border-line/30">{tag}</span>
                     ))}
                   </div>
                 </div>

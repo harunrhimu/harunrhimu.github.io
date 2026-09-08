@@ -6,7 +6,7 @@ const FEATURED_VIDEO_TITLE = 'Web Data to Excel (Power Query) : Get, Clean & Ana
 
 export default function FeaturedVideo() {
   return (
-    <section className="section-pad bg-surface-900/20">
+    <section className="section-pad bg-card/20">
       <div className="container-xl">
         <div className="text-center mb-14">
           <p className="label mb-3">See It In Action</p>
@@ -14,7 +14,7 @@ export default function FeaturedVideo() {
             Featured{' '}
             <span className="text-gradient">Video</span>
           </h2>
-          <p className="text-surface-400 mt-4 max-w-xl mx-auto">
+          <p className="text-muted mt-4 max-w-xl mx-auto">
             Watch how I approach real data challenges and build solutions from scratch.
           </p>
         </div>
@@ -34,8 +34,8 @@ export default function FeaturedVideo() {
             {/* Caption bar */}
             <div className="p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h3 className="text-sm font-semibold text-white">{FEATURED_VIDEO_TITLE}</h3>
-                <p className="text-xs text-surface-500 mt-1">
+                <h3 className="text-sm font-semibold text-heading">{FEATURED_VIDEO_TITLE}</h3>
+                <p className="text-xs text-muted mt-1">
                   Step-by-step walkthrough of my dashboard development process
                 </p>
               </div>

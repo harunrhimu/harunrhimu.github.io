@@ -9,7 +9,7 @@ export function getPersonSchema() {
     url: SITE_URL,
     image: `${SITE_URL}/harunrhimu.jpg`,
     jobTitle: 'Microsoft Fabric Analytics Engineer & Power BI Design Specialist',
-    description: 'Microsoft Fabric Analytics Engineer and Power BI Design Specialist (PL-300, DP-600) specializing in Lakehouse architecture, Direct Lake semantic models, and executive-grade dashboards.',
+    description: 'Microsoft Fabric Analytics Engineer and Power BI Design Specialist (PL-300, DP-600, DP-700) specializing in Lakehouse architecture, Direct Lake semantic models, and executive-grade dashboards.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Dhaka',
@@ -26,6 +26,13 @@ export function getPersonSchema() {
       'DAX time intelligence', 'Data Modeling', 'ETL Pipelines', 'Python', 'SQL',
     ],
     hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        name: 'Microsoft Certified: Fabric Data Engineer Associate (DP-700)',
+        credentialCategory: 'Professional Certification',
+        recognizedBy: { '@type': 'Organization', name: 'Microsoft' },
+        url: 'https://learn.microsoft.com/api/credentials/share/en-us/harunrhimu/74B95A4F51334853?sharingId=56CBB4DAE1F18D3',
+      },
       {
         '@type': 'EducationalOccupationalCredential',
         name: 'Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)',

@@ -2,6 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   THEME TOKENS
+   Every colour in the app resolves through these. Values are raw RGB channel
+   triples (not hex) so Tailwind's opacity modifiers keep working:
+   `bg-card/60` compiles to rgb(var(--bg-card) / 0.6).
+
+   To swap the light palette, edit ONE block below (:root). Nothing else.
+   The warm off-white alternative is parked at the bottom of this file.
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* surfaces — warm off-white ("paper") */
+  --bg-page:        248 247 244;   /* #f8f7f4  warm page base        */
+  --bg-card:        255 255 254;   /* #fffffe  cards lift off page   */
+  --bg-band:        240 238 233;   /* #f0eee9  alternating sections  */
+  --bg-inset:       245 243 239;   /* #f5f3ef  code blocks, wells    */
+
+  /* ink — warm stone scale, all AA on the band (darkest light surface) */
+  --text-heading:    28  25  23;   /* #1c1917  15.08:1 on band       */
+  --text-body:       68  64  60;   /* #44403c   8.86:1 on band       */
+  --text-muted:     107 100  95;   /* #6b645f   5.01:1 on band       */
+  --text-subtle:    135 128 123;   /* #87807b   3.35:1 on band       */
+
+  /* lines */
+  --border:         231 229 228;   /* #e7e5e4 */
+  --border-strong:  214 211 209;   /* #d6d3d1 */
+
+  /* accents — text-safe values, AA on the band */
+  --accent:           4 120  87;   /* #047857  brand-700  4.73:1     */
+  --accent-soft:      5 150 105;   /* #059669  brand-600  large text */
+  --accent-fill:     16 185 129;   /* #10b981  fills, never text     */
+  --accent-warm:    146  64  14;   /* #92400e  amber, 6.11:1         */
+  --accent-warm-fill:245 158  11;  /* #f59e0b  fills only            */
+  --on-accent:      255 255 255;   /* ink on top of accent fills     */
+
+  /* effects */
+  --glass-bg:       255 255 254;
+  --glass-alpha:    0.74;
+  /* modal/lightbox scrim stays dark in BOTH themes so images read correctly */
+  --overlay:         28  25  23;
+  --shadow-card:    0 1px 2px rgb(28 25 23 / 0.05), 0 4px 16px rgb(28 25 23 / 0.07);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-page:          8  13  26;   /* #080d1a  surface-950 */
+  --bg-card:         15  23  42;   /* #0f172a  surface-900 */
+  --bg-band:         15  23  42;
+  --bg-inset:        30  41  59;   /* #1e293b  surface-800 */
+
+  --text-heading:   255 255 255;
+  --text-body:      203 213 225;   /* surface-300 */
+  --text-muted:     148 163 184;   /* surface-400 */
+  --text-subtle:    100 116 139;   /* surface-500 */
+
+  --border:          51  65  85;   /* surface-700 */
+  --border-strong:   71  85 105;   /* surface-600 */
+
+  --accent:          52 211 153;   /* brand-400 */
+  --accent-soft:    110 231 183;   /* brand-300 */
+  --accent-fill:     16 185 129;   /* brand-500 */
+  --accent-warm:    251 191  36;   /* warm-400 */
+  --accent-warm-fill:245 158  11;
+  --on-accent:      255 255 255;
+
+  --glass-bg:        15  23  42;
+  --glass-alpha:     0.60;
+  --overlay:          8  13  26;
+  --shadow-card:     0 1px 2px rgb(0 0 0 / 0.20), 0 4px 16px rgb(0 0 0 / 0.30);
+}
+
+/* Theme swaps instantly on toggle; individual components animate their own
+   colours, but we damp the full-page repaint so it does not strobe. */
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: background-color 200ms ease, border-color 200ms ease,
+                color 200ms ease, fill 200ms ease !important;
+    transition-delay: 0ms !important;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -9,24 +97,24 @@
   }
 
   body {
-    @apply bg-surface-950 text-surface-300 font-sans antialiased;
+    @apply bg-page text-body font-sans antialiased;
   }
 
   ::selection {
-    @apply bg-brand-500/30 text-white;
+    @apply bg-accent-fill/25 text-heading;
   }
 
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-surface-950;
+    @apply bg-page;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-surface-700 rounded-full;
+    @apply bg-line-strong rounded-full;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-surface-600;
+    @apply bg-muted;
   }
 }
 
@@ -48,27 +136,31 @@
   }
 
   .glass {
-    @apply bg-surface-900/60 backdrop-blur-md border border-surface-700/40 rounded-2xl;
+    background-color: rgb(var(--glass-bg) / var(--glass-alpha));
+    box-shadow: var(--shadow-card);
+    @apply backdrop-blur-md border border-line rounded-2xl;
   }
 
   .glass-sm {
-    @apply bg-surface-900/50 backdrop-blur-sm border border-surface-800/60 rounded-xl;
+    background-color: rgb(var(--glass-bg) / var(--glass-alpha));
+    @apply backdrop-blur-sm border border-line rounded-xl;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-brand-400 via-brand-300 to-warm-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent via-accent-soft to-accent-warm bg-clip-text text-transparent;
   }
 
   .text-gradient-warm {
-    @apply bg-gradient-to-r from-warm-400 to-brand-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent-warm to-accent bg-clip-text text-transparent;
   }
 
+  /* on-accent stays white in BOTH themes — this is a fill, not page text */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/20 hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/25 hover:-translate-y-0.5;
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 border border-surface-600 hover:border-brand-500/50 text-surface-200 hover:text-white font-semibold rounded-xl transition-all duration-300 hover:bg-brand-500/5;
+    @apply inline-flex items-center gap-2 px-7 py-3.5 border border-line-strong hover:border-accent/50 text-body hover:text-heading font-semibold rounded-xl transition-all duration-300 hover:bg-accent-fill/5;
   }
 
   .badge {
@@ -76,19 +168,19 @@
   }
 
   .heading-lg {
-    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold text-heading leading-tight tracking-tight;
   }
 
   .heading-md {
-    @apply text-3xl md:text-4xl font-bold text-white leading-tight;
+    @apply text-3xl md:text-4xl font-bold text-heading leading-tight;
   }
 
   .heading-sm {
-    @apply text-xl md:text-2xl font-bold text-white;
+    @apply text-xl md:text-2xl font-bold text-heading;
   }
 
   .label {
-    @apply text-xs font-semibold uppercase tracking-widest text-brand-400;
+    @apply text-xs font-semibold uppercase tracking-widest text-accent;
   }
 }
 
@@ -104,7 +196,7 @@
 .glass h2 {
   font-size: 1.5rem !important; /* text-2xl equivalent */
   font-weight: 700 !important;
-  color: #ffffff !important;
+  color: rgb(var(--text-heading)) !important;
   margin-top: 2rem !important;
   margin-bottom: 0.75rem !important;
 }
@@ -112,14 +204,14 @@
 .glass h3 {
   font-size: 1.25rem !important; /* text-xl equivalent */
   font-weight: 600 !important;
-  color: #e2e8f0 !important; /* text-surface-200 */
+  color: rgb(var(--text-body)) !important;
   margin-top: 1.5rem !important;
   margin-bottom: 0.5rem !important;
 }
 
 .glass hr {
   border: 0 !important;
-  border-top: 1px solid rgba(148, 163, 184, 0.2) !important; /* subtle border */
+  border-top: 1px solid rgb(var(--border)) !important;
   margin: 2rem 0 !important;
 }
 
@@ -140,8 +232,8 @@
 }
 
 .glass blockquote {
-  border-left: 4px solid #0284c7 !important; /* your brand/blue indicator accent */
-  background-color: rgba(15, 23, 42, 0.4) !important; /* dark slate tint */
+  border-left: 4px solid rgb(var(--accent)) !important;
+  background-color: rgb(var(--bg-inset) / 0.6) !important;
   padding: 1rem !important;
   font-style: italic !important;
   border-radius: 0 0.5rem 0.5rem 0 !important;
@@ -149,17 +241,17 @@
 }
 
 .glass code {
-  background-color: rgba(30, 41, 59, 0.7) !important;
+  background-color: rgb(var(--bg-inset)) !important;
   padding: 0.15rem 0.35rem !important;
   border-radius: 0.25rem !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   font-size: 0.9em !important;
-  color: #f1f5f9 !important;
+  color: rgb(var(--text-heading)) !important;
 }
 
 .glass pre {
-  background-color: rgba(15, 23, 42, 0.95) !important;
-  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+  background-color: rgb(var(--bg-inset)) !important;
+  border: 1px solid rgb(var(--border)) !important;
   border-radius: 0.75rem !important;
   padding: 1.25rem !important;
   margin: 1.5rem 0 !important;
@@ -173,6 +265,26 @@
   background: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
-  color: #f1f5f9 !important;
+  color: rgb(var(--text-heading)) !important;
   font-size: inherit !important;
 }
+
+/* ==========================================================================
+   ALTERNATIVE LIGHT PALETTE — cool grey (#f7f8fa)
+   To switch back: replace the light values in :root above with these.
+   All values are AA-verified against their own band colour.
+
+   --bg-page:       247 248 250;   #f7f8fa
+   --bg-card:       255 255 255;   #ffffff
+   --bg-band:       238 241 245;   #eef1f5
+   --bg-inset:      241 245 249;   #f1f5f9
+   --text-heading:   15  23  42;   #0f172a
+   --text-body:      51  65  85;   #334155
+   --text-muted:     93 107 128;   #5d6b80
+   --text-subtle:   125 139 156;   #7d8b9c
+   --border:        226 232 240;   #e2e8f0
+   --border-strong: 203 213 225;   #cbd5e1
+   --accent-warm:   180  83   9;   #b45309   (cool-grey bands tolerate this)
+   --glass-bg:      255 255 255;   --glass-alpha: 0.72;
+   --overlay:         8  13  26;
+   ========================================================================== */

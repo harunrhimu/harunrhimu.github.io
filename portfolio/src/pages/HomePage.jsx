@@ -7,6 +7,7 @@ import BeforeAfter from '../components/BeforeAfter'
 import MyApproach from '../components/MyApproach'
 import WhyWorkWithMe from '../components/WhyWorkWithMe'
 import AiFabricSection from '../components/AiFabricSection'
+import DashboardGalleryPreview from '../components/DashboardGalleryPreview'
 import FeaturedVideo from '../components/FeaturedVideo'
 import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
@@ -52,6 +53,10 @@ export default function HomePage() {
         <SectionDivider />
       </div>
       <AiFabricSection />
+      <div className="divider-spacing">
+        <SectionDivider />
+      </div>
+      <DashboardGalleryPreview />
       <div className="divider-spacing">
         <SectionDivider />
       </div>

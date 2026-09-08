@@ -226,17 +226,17 @@ export default function Projects() {
             return (
               <div
                 key={project.title}
-                className="glass-card glow-border group hover:bg-dark-800/60 transition-all duration-300 flex flex-col"
+                className="glass-card glow-border group hover:bg-inset/60 transition-all duration-300 flex flex-col"
               >
                 {/* Header */}
                 <div className="p-6 pb-0">
                   <div className={`w-14 h-14 rounded-2xl ${colors.iconBg} border ${colors.iconBorder} flex items-center justify-center ${colors.iconText} mb-4 group-hover:scale-110 transition-transform`}>
                     {project.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-primary-300 transition-colors">
+                  <h3 className="text-lg font-semibold text-heading mb-2 group-hover:text-primary-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-dark-400 leading-relaxed">{project.description}</p>
+                  <p className="text-sm text-muted leading-relaxed">{project.description}</p>
                 </div>
 
                 {/* Metrics */}
@@ -260,7 +260,7 @@ export default function Projects() {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="text-sm text-dark-400 hover:text-primary-400 transition-colors flex items-center gap-1 cursor-pointer"
+                      className="text-sm text-muted hover:text-primary-400 transition-colors flex items-center gap-1 cursor-pointer"
                     >
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
@@ -273,7 +273,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-dark-400 hover:text-primary-400 transition-colors flex items-center gap-1"
+                        className="text-sm text-muted hover:text-primary-400 transition-colors flex items-center gap-1"
                       >
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />

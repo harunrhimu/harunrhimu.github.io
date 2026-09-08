@@ -85,7 +85,7 @@ export default function CaseStudies() {
             Case
             <span className="text-gradient"> Studies</span>
           </h2>
-          <p className="text-surface-400 mt-4 max-w-2xl">
+          <p className="text-muted mt-4 max-w-2xl">
             Real projects with measurable impact. Here's how I've helped businesses unlock the power of their data.
           </p>
         </div>
@@ -94,35 +94,35 @@ export default function CaseStudies() {
         {caseStudies.filter(c => c.featured).map((cs) => (
           <div key={cs.title} className="glass p-8 md:p-10 mb-8 border-brand-500/20 hover:border-brand-500/40 transition-all">
             <div className="flex items-center gap-3 mb-6">
-              <span className="badge bg-brand-500/15 text-brand-300 border border-brand-500/20">Featured</span>
-              <span className="badge bg-surface-800/60 text-surface-300 border border-surface-700/40">{cs.industry}</span>
+              <span className="badge bg-brand-500/15 text-accent-soft border border-brand-500/20">Featured</span>
+              <span className="badge bg-inset/60 text-body border border-line/40">{cs.industry}</span>
             </div>
             <div className="grid lg:grid-cols-2 gap-8">
               <div>
                 <h3 className="heading-sm mb-3">{cs.title}</h3>
-                <p className="text-sm text-surface-500 font-medium mb-4">Client: {cs.client}</p>
+                <p className="text-sm text-muted font-medium mb-4">Client: {cs.client}</p>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-1">Challenge</p>
-                    <p className="text-sm text-surface-300 leading-relaxed">{cs.challenge}</p>
+                    <p className="text-xs font-semibold text-muted uppercase tracking-wider mb-1">Challenge</p>
+                    <p className="text-sm text-body leading-relaxed">{cs.challenge}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-1">Solution</p>
-                    <p className="text-sm text-surface-300 leading-relaxed">{cs.solution}</p>
+                    <p className="text-xs font-semibold text-muted uppercase tracking-wider mb-1">Solution</p>
+                    <p className="text-sm text-body leading-relaxed">{cs.solution}</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-5">
                   {cs.tags.map((tag) => (
-                    <span key={tag} className="badge bg-brand-500/10 text-brand-300 border border-brand-500/20">{tag}</span>
+                    <span key={tag} className="badge bg-brand-500/10 text-accent-soft border border-brand-500/20">{tag}</span>
                   ))}
                 </div>
               </div>
               <div className="flex items-center">
                 <div className="grid grid-cols-3 gap-4 w-full">
                   {cs.results.map((r) => (
-                    <div key={r.label} className="text-center p-5 bg-surface-800/40 rounded-2xl border border-surface-700/30">
+                    <div key={r.label} className="text-center p-5 bg-inset/40 rounded-2xl border border-line/30">
                       <p className="text-2xl md:text-3xl font-extrabold text-gradient mb-1">{r.metric}</p>
-                      <p className="text-xs text-surface-400 font-medium">{r.label}</p>
+                      <p className="text-xs text-muted font-medium">{r.label}</p>
                     </div>
                   ))}
                 </div>
@@ -136,35 +136,35 @@ export default function CaseStudies() {
           {caseStudies.filter(c => !c.featured).map((cs, idx) => (
             <div
               key={cs.title}
-              className="glass p-6 hover:bg-surface-800/40 transition-all duration-300 hover:border-surface-600/50 cursor-pointer"
+              className="glass p-6 hover:bg-inset/40 transition-all duration-300 hover:border-line-strong/50 cursor-pointer"
               onClick={() => setExpanded(expanded === idx ? null : idx)}
             >
               <div className="flex items-center gap-2 mb-4">
-                <span className="badge bg-surface-800/60 text-surface-300 border border-surface-700/40">{cs.industry}</span>
-                <span className="text-xs text-surface-500">{cs.client}</span>
+                <span className="badge bg-inset/60 text-body border border-line/40">{cs.industry}</span>
+                <span className="text-xs text-muted">{cs.client}</span>
               </div>
-              <h3 className="text-lg font-bold text-white mb-3">{cs.title}</h3>
+              <h3 className="text-lg font-bold text-heading mb-3">{cs.title}</h3>
 
               {/* Results Row */}
               <div className="flex gap-4 mb-4">
                 {cs.results.map((r) => (
                   <div key={r.label}>
                     <p className="text-lg font-bold text-gradient">{r.metric}</p>
-                    <p className="text-[10px] text-surface-500 font-medium">{r.label}</p>
+                    <p className="text-[10px] text-muted font-medium">{r.label}</p>
                   </div>
                 ))}
               </div>
 
               {/* Expandable Content */}
               {expanded === idx && (
-                <div className="space-y-3 pt-4 border-t border-surface-700/40 animate-fade-in">
+                <div className="space-y-3 pt-4 border-t border-line/40 animate-fade-in">
                   <div>
-                    <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-1">Challenge</p>
-                    <p className="text-sm text-surface-400 leading-relaxed">{cs.challenge}</p>
+                    <p className="text-xs font-semibold text-muted uppercase tracking-wider mb-1">Challenge</p>
+                    <p className="text-sm text-muted leading-relaxed">{cs.challenge}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider mb-1">Solution</p>
-                    <p className="text-sm text-surface-400 leading-relaxed">{cs.solution}</p>
+                    <p className="text-xs font-semibold text-muted uppercase tracking-wider mb-1">Solution</p>
+                    <p className="text-sm text-muted leading-relaxed">{cs.solution}</p>
                   </div>
                 </div>
               )}
@@ -172,12 +172,12 @@ export default function CaseStudies() {
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mt-4">
                 {cs.tags.map((tag) => (
-                  <span key={tag} className="text-[10px] font-medium px-2 py-1 rounded-md bg-surface-800/60 text-surface-400 border border-surface-700/30">{tag}</span>
+                  <span key={tag} className="text-[10px] font-medium px-2 py-1 rounded-md bg-inset/60 text-muted border border-line/30">{tag}</span>
                 ))}
               </div>
 
               {/* Toggle hint */}
-              <div className="flex items-center gap-1 mt-4 text-xs text-surface-500">
+              <div className="flex items-center gap-1 mt-4 text-xs text-muted">
                 <svg className={`w-3.5 h-3.5 transition-transform ${expanded === idx ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>

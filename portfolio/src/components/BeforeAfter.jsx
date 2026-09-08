@@ -18,7 +18,7 @@ const afterItems = [
 
 export default function BeforeAfter() {
   return (
-    <section className="section-pad bg-surface-900/20">
+    <section className="section-pad bg-card/20">
       <div className="container-xl">
         <div className="text-center mb-14">
           <p className="label mb-3">The Transformation</p>
@@ -26,7 +26,7 @@ export default function BeforeAfter() {
             From Spreadsheet Chaos to{' '}
             <span className="text-gradient">Data-Driven Clarity</span>
           </h2>
-          <p className="text-surface-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-muted mt-4 max-w-2xl mx-auto">
             Here's what changes when you invest in a proper data foundation.
           </p>
         </div>
@@ -48,7 +48,7 @@ export default function BeforeAfter() {
                   <svg className="w-4 h-4 text-red-400/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                  <span className="text-sm text-surface-400 leading-relaxed">{item}</span>
+                  <span className="text-sm text-muted leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -58,19 +58,19 @@ export default function BeforeAfter() {
           <div className="glass p-7 border-brand-500/20 bg-brand-500/[0.02]">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
-                <svg className="w-5 h-5 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-brand-400">After</h3>
+              <h3 className="text-lg font-bold text-accent">After</h3>
             </div>
             <ul className="space-y-3">
               {afterItems.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <svg className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-4 h-4 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
-                  <span className="text-sm text-surface-300 leading-relaxed">{item}</span>
+                  <span className="text-sm text-body leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>

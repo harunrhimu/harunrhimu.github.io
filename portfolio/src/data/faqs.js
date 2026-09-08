@@ -1,7 +1,7 @@
 const faqs = [
   {
     q: 'How long does a typical project take?',
-    a: 'Most projects take 2-6 weeks depending on scope. A single Power BI dashboard can be ready in 1-2 weeks. A full Microsoft Fabric implementation with Lakehouse, pipelines, and multiple dashboards typically takes 4-6 weeks.',
+    a: 'The flagship engagement runs 4 weeks: your live dashboard is up by week 3, and week 4 is dedicated to refinement, training, and full handover. Larger Microsoft Fabric implementations with Lakehouse and multiple dashboards may extend beyond that depending on scope.',
   },
   {
     q: 'What does the investment look like?',

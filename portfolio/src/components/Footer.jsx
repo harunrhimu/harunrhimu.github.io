@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-surface-800/50 bg-surface-950">
+    <footer className="border-t border-line/50 bg-page">
       <div className="container-xl py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
@@ -14,11 +14,11 @@ export default function Footer() {
                 H
               </div>
               <div>
-                <span className="text-white font-bold text-lg">Harun</span>
-                <span className="text-brand-400 font-bold text-lg">.</span>
+                <span className="text-heading font-bold text-lg">Harun</span>
+                <span className="text-accent font-bold text-lg">.</span>
               </div>
             </Link>
-            <p className="text-sm text-surface-400 leading-relaxed mb-4">
+            <p className="text-sm text-muted leading-relaxed mb-4">
               Turning raw data into business intelligence. Power BI & Fabric Developer & Data Analyst based in Dhaka.
             </p>
             <div className="flex gap-3">
@@ -30,7 +30,7 @@ export default function Footer() {
                 <a
                   key={s.name}
                   href="#"
-                  className="w-9 h-9 rounded-lg bg-surface-900/60 border border-surface-800/50 flex items-center justify-center text-surface-500 hover:text-brand-400 hover:border-brand-500/30 transition-all"
+                  className="w-9 h-9 rounded-lg bg-card/60 border border-line/50 flex items-center justify-center text-muted hover:text-accent hover:border-brand-500/30 transition-all"
                   aria-label={s.name}
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">{s.icon}</svg>
@@ -41,23 +41,24 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Navigation</h4>
+            <h4 className="text-sm font-semibold text-heading mb-4">Navigation</h4>
             <ul className="space-y-2.5">
               {[
                 { label: 'Home', to: '/' },
                 { label: 'Services', to: '/services' },
                 { label: 'Case Studies', to: '/case-studies' },
+                { label: 'Dashboard Gallery', to: '/dashboard-gallery' },
                 { label: 'Blog', to: '/blog' },
                 { label: 'About Me', to: '/about' },
                 { label: 'Contact', to: '/contact' },
               ].map((link) => (
                 <li key={link.label}>
                   {link.to.startsWith('/#') ? (
-                    <a href={link.to.replace('/', '')} className="text-sm text-surface-400 hover:text-brand-400 transition-colors">
+                    <a href={link.to.replace('/', '')} className="text-sm text-muted hover:text-accent transition-colors">
                       {link.label}
                     </a>
                   ) : (
-                    <Link to={link.to} className="text-sm text-surface-400 hover:text-brand-400 transition-colors">
+                    <Link to={link.to} className="text-sm text-muted hover:text-accent transition-colors">
                       {link.label}
                     </Link>
                   )}
@@ -68,11 +69,11 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Services</h4>
+            <h4 className="text-sm font-semibold text-heading mb-4">Services</h4>
             <ul className="space-y-2.5">
               {['Dashboard Development', 'Data Analysis', 'ETL Pipelines', 'Data Modeling', 'BI Training', 'Automation'].map((s) => (
                 <li key={s}>
-                  <Link to="/services" className="text-sm text-surface-400 hover:text-brand-400 transition-colors">{s}</Link>
+                  <Link to="/services" className="text-sm text-muted hover:text-accent transition-colors">{s}</Link>
                 </li>
               ))}
             </ul>
@@ -80,12 +81,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Contact</h4>
+            <h4 className="text-sm font-semibold text-heading mb-4">Contact</h4>
             <ul className="space-y-2.5">
-              <li className="text-sm text-surface-400">harunrhimu@gmail.com</li>
-              <li className="text-sm text-surface-400">Dhaka, Bangladesh</li>
+              <li className="text-sm text-muted">harunrhimu@gmail.com</li>
+              <li className="text-sm text-muted">Dhaka, Bangladesh</li>
               <li className="mt-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 text-sm text-brand-400 hover:text-brand-300 font-medium transition-colors">
+                <Link to="/contact" className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-soft font-medium transition-colors">
                   Send a message
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -97,13 +98,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-surface-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-surface-500">
+        <div className="pt-8 border-t border-line/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted">
             &copy; {currentYear} harunrhimu. All rights reserved.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="inline-flex items-center gap-1.5 text-xs text-surface-500 hover:text-brand-400 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 const links = [
   { name: 'Home', to: '/' },
   { name: 'Services', to: '/services' },
   { name: 'Case Studies', to: '/case-studies' },
+  { name: 'Gallery', to: '/dashboard-gallery' },
   { name: 'Blog', to: '/blog' },
   { name: 'About Me', to: '/about' },
   { name: 'Contact', to: '/contact' },
@@ -78,7 +80,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-surface-950/90 backdrop-blur-xl border-b border-surface-800/50 shadow-xl shadow-surface-950/30'
+            ? 'bg-page/90 backdrop-blur-xl border-b border-line/50 shadow-xl shadow-heading/10'
             : 'bg-transparent'
         }`}
       >
@@ -92,9 +94,9 @@ export default function Navbar() {
                 className="w-10 h-10 object-contain group-hover:scale-105 transition-transform"
               />
               <div className="hidden sm:block">
-                <span className="text-white font-bold text-lg">Pibric</span>
-                <span className="text-brand-400 font-bold text-lg">.</span>
-                <p className="text-[10px] text-surface-500 font-medium -mt-1 tracking-wider uppercase">Power BI & Fabric</p>
+                <span className="text-heading font-bold text-lg">Pibric</span>
+                <span className="text-accent font-bold text-lg">.</span>
+                <p className="text-[10px] text-muted font-medium -mt-1 tracking-wider uppercase">Power BI & Fabric</p>
               </div>
             </Link>
 
@@ -105,8 +107,8 @@ export default function Navbar() {
                   link,
                   `text-sm font-medium transition-colors duration-200 ${
                     isActive(link.to)
-                      ? 'text-brand-400'
-                      : 'text-surface-400 hover:text-brand-400'
+                      ? 'text-accent'
+                      : 'text-muted hover:text-accent'
                   }`,
                   link.name
                 )
@@ -115,10 +117,11 @@ export default function Navbar() {
 
             {/* Right */}
             <div className="flex items-center gap-3">
-              <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-900/60 border border-surface-800/50">
+              <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-card/60 border border-line/50">
                 <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
-                <span className="text-xs text-surface-400 font-medium">Open to work</span>
+                <span className="text-xs text-muted font-medium">Open to work</span>
               </div>
+              <ThemeToggle />
               <Link
                 to="/contact"
                 className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-brand-500/20"
@@ -128,7 +131,7 @@ export default function Navbar() {
               {/* Mobile Toggle */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden w-10 h-10 rounded-xl bg-surface-900/60 border border-surface-800/50 flex items-center justify-center text-surface-400 hover:text-white transition-colors"
+                className="lg:hidden w-10 h-10 rounded-xl bg-card/60 border border-line/50 flex items-center justify-center text-muted hover:text-heading transition-colors"
               >
                 {mobileOpen ? (
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -148,13 +151,13 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 lg:hidden animate-fade-in">
-          <div className="absolute inset-0 bg-surface-950/95 backdrop-blur-xl" onClick={() => setMobileOpen(false)} />
+          <div className="absolute inset-0 bg-page/95 backdrop-blur-xl" onClick={() => setMobileOpen(false)} />
           <div className="relative z-10 flex flex-col items-center justify-center h-full gap-6">
             {links.map((link) =>
               renderLink(
                 link,
                 `text-2xl font-semibold transition-colors ${
-                  isActive(link.to) ? 'text-brand-400' : 'text-surface-200 hover:text-brand-400'
+                  isActive(link.to) ? 'text-accent' : 'text-body hover:text-accent'
                 }`,
                 `mobile-${link.name}`
               )

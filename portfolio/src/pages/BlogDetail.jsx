@@ -13,7 +13,7 @@ export default function BlogDetail() {
       <main className="pt-20 section-pad">
         <div className="container-xl text-center">
           <h1 className="heading-md mb-4">Article Not Found</h1>
-          <p className="text-surface-400 mb-8">The blog post you're looking for doesn't exist.</p>
+          <p className="text-muted mb-8">The blog post you're looking for doesn't exist.</p>
           <Link to="/blog" className="btn-primary">View All Articles</Link>
         </div>
       </main>
@@ -42,20 +42,20 @@ export default function BlogDetail() {
           <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog' }, { name: post.title, url: `/blog/${post.slug}` }]} />
 
           <div className="flex items-center gap-3 mb-5">
-            <span className="badge bg-brand-500/15 text-brand-300 border border-brand-500/20">{post.category}</span>
-            <span className="text-sm text-surface-500">{post.readTime}</span>
-            <span className="text-sm text-surface-500">{post.date}</span>
+            <span className="badge bg-brand-500/15 text-accent-soft border border-brand-500/20">{post.category}</span>
+            <span className="text-sm text-muted">{post.readTime}</span>
+            <span className="text-sm text-muted">{post.date}</span>
           </div>
 
           <h1 className="heading-lg mb-6">{post.title}</h1>
-          <p className="text-lg text-surface-400 leading-relaxed">{post.excerpt}</p>
+          <p className="text-lg text-muted leading-relaxed">{post.excerpt}</p>
         </div>
       </section>
 
       {/* Featured Image */}
       <section className="pb-10">
         <div className="container-xl max-w-4xl">
-          <div className="rounded-2xl overflow-hidden border border-surface-700/40">
+          <div className="rounded-2xl overflow-hidden border border-line/40">
             <img src={post.image} alt={post.title} loading="lazy" className="w-full h-auto object-contain" />
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function BlogDetail() {
                 // Fallback: If it's your old blog post format without HTML tags, render standard paragraph
                 if (!trimmedHtml.startsWith('<')) {
                   return (
-                    <p key={i} className="text-surface-300 leading-relaxed">
+                    <p key={i} className="text-body leading-relaxed">
                       {elementHtml}
                     </p>
                   )
@@ -106,7 +106,7 @@ export default function BlogDetail() {
                 return (
                   <div
                     key={i}
-                    className="text-surface-300 leading-relaxed"
+                    className="text-body leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: safeHtml }}
                   />
                 )
@@ -118,8 +118,8 @@ export default function BlogDetail() {
           <div className="glass p-6 mt-8 flex items-center gap-4">
             <img src="/harunrhimu.jpg" alt="Harun" loading="lazy" className="w-12 h-12 rounded-full object-cover" />
             <div>
-              <p className="text-white font-semibold">Md Harun Or Roshid</p>
-              <p className="text-sm text-surface-400">Power BI Developer & Data Analyst</p>
+              <p className="text-heading font-semibold">Md Harun Or Roshid</p>
+              <p className="text-sm text-muted">Power BI Developer & Data Analyst</p>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function BlogDetail() {
       </article>
       {/* Related Posts */}
       {otherPosts.length > 0 && (
-        <section className="section-pad bg-surface-900/20">
+        <section className="section-pad bg-card/20">
           <div className="container-xl">
             <h2 className="heading-sm mb-8">More Articles</h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -142,8 +142,8 @@ export default function BlogDetail() {
                     <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-5">
-                    <span className="badge bg-brand-500/10 text-brand-300 border border-brand-500/20 mb-2">{p.category}</span>
-                    <h3 className="text-sm font-bold text-white group-hover:text-brand-300 transition-colors line-clamp-2">{p.title}</h3>
+                    <span className="badge bg-brand-500/10 text-accent-soft border border-brand-500/20 mb-2">{p.category}</span>
+                    <h3 className="text-sm font-bold text-heading group-hover:text-accent-soft transition-colors line-clamp-2">{p.title}</h3>
                   </div>
                 </Link>
               ))}
