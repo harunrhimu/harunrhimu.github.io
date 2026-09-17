@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="The causal chain: demand concentration leads to slow delivery in distant states, which drives the lowest satisfaction scores">
+  <rect width="1200" height="400" rx="18" fill="#F5F1EB"/>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <text x="40" y="48" font-size="25" font-weight="700" fill="#202020">The chain the six pages build, in order</text>
+    <text x="40" y="76" font-size="13.5" fill="#8A8D93">Each page opens a link. The last page closes it — and the conclusion is an operations decision, not a pricing one.</text>
+
+    <!-- 1 -->
+    <rect x="40" y="110" width="200" height="170" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="68" cy="140" r="13" fill="#F5F1EB"/><text x="68" y="145" font-size="11.5" font-weight="700" fill="#8A8D93" text-anchor="middle">1</text>
+    <text x="58" y="180" font-size="12.5" font-weight="700" fill="#202020">Demand</text>
+    <text x="58" y="196" font-size="12.5" font-weight="700" fill="#202020">concentrates</text>
+    <text x="58" y="232" font-size="24" font-weight="700" fill="#F4A261">37.4%</text>
+    <text x="58" y="254" font-size="10" fill="#8A8D93">of all revenue sits in</text>
+    <text x="58" y="268" font-size="10" fill="#8A8D93">a single state</text>
+    <path d="M250,187 L264,195 L250,203" fill="none" stroke="#F4A261" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 2 -->
+    <rect x="268" y="110" width="200" height="170" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="296" cy="140" r="13" fill="#F5F1EB"/><text x="296" y="145" font-size="11.5" font-weight="700" fill="#8A8D93" text-anchor="middle">2</text>
+    <text x="286" y="180" font-size="12.5" font-weight="700" fill="#202020">Supply follows</text>
+    <text x="286" y="196" font-size="12.5" font-weight="700" fill="#202020">demand</text>
+    <text x="286" y="232" font-size="24" font-weight="700" fill="#F4A261">same region</text>
+    <text x="286" y="254" font-size="10" fill="#8A8D93">sellers cluster where</text>
+    <text x="286" y="268" font-size="10" fill="#8A8D93">the buyers already are</text>
+    <path d="M478,187 L492,195 L478,203" fill="none" stroke="#F4A261" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 3 -->
+    <rect x="496" y="110" width="200" height="170" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="524" cy="140" r="13" fill="#F5F1EB"/><text x="524" y="145" font-size="11.5" font-weight="700" fill="#8A8D93" text-anchor="middle">3</text>
+    <text x="514" y="180" font-size="12.5" font-weight="700" fill="#202020">Distance costs</text>
+    <text x="514" y="196" font-size="12.5" font-weight="700" fill="#202020">days</text>
+    <text x="514" y="232" font-size="24" font-weight="700" fill="#E76F51">29.4 vs 8.8</text>
+    <text x="514" y="254" font-size="10" fill="#8A8D93">delivery days — slowest</text>
+    <text x="514" y="268" font-size="10" fill="#8A8D93">state vs fastest</text>
+    <path d="M706,187 L720,195 L706,203" fill="none" stroke="#F4A261" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 4 -->
+    <rect x="724" y="110" width="200" height="170" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="752" cy="140" r="13" fill="#F5F1EB"/><text x="752" y="145" font-size="11.5" font-weight="700" fill="#8A8D93" text-anchor="middle">4</text>
+    <text x="742" y="180" font-size="12.5" font-weight="700" fill="#202020">Slow delivery</text>
+    <text x="742" y="196" font-size="12.5" font-weight="700" fill="#202020">costs goodwill</text>
+    <text x="742" y="232" font-size="24" font-weight="700" fill="#E76F51">lowest scores</text>
+    <text x="742" y="254" font-size="10" fill="#8A8D93">the slowest states rank</text>
+    <text x="742" y="268" font-size="10" fill="#8A8D93">worst on satisfaction</text>
+    <path d="M934,187 L948,195 L934,203" fill="none" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 5 -->
+    <rect x="952" y="110" width="200" height="170" rx="14" fill="#F4A261"/>
+    <circle cx="980" cy="140" r="13" fill="#202020"/><text x="980" y="145" font-size="11.5" font-weight="700" fill="#F4A261" text-anchor="middle">5</text>
+    <text x="970" y="180" font-size="12.5" font-weight="700" fill="#202020">So the lever is</text>
+    <text x="970" y="196" font-size="12.5" font-weight="700" fill="#202020">operational</text>
+    <text x="970" y="230" font-size="19" font-weight="700" fill="#202020">regional</text>
+    <text x="970" y="252" font-size="19" font-weight="700" fill="#202020">logistics</text>
+    <text x="970" y="272" font-size="10" fill="#8A4B18">not discounts, not assortment</text>
+
+    <rect x="40" y="312" width="1112" height="54" rx="12" fill="#2B2B2B"/>
+    <text x="596" y="345" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">Discounting a category whose real problem is a 29-day delivery burns margin and fixes nothing.</text>
+  </g>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 790" width="1200" height="790" role="img" aria-label="Star schema: one fact table, Fact Orders Items, surrounded by five conformed dimensions">
+  <rect width="1200" height="790" rx="18" fill="#F5F1EB"/>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <text x="40" y="48" font-size="25" font-weight="700" fill="#202020">The star schema — one fact, five conformed dimensions</text>
+    <text x="40" y="76" font-size="13.5" fill="#8A8D93">Filters flow one way only: dimension → fact. Every measure returns the same total no matter which slicer produced it.</text>
+
+    <!-- ===== connectors (drawn first, boxes cover the ends) ===== -->
+    <g stroke="#C9A227" stroke-width="0" fill="none"/>
+    <line x1="600" y1="345" x2="600" y2="223" stroke="#F4A261" stroke-width="2.5"/>
+    <line x1="455" y1="352" x2="305" y2="285" stroke="#F4A261" stroke-width="2.5"/>
+    <line x1="745" y1="352" x2="895" y2="285" stroke="#F4A261" stroke-width="2.5"/>
+    <line x1="455" y1="518" x2="305" y2="585" stroke="#F4A261" stroke-width="2.5"/>
+    <line x1="745" y1="518" x2="895" y2="585" stroke="#F4A261" stroke-width="2.5"/>
+    <line x1="425" y1="470" x2="182" y2="295" stroke="#8A8D93" stroke-width="2" stroke-dasharray="7 6"/>
+
+    <!-- ===== FACT ===== -->
+    <rect x="425" y="345" width="350" height="180" rx="14" fill="#F4A261"/>
+    <text x="450" y="376" font-size="10" font-weight="700" fill="#8A4B18" letter-spacing="1.6">★ FACT · LINE GRAIN</text>
+    <text x="450" y="404" font-size="21" font-weight="700" fill="#202020">Fact Orders Items</text>
+    <text x="450" y="428" font-size="12.5" fill="#202020">112,650 rows — one row per order line</text>
+    <line x1="450" y1="446" x2="750" y2="446" stroke="#202020" stroke-opacity="0.2" stroke-width="1"/>
+    <text x="450" y="470" font-size="11.5" font-weight="700" fill="#202020">MEASURED price · freight_value</text>
+    <text x="450" y="490" font-size="11" fill="#8A4B18">KEYS order_id · customer_id · product_id</text>
+    <text x="450" y="508" font-size="11" fill="#8A4B18">seller_id · Order Purchase Date</text>
+
+    <!-- ===== DIM ORDER (top) ===== -->
+    <rect x="475" y="105" width="250" height="118" rx="12" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <rect x="475" y="105" width="250" height="4" rx="2" fill="#2B2B2B"/>
+    <text x="493" y="132" font-size="9" font-weight="700" fill="#8A8D93" letter-spacing="1.4">DIMENSION</text>
+    <text x="707" y="132" font-size="11" font-weight="700" fill="#E76F51" text-anchor="end">99,441 rows</text>
+    <text x="493" y="156" font-size="15" font-weight="700" fill="#202020">Dim Order</text>
+    <line x1="493" y1="168" x2="707" y2="168" stroke="#E8E1D6"/>
+    <text x="493" y="188" font-size="10.5" fill="#55575C">order_status · 5 timestamps</text>
+    <text x="493" y="206" font-size="10.5" fill="#55575C">payment + review consolidated in</text>
+
+    <!-- ===== DIM DATE (upper left) ===== -->
+    <rect x="55" y="175" width="250" height="118" rx="12" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <rect x="55" y="175" width="250" height="4" rx="2" fill="#2B2B2B"/>
+    <text x="73" y="202" font-size="9" font-weight="700" fill="#8A8D93" letter-spacing="1.4">DIMENSION · CALENDAR</text>
+    <text x="287" y="202" font-size="11" font-weight="700" fill="#E76F51" text-anchor="end">1,096 rows</text>
+    <text x="73" y="226" font-size="15" font-weight="700" fill="#202020">Dim Date</text>
+    <line x1="73" y1="238" x2="287" y2="238" stroke="#E8E1D6"/>
+    <text x="73" y="258" font-size="10.5" fill="#55575C">Year · Quarter · Month · YearMonth</text>
+    <text x="73" y="276" font-size="10.5" fill="#55575C">DayOfWeek · MonthNo sort key</text>
+
+    <!-- ===== DIM CUSTOMER (upper right) ===== -->
+    <rect x="895" y="175" width="250" height="118" rx="12" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <rect x="895" y="175" width="250" height="4" rx="2" fill="#2B2B2B"/>
+    <text x="913" y="202" font-size="9" font-weight="700" fill="#8A8D93" letter-spacing="1.4">DIMENSION</text>
+    <text x="1127" y="202" font-size="11" font-weight="700" fill="#E76F51" text-anchor="end">99,441 rows</text>
+    <text x="913" y="226" font-size="15" font-weight="700" fill="#202020">Dim Customer</text>
+    <line x1="913" y1="238" x2="1127" y2="238" stroke="#E8E1D6"/>
+    <text x="913" y="258" font-size="10.5" fill="#55575C">96,096 unique people behind them</text>
+    <text x="913" y="276" font-size="10.5" fill="#55575C">city · state · zip prefix</text>
+
+    <!-- ===== DIM PRODUCT (lower left) ===== -->
+    <rect x="55" y="585" width="250" height="118" rx="12" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <rect x="55" y="585" width="250" height="4" rx="2" fill="#2B2B2B"/>
+    <text x="73" y="612" font-size="9" font-weight="700" fill="#8A8D93" letter-spacing="1.4">DIMENSION</text>
+    <text x="287" y="612" font-size="11" font-weight="700" fill="#E76F51" text-anchor="end">32,951 rows</text>
+    <text x="73" y="636" font-size="15" font-weight="700" fill="#202020">Dim Product</text>
+    <line x1="73" y1="648" x2="287" y2="648" stroke="#E8E1D6"/>
+    <text x="73" y="668" font-size="10.5" fill="#55575C">category in English — flattened in</text>
+    <text x="73" y="686" font-size="10.5" fill="#55575C">weight · length · height · width</text>
+
+    <!-- ===== DIM SELLER (lower right) ===== -->
+    <rect x="895" y="585" width="250" height="118" rx="12" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <rect x="895" y="585" width="250" height="4" rx="2" fill="#2B2B2B"/>
+    <text x="913" y="612" font-size="9" font-weight="700" fill="#8A8D93" letter-spacing="1.4">DIMENSION</text>
+    <text x="1127" y="612" font-size="11" font-weight="700" fill="#E76F51" text-anchor="end">3,095 rows</text>
+    <text x="913" y="636" font-size="15" font-weight="700" fill="#202020">Dim Seller</text>
+    <line x1="913" y1="648" x2="1127" y2="648" stroke="#E8E1D6"/>
+    <text x="913" y="668" font-size="10.5" fill="#55575C">city · state</text>
+    <text x="913" y="686" font-size="10.5" fill="#55575C">the supply side of the marketplace</text>
+
+    <!-- ===== relationship chips (on top) ===== -->
+    <g font-size="11" text-anchor="middle">
+      <rect x="527" y="271" width="146" height="26" rx="13" fill="#FFFFFF" stroke="#E8E1D6"/>
+      <text x="600" y="288" fill="#55575C">order_id · many : 1</text>
+
+      <rect x="277" y="305" width="206" height="26" rx="13" fill="#FFFFFF" stroke="#E8E1D6"/>
+      <text x="380" y="322" fill="#55575C">Order Purchase Date · many : 1</text>
+
+      <rect x="742" y="305" width="156" height="26" rx="13" fill="#FFFFFF" stroke="#E8E1D6"/>
+      <text x="820" y="322" fill="#55575C">customer_id · many : 1</text>
+
+      <rect x="303" y="538" width="154" height="26" rx="13" fill="#FFFFFF" stroke="#E8E1D6"/>
+      <text x="380" y="555" fill="#55575C">product_id · many : 1</text>
+
+      <rect x="745" y="538" width="150" height="26" rx="13" fill="#FFFFFF" stroke="#E8E1D6"/>
+      <text x="820" y="555" fill="#55575C">seller_id · many : 1</text>
+
+      <rect x="196" y="369" width="214" height="26" rx="13" fill="#F5F1EB" stroke="#C9C2B6" stroke-dasharray="5 4"/>
+      <text x="303" y="386" fill="#8A8D93">Shipping Limit Date · inactive</text>
+    </g>
+
+    <!-- ===== footer badges ===== -->
+    <g font-size="12">
+      <rect x="270" y="726" width="200" height="34" rx="17" fill="#FFFFFF" stroke="#E8E1D6"/>
+      <circle cx="294" cy="743" r="5" fill="#F4A261"/>
+      <text x="308" y="748" font-weight="700" fill="#202020">0 fact-to-fact joins</text>
+
+      <rect x="490" y="726" width="220" height="34" rx="17" fill="#FFFFFF" stroke="#E8E1D6"/>
+      <circle cx="514" cy="743" r="5" fill="#E76F51"/>
+      <text x="528" y="748" font-weight="700" fill="#202020">0 bidirectional filters</text>
+
+      <rect x="730" y="726" width="200" height="34" rx="17" fill="#FFFFFF" stroke="#E8E1D6"/>
+      <circle cx="754" cy="743" r="5" fill="#2B2B2B"/>
+      <text x="768" y="748" font-weight="700" fill="#202020">1 conformed calendar</text>
+    </g>
+    <text x="600" y="782" font-size="10.5" fill="#8A8D93" text-anchor="middle">Dashed = inactive relationship, switched on inside a measure with USERELATIONSHIP</text>
+  </g>
+</svg>

@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Architecture: nine CSV exports through Power Query and a TMDL star schema into a six-page PBIR report">
+  <rect width="1200" height="600" rx="18" fill="#F5F1EB"/>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <text x="40" y="52" font-size="25" font-weight="700" fill="#202020">Architecture — nine raw exports into a six-page decision system</text>
+    <text x="40" y="80" font-size="13.5" fill="#8A8D93">Plain text end to end: M queries, a TMDL model, a PBIR report. Nothing is cleaned downstream of the layer that owns it.</text>
+
+    <!-- ============ STAGE 1 : SOURCE ============ -->
+    <rect x="32" y="110" width="251" height="420" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="66" cy="150" r="15" fill="#8A8D93"/>
+    <text x="66" y="155" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="90" y="156" font-size="14.5" font-weight="700" fill="#202020">SOURCE</text>
+    <text x="50" y="182" font-size="11" fill="#8A8D93">9 CSV exports · operational system</text>
+    <rect x="50" y="192" width="215" height="3" rx="1.5" fill="#8A8D93"/>
+    <g font-size="11.5">
+      <rect x="50" y="212" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="231" fill="#55575C">orders</text><text x="253" y="231" font-weight="700" fill="#202020" text-anchor="end">99,441</text>
+      <rect x="50" y="245" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="264" fill="#55575C">order_items</text><text x="253" y="264" font-weight="700" fill="#202020" text-anchor="end">112,650</text>
+      <rect x="50" y="278" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="297" fill="#55575C">order_payments</text><text x="253" y="297" font-weight="700" fill="#202020" text-anchor="end">103,886</text>
+      <rect x="50" y="311" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="330" fill="#55575C">order_reviews</text><text x="253" y="330" font-weight="700" fill="#202020" text-anchor="end">99,224</text>
+      <rect x="50" y="344" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="363" fill="#55575C">customers</text><text x="253" y="363" font-weight="700" fill="#202020" text-anchor="end">99,441</text>
+      <rect x="50" y="377" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="396" fill="#55575C">products</text><text x="253" y="396" font-weight="700" fill="#202020" text-anchor="end">32,951</text>
+      <rect x="50" y="410" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="429" fill="#55575C">sellers</text><text x="253" y="429" font-weight="700" fill="#202020" text-anchor="end">3,095</text>
+      <rect x="50" y="443" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="462" fill="#55575C">category_translation</text><text x="253" y="462" font-weight="700" fill="#202020" text-anchor="end">71</text>
+      <rect x="50" y="476" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="62" y="495" fill="#55575C">geolocation</text><text x="253" y="495" font-weight="700" fill="#8A8D93" text-anchor="end">unused</text>
+    </g>
+
+    <!-- arrow 1 -->
+    <path d="M297,308 L313,320 L297,332" fill="none" stroke="#F4A261" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- ============ STAGE 2 : POWER QUERY ============ -->
+    <rect x="327" y="110" width="251" height="420" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="361" cy="150" r="15" fill="#E76F51"/>
+    <text x="361" y="155" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="385" y="156" font-size="14.5" font-weight="700" fill="#202020">POWER QUERY</text>
+    <text x="345" y="182" font-size="11" fill="#8A8D93">M · 6 transformations</text>
+    <rect x="345" y="192" width="215" height="3" rx="1.5" fill="#E76F51"/>
+    <g font-size="11.5">
+      <rect x="345" y="212" width="215" height="40" rx="8" fill="#FBE9E3"/>
+      <text x="357" y="228" font-weight="700" fill="#A63D24">Typed parse</text>
+      <text x="357" y="244" fill="#55575C">explicit encodings, no guessing</text>
+      <rect x="345" y="257" width="215" height="40" rx="8" fill="#FBE9E3"/>
+      <text x="357" y="273" font-weight="700" fill="#A63D24">Payments → order grain</text>
+      <text x="357" y="289" fill="#55575C">103,886 rows collapse to 99,441</text>
+      <rect x="345" y="302" width="215" height="40" rx="8" fill="#FBE9E3"/>
+      <text x="357" y="318" font-weight="700" fill="#A63D24">Reviews → latest per order</text>
+      <text x="357" y="334" fill="#55575C">551 duplicates removed</text>
+      <rect x="345" y="347" width="215" height="40" rx="8" fill="#FBE9E3"/>
+      <text x="357" y="363" font-weight="700" fill="#A63D24">Header → dimension</text>
+      <text x="357" y="379" fill="#55575C">the architectural decision</text>
+      <rect x="345" y="392" width="215" height="40" rx="8" fill="#FBE9E3"/>
+      <text x="357" y="408" font-weight="700" fill="#A63D24">Category flattened</text>
+      <text x="357" y="424" fill="#55575C">snowflake hop removed</text>
+      <rect x="345" y="437" width="215" height="40" rx="8" fill="#FBE9E3"/>
+      <text x="357" y="453" font-weight="700" fill="#A63D24">Date keys derived</text>
+      <text x="357" y="469" fill="#55575C">Date.From() on 8 timestamps</text>
+    </g>
+    <text x="452" y="501" font-size="10.5" fill="#8A8D93" text-anchor="middle">left join throughout — nothing is dropped</text>
+
+    <!-- arrow 2 -->
+    <path d="M592,308 L608,320 L592,332" fill="none" stroke="#F4A261" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- ============ STAGE 3 : MODEL ============ -->
+    <rect x="622" y="110" width="251" height="420" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="656" cy="150" r="15" fill="#F4A261"/>
+    <text x="656" y="155" font-size="14" font-weight="700" fill="#202020" text-anchor="middle">3</text>
+    <text x="680" y="156" font-size="14.5" font-weight="700" fill="#202020">SEMANTIC MODEL</text>
+    <text x="640" y="182" font-size="11" fill="#8A8D93">TMDL · star schema</text>
+    <rect x="640" y="192" width="215" height="3" rx="1.5" fill="#F4A261"/>
+    <g font-size="11.5">
+      <rect x="640" y="212" width="215" height="34" rx="8" fill="#F4A261"/>
+      <text x="652" y="234" font-weight="700" fill="#202020">★ Fact Orders Items</text><text x="843" y="234" font-weight="700" fill="#202020" text-anchor="end">112,650</text>
+      <rect x="640" y="252" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="652" y="271" fill="#55575C">Dim Order</text><text x="843" y="271" font-weight="700" fill="#202020" text-anchor="end">99,441</text>
+      <rect x="640" y="285" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="652" y="304" fill="#55575C">Dim Customer</text><text x="843" y="304" font-weight="700" fill="#202020" text-anchor="end">99,441</text>
+      <rect x="640" y="318" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="652" y="337" fill="#55575C">Dim Product</text><text x="843" y="337" font-weight="700" fill="#202020" text-anchor="end">32,951</text>
+      <rect x="640" y="351" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="652" y="370" fill="#55575C">Dim Seller</text><text x="843" y="370" font-weight="700" fill="#202020" text-anchor="end">3,095</text>
+      <rect x="640" y="384" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="652" y="403" fill="#55575C">Dim Date</text><text x="843" y="403" font-weight="700" fill="#202020" text-anchor="end">1,096</text>
+      <rect x="640" y="417" width="215" height="28" rx="8" fill="#2B2B2B"/>
+      <text x="652" y="436" fill="#FFFFFF">_Measures</text><text x="843" y="436" font-weight="700" fill="#F4A261" text-anchor="end">137 DAX</text>
+    </g>
+    <text x="747" y="474" font-size="10.5" fill="#8A8D93" text-anchor="middle">1 fact · 5 dimensions</text>
+    <text x="747" y="494" font-size="11" font-weight="700" fill="#E76F51" text-anchor="middle">0 fact-to-fact joins</text>
+
+    <!-- arrow 3 -->
+    <path d="M887,308 L903,320 L887,332" fill="none" stroke="#F4A261" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- ============ STAGE 4 : REPORT ============ -->
+    <rect x="917" y="110" width="251" height="420" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="951" cy="150" r="15" fill="#2B2B2B"/>
+    <text x="951" y="155" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="975" y="156" font-size="14.5" font-weight="700" fill="#202020">REPORT</text>
+    <text x="935" y="182" font-size="11" fill="#8A8D93">PBIR · 6 pages, 1920×1080</text>
+    <rect x="935" y="192" width="215" height="3" rx="1.5" fill="#2B2B2B"/>
+    <g font-size="11.5">
+      <rect x="935" y="212" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="947" y="231" fill="#55575C">Executive Overview</text><text x="1138" y="231" font-weight="700" fill="#202020" text-anchor="end">19</text>
+      <rect x="935" y="245" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="947" y="264" fill="#55575C">Sales Trends</text><text x="1138" y="264" font-weight="700" fill="#202020" text-anchor="end">17</text>
+      <rect x="935" y="278" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="947" y="297" fill="#55575C">Product &amp; Category</text><text x="1138" y="297" font-weight="700" fill="#202020" text-anchor="end">18</text>
+      <rect x="935" y="311" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="947" y="330" fill="#55575C">Customer Analysis</text><text x="1138" y="330" font-weight="700" fill="#202020" text-anchor="end">19</text>
+      <rect x="935" y="344" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="947" y="363" fill="#55575C">Delivery &amp; Operations</text><text x="1138" y="363" font-weight="700" fill="#202020" text-anchor="end">19</text>
+      <rect x="935" y="377" width="215" height="28" rx="8" fill="#F5F1EB"/>
+      <text x="947" y="396" fill="#55575C">Reviews &amp; Satisfaction</text><text x="1138" y="396" font-weight="700" fill="#202020" text-anchor="end">18</text>
+      <rect x="935" y="410" width="215" height="34" rx="8" fill="#F4A261"/>
+      <text x="947" y="432" font-weight="700" fill="#202020">Total visuals</text><text x="1138" y="432" font-weight="700" fill="#202020" text-anchor="end">110</text>
+    </g>
+    <text x="1042" y="474" font-size="10.5" fill="#8A8D93" text-anchor="middle">Year · State · Category slicers</text>
+    <text x="1042" y="494" font-size="10.5" fill="#8A8D93" text-anchor="middle">on every page</text>
+
+    <text x="600" y="570" font-size="12" fill="#55575C" text-anchor="middle">Each layer owns one job — ingestion shapes grain, the model owns relationships, DAX owns logic, the report owns nothing but presentation.</text>
+  </g>
+</svg>

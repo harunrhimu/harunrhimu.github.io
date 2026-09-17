@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-label="137 DAX measures across ten display folders, and how the context-transition wrapper works">
+  <rect width="1200" height="540" rx="18" fill="#F5F1EB"/>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <text x="40" y="48" font-size="25" font-weight="700" fill="#202020">137 measures, ten folders — and one trick that makes them slice</text>
+    <text x="40" y="76" font-size="13.5" fill="#8A8D93">Every calculation lives in a dedicated _Measures table, so users never confuse a column with a metric.</text>
+
+    <text x="40" y="120" font-size="11" font-weight="700" fill="#8A8D93" letter-spacing="1.4">DISPLAY FOLDERS</text>
+
+    <!-- col 1 -->
+    <rect x="40" y="140" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="56" y="165" font-size="12.5" font-weight="700" fill="#202020">01 Sales &amp; Revenue</text>
+    <text x="56" y="182" font-size="10" fill="#8A8D93">revenue, freight, item price</text>
+    <rect x="265" y="156" width="46" height="24" rx="12" fill="#F5F1EB"/><text x="288" y="172" font-size="11.5" font-weight="700" fill="#55575C" text-anchor="middle">6</text>
+
+    <rect x="40" y="204" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="56" y="229" font-size="12.5" font-weight="700" fill="#202020">02 Orders</text>
+    <text x="56" y="246" font-size="10" fill="#8A8D93">counts, AOV, cancellation rate</text>
+    <rect x="265" y="220" width="46" height="24" rx="12" fill="#F5F1EB"/><text x="288" y="236" font-size="11.5" font-weight="700" fill="#55575C" text-anchor="middle">9</text>
+
+    <rect x="40" y="268" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="56" y="293" font-size="12.5" font-weight="700" fill="#202020">03 Customers</text>
+    <text x="56" y="310" font-size="10" fill="#8A8D93">unique people, revenue per customer</text>
+    <rect x="265" y="284" width="46" height="24" rx="12" fill="#F5F1EB"/><text x="288" y="300" font-size="11.5" font-weight="700" fill="#55575C" text-anchor="middle">4</text>
+
+    <rect x="40" y="332" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="56" y="357" font-size="12.5" font-weight="700" fill="#202020">04 Products &amp; Sellers</text>
+    <text x="56" y="374" font-size="10" fill="#8A8D93">assortment breadth, seller yield</text>
+    <rect x="265" y="348" width="46" height="24" rx="12" fill="#F5F1EB"/><text x="288" y="364" font-size="11.5" font-weight="700" fill="#55575C" text-anchor="middle">4</text>
+
+    <rect x="40" y="396" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="56" y="421" font-size="12.5" font-weight="700" fill="#202020">05 Reviews</text>
+    <text x="56" y="438" font-size="10" fill="#8A8D93">score, positive %, negative count</text>
+    <rect x="265" y="412" width="46" height="24" rx="12" fill="#F5F1EB"/><text x="288" y="428" font-size="11.5" font-weight="700" fill="#55575C" text-anchor="middle">6</text>
+
+    <!-- col 2 -->
+    <rect x="335" y="140" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="351" y="165" font-size="12.5" font-weight="700" fill="#202020">06 Payments</text>
+    <text x="351" y="182" font-size="10" fill="#8A8D93">value, method, instalments</text>
+    <rect x="560" y="156" width="46" height="24" rx="12" fill="#F5F1EB"/><text x="583" y="172" font-size="11.5" font-weight="700" fill="#55575C" text-anchor="middle">3</text>
+
+    <rect x="335" y="204" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="351" y="229" font-size="12.5" font-weight="700" fill="#202020">07 Delivery</text>
+    <text x="351" y="246" font-size="10" fill="#8A8D93">days, on-time rate, vs estimate</text>
+    <rect x="560" y="220" width="46" height="24" rx="12" fill="#F5F1EB"/><text x="583" y="236" font-size="11.5" font-weight="700" fill="#55575C" text-anchor="middle">6</text>
+
+    <rect x="335" y="268" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="351" y="293" font-size="12.5" font-weight="700" fill="#202020">08 Time Intelligence</text>
+    <text x="351" y="310" font-size="10" fill="#8A8D93">YTD, YoY %, MoM %</text>
+    <rect x="560" y="284" width="46" height="24" rx="12" fill="#F5F1EB"/><text x="583" y="300" font-size="11.5" font-weight="700" fill="#55575C" text-anchor="middle">6</text>
+
+    <rect x="335" y="332" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#F4A261" stroke-width="2"/>
+    <text x="351" y="357" font-size="12.5" font-weight="700" fill="#202020">09 Context (report)</text>
+    <text x="351" y="374" font-size="10" fill="#A63D24">the (ctx) family — explained right →</text>
+    <rect x="560" y="348" width="46" height="24" rx="12" fill="#F4A261"/><text x="583" y="364" font-size="11.5" font-weight="700" fill="#202020" text-anchor="middle">13</text>
+
+    <rect x="335" y="396" width="285" height="54" rx="10" fill="#FFFFFF" stroke="#F4A261" stroke-width="2"/>
+    <text x="351" y="421" font-size="12.5" font-weight="700" fill="#202020">10 KPI vs PY</text>
+    <text x="351" y="438" font-size="10" fill="#A63D24">26 KPIs × value / variance / variance %</text>
+    <rect x="560" y="412" width="46" height="24" rx="12" fill="#F4A261"/><text x="583" y="428" font-size="11.5" font-weight="700" fill="#202020" text-anchor="middle">80</text>
+
+    <!-- ================= (ctx) explainer ================= -->
+    <text x="660" y="120" font-size="11" font-weight="700" fill="#8A8D93" letter-spacing="1.4">WHY 13 MEASURES NEEDED A WRAPPER</text>
+
+    <!-- panel A -->
+    <rect x="660" y="140" width="500" height="150" rx="12" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <text x="680" y="168" font-size="13" font-weight="700" fill="#A63D24">Plain measure — breaks on a category axis</text>
+    <rect x="680" y="186" width="120" height="44" rx="8" fill="#F5F1EB" stroke="#E8E1D6"/>
+    <text x="740" y="205" font-size="10.5" font-weight="700" fill="#202020" text-anchor="middle">Dim Product</text>
+    <text x="740" y="220" font-size="9" fill="#8A8D93" text-anchor="middle">the chart's axis</text>
+    <path d="M812,202 L826,208 L812,214" fill="none" stroke="#F4A261" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="840" y="186" width="120" height="44" rx="8" fill="#F4A261"/>
+    <text x="900" y="205" font-size="10.5" font-weight="700" fill="#202020" text-anchor="middle">Fact Orders Items</text>
+    <text x="900" y="220" font-size="9" fill="#8A4B18" text-anchor="middle">filter lands here</text>
+    <line x1="972" y1="208" x2="998" y2="208" stroke="#C9C2B6" stroke-width="2.5" stroke-dasharray="5 4"/>
+    <line x1="978" y1="200" x2="992" y2="216" stroke="#E76F51" stroke-width="3" stroke-linecap="round"/>
+    <line x1="992" y1="200" x2="978" y2="216" stroke="#E76F51" stroke-width="3" stroke-linecap="round"/>
+    <rect x="1010" y="186" width="130" height="44" rx="8" fill="#F5F1EB" stroke="#E8E1D6"/>
+    <text x="1075" y="205" font-size="10.5" font-weight="700" fill="#202020" text-anchor="middle">Dim Order</text>
+    <text x="1075" y="220" font-size="9" fill="#8A8D93" text-anchor="middle">where the metric lives</text>
+    <text x="680" y="258" font-size="11.5" fill="#55575C">A dimension is not filtered by the fact — so the filter never arrives.</text>
+    <text x="680" y="276" font-size="11.5" font-weight="700" fill="#A63D24">Every bar shows the identical number.</text>
+
+    <!-- panel B -->
+    <rect x="660" y="310" width="500" height="150" rx="12" fill="#FFFFFF" stroke="#F4A261" stroke-width="2"/>
+    <text x="680" y="338" font-size="13" font-weight="700" fill="#202020">CALCULATE([measure], 'Fact Orders Items')</text>
+    <rect x="680" y="356" width="120" height="44" rx="8" fill="#F5F1EB" stroke="#E8E1D6"/>
+    <text x="740" y="375" font-size="10.5" font-weight="700" fill="#202020" text-anchor="middle">Dim Product</text>
+    <text x="740" y="390" font-size="9" fill="#8A8D93" text-anchor="middle">the chart's axis</text>
+    <path d="M812,372 L826,378 L812,384" fill="none" stroke="#F4A261" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="840" y="356" width="120" height="44" rx="8" fill="#F4A261"/>
+    <text x="900" y="375" font-size="10.5" font-weight="700" fill="#202020" text-anchor="middle">Fact Orders Items</text>
+    <text x="900" y="390" font-size="9" fill="#8A4B18" text-anchor="middle">passed as a filter arg</text>
+    <path d="M982,372 L996,378 L982,384" fill="none" stroke="#F4A261" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1010" y="356" width="130" height="44" rx="8" fill="#2B2B2B"/>
+    <text x="1075" y="375" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Dim Order</text>
+    <text x="1075" y="390" font-size="9" fill="#F4A261" text-anchor="middle">now reachable</text>
+    <text x="680" y="428" font-size="11.5" fill="#55575C">Evaluation is forced through the fact, carrying the filter with it.</text>
+    <text x="680" y="446" font-size="11.5" font-weight="700" fill="#202020">Delivery days and review scores slice by date, state and category.</text>
+
+    <text x="600" y="510" font-size="12" fill="#55575C" text-anchor="middle">Trade-off, stated plainly: (ctx) measures are correct for slicing and wrong for stacking — they average, they do not add.</text>
+  </g>
+</svg>

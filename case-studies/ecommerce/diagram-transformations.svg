@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 530" width="1200" height="530" role="img" aria-label="Six Power Query transformations with their input and output row counts">
+  <rect width="1200" height="530" rx="18" fill="#F5F1EB"/>
+  <g font-family="Segoe UI,Helvetica Neue,Arial,sans-serif">
+    <text x="40" y="48" font-size="25" font-weight="700" fill="#202020">Six transformations — what actually happens in Power Query</text>
+    <text x="40" y="76" font-size="13.5" fill="#8A8D93">Each one exists to fix a specific defect. Step 4 is the architectural decision the whole model rests on.</text>
+
+    <!-- 1 -->
+    <rect x="40" y="110" width="360" height="160" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="72" cy="144" r="16" fill="#FBE9E3"/>
+    <text x="72" y="150" font-size="14" font-weight="700" fill="#A63D24" text-anchor="middle">1</text>
+    <text x="100" y="150" font-size="15" font-weight="700" fill="#202020">Typed parse</text>
+    <text x="62" y="182" font-size="11.5" fill="#8A8D93">Encoding declared per file, not guessed —</text>
+    <text x="62" y="199" font-size="11.5" fill="#8A8D93">accented category names survive intact.</text>
+    <rect x="62" y="214" width="140" height="32" rx="8" fill="#FBE9E3"/>
+    <text x="132" y="235" font-size="11.5" font-weight="700" fill="#A63D24" text-anchor="middle">9 raw CSVs</text>
+    <text x="212" y="235" font-size="13" fill="#8A8D93" text-anchor="middle">→</text>
+    <rect x="236" y="214" width="140" height="32" rx="8" fill="#F4A261"/>
+    <text x="306" y="235" font-size="11.5" font-weight="700" fill="#202020" text-anchor="middle">9 typed tables</text>
+
+    <!-- 2 -->
+    <rect x="420" y="110" width="360" height="160" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="452" cy="144" r="16" fill="#FBE9E3"/>
+    <text x="452" y="150" font-size="14" font-weight="700" fill="#A63D24" text-anchor="middle">2</text>
+    <text x="480" y="150" font-size="15" font-weight="700" fill="#202020">Payments → order grain</text>
+    <text x="442" y="182" font-size="11.5" fill="#8A8D93">One order can be split across a voucher</text>
+    <text x="442" y="199" font-size="11.5" fill="#8A8D93">and a card. Group it before joining.</text>
+    <rect x="442" y="214" width="140" height="32" rx="8" fill="#FBE9E3"/>
+    <text x="512" y="235" font-size="11.5" font-weight="700" fill="#A63D24" text-anchor="middle">103,886 rows</text>
+    <text x="592" y="235" font-size="13" fill="#8A8D93" text-anchor="middle">→</text>
+    <rect x="616" y="214" width="140" height="32" rx="8" fill="#F4A261"/>
+    <text x="686" y="235" font-size="11.5" font-weight="700" fill="#202020" text-anchor="middle">99,441 rows</text>
+
+    <!-- 3 -->
+    <rect x="800" y="110" width="360" height="160" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="832" cy="144" r="16" fill="#FBE9E3"/>
+    <text x="832" y="150" font-size="14" font-weight="700" fill="#A63D24" text-anchor="middle">3</text>
+    <text x="860" y="150" font-size="15" font-weight="700" fill="#202020">Reviews → latest per order</text>
+    <text x="822" y="182" font-size="11.5" fill="#8A8D93">551 orders were reviewed twice. Keeping</text>
+    <text x="822" y="199" font-size="11.5" fill="#8A8D93">both would skew the average score.</text>
+    <rect x="822" y="214" width="140" height="32" rx="8" fill="#FBE9E3"/>
+    <text x="892" y="235" font-size="11.5" font-weight="700" fill="#A63D24" text-anchor="middle">99,224 reviews</text>
+    <text x="972" y="235" font-size="13" fill="#8A8D93" text-anchor="middle">→</text>
+    <rect x="996" y="214" width="140" height="32" rx="8" fill="#F4A261"/>
+    <text x="1066" y="235" font-size="11.5" font-weight="700" fill="#202020" text-anchor="middle">98,673 orders</text>
+
+    <!-- 4 — the key decision -->
+    <rect x="40" y="300" width="360" height="160" rx="14" fill="#FFFFFF" stroke="#F4A261" stroke-width="2.5"/>
+    <circle cx="72" cy="334" r="16" fill="#F4A261"/>
+    <text x="72" y="340" font-size="14" font-weight="700" fill="#202020" text-anchor="middle">4</text>
+    <text x="100" y="340" font-size="15" font-weight="700" fill="#202020">Header → dimension</text>
+    <rect x="286" y="316" width="90" height="20" rx="10" fill="#2B2B2B"/>
+    <text x="331" y="330" font-size="9.5" font-weight="700" fill="#F4A261" text-anchor="middle">THE DECISION</text>
+    <text x="62" y="372" font-size="11.5" fill="#8A8D93">The order header has no additive measures.</text>
+    <text x="62" y="389" font-size="11.5" fill="#8A8D93">As a dimension, the fact-to-fact join dies.</text>
+    <rect x="62" y="404" width="140" height="32" rx="8" fill="#FBE9E3"/>
+    <text x="132" y="425" font-size="11.5" font-weight="700" fill="#A63D24" text-anchor="middle">Fact Order</text>
+    <text x="212" y="425" font-size="13" fill="#8A8D93" text-anchor="middle">→</text>
+    <rect x="236" y="404" width="140" height="32" rx="8" fill="#F4A261"/>
+    <text x="306" y="425" font-size="11.5" font-weight="700" fill="#202020" text-anchor="middle">Dim Order</text>
+
+    <!-- 5 -->
+    <rect x="420" y="300" width="360" height="160" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="452" cy="334" r="16" fill="#FBE9E3"/>
+    <text x="452" y="340" font-size="14" font-weight="700" fill="#A63D24" text-anchor="middle">5</text>
+    <text x="480" y="340" font-size="15" font-weight="700" fill="#202020">Category flattened</text>
+    <text x="442" y="372" font-size="11.5" fill="#8A8D93">One translated column did not deserve its</text>
+    <text x="442" y="389" font-size="11.5" fill="#8A8D93">own table and an extra relationship hop.</text>
+    <rect x="442" y="404" width="140" height="32" rx="8" fill="#FBE9E3"/>
+    <text x="512" y="425" font-size="11.5" font-weight="700" fill="#A63D24" text-anchor="middle">2 tables</text>
+    <text x="592" y="425" font-size="13" fill="#8A8D93" text-anchor="middle">→</text>
+    <rect x="616" y="404" width="140" height="32" rx="8" fill="#F4A261"/>
+    <text x="686" y="425" font-size="11.5" font-weight="700" fill="#202020" text-anchor="middle">1 table</text>
+
+    <!-- 6 -->
+    <rect x="800" y="300" width="360" height="160" rx="14" fill="#FFFFFF" stroke="#E8E1D6"/>
+    <circle cx="832" cy="334" r="16" fill="#FBE9E3"/>
+    <text x="832" y="340" font-size="14" font-weight="700" fill="#A63D24" text-anchor="middle">6</text>
+    <text x="860" y="340" font-size="15" font-weight="700" fill="#202020">Date keys derived</text>
+    <text x="822" y="372" font-size="11.5" fill="#8A8D93">A datetime silently matches nothing in a</text>
+    <text x="822" y="389" font-size="11.5" fill="#8A8D93">date dimension. Date.From() strips the time.</text>
+    <rect x="822" y="404" width="140" height="32" rx="8" fill="#FBE9E3"/>
+    <text x="892" y="425" font-size="11.5" font-weight="700" fill="#A63D24" text-anchor="middle">8 timestamps</text>
+    <text x="972" y="425" font-size="13" fill="#8A8D93" text-anchor="middle">→</text>
+    <rect x="996" y="404" width="140" height="32" rx="8" fill="#F4A261"/>
+    <text x="1066" y="425" font-size="11.5" font-weight="700" fill="#202020" text-anchor="middle">8 date keys</text>
+
+    <text x="600" y="500" font-size="12" fill="#55575C" text-anchor="middle">Every join is a LEFT OUTER join. That single choice is what preserves the 775 orders that never shipped an item.</text>
+  </g>
+</svg>
