@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="620" fill="#F4F5F7"/>
+
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#205072">What architecture alone bought</text>
+  <text x="24" y="58" font-size="13" fill="#5C6670">One report, one dataset. Both columns were captured with Performance Analyzer on the same visuals, before and after the rewrite.</text>
+
+  <!-- ============ CARD 1 : PAGE LOAD ============ -->
+  <rect x="24" y="82" width="1152" height="140" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="130" font-size="15" font-weight="700" fill="#252423">Page load time</text>
+  <text x="48" y="150" font-size="11" fill="#5C6670">Opening the report</text>
+
+  <rect x="300" y="118" width="560" height="22" rx="4" fill="#D64550"/>
+  <text x="312" y="133" font-size="12" font-weight="700" fill="#FFFFFF">15.2 s</text>
+  <rect x="300" y="148" width="195" height="22" rx="4" fill="#00873A"/>
+  <text x="312" y="163" font-size="12" font-weight="700" fill="#FFFFFF">5.3 s</text>
+
+  <rect x="890" y="112" width="262" height="60" rx="10" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="1021" y="138" font-size="20" font-weight="700" fill="#00873A" text-anchor="middle">~3&#215; faster</text>
+  <text x="1021" y="157" font-size="11" fill="#5C6670" text-anchor="middle">2.9&#215; exactly</text>
+
+  <!-- ============ CARD 2 : SLOWEST VISUAL ============ -->
+  <rect x="24" y="234" width="1152" height="140" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="282" font-size="15" font-weight="700" fill="#252423">Slowest visual</text>
+  <text x="48" y="302" font-size="11" fill="#5C6670">The worst single chart on the page</text>
+
+  <rect x="300" y="270" width="560" height="22" rx="4" fill="#D64550"/>
+  <text x="312" y="285" font-size="12" font-weight="700" fill="#FFFFFF">11.9 s</text>
+  <rect x="300" y="300" width="75" height="22" rx="4" fill="#00873A"/>
+  <text x="312" y="315" font-size="12" font-weight="700" fill="#FFFFFF">1.6 s</text>
+
+  <rect x="890" y="264" width="262" height="60" rx="10" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="1021" y="290" font-size="20" font-weight="700" fill="#00873A" text-anchor="middle">~7&#215; faster</text>
+  <text x="1021" y="309" font-size="11" fill="#5C6670" text-anchor="middle">7.4&#215; exactly</text>
+
+  <!-- ============ CARD 3 : FILTER RESPONSE ============ -->
+  <rect x="24" y="386" width="1152" height="140" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="434" font-size="15" font-weight="700" fill="#252423">Filter response</text>
+  <text x="48" y="454" font-size="11" fill="#5C6670">Changing a slicer</text>
+
+  <rect x="300" y="422" width="560" height="22" rx="4" fill="#D64550"/>
+  <text x="312" y="437" font-size="12" font-weight="700" fill="#FFFFFF">454 s &#8202;(7.5 min)</text>
+  <rect x="300" y="452" width="8" height="22" rx="3" fill="#00873A"/>
+  <text x="318" y="468" font-size="12" font-weight="700" fill="#00873A">1.0&#8211;1.6 s</text>
+
+  <rect x="890" y="416" width="262" height="60" rx="10" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="1021" y="442" font-size="20" font-weight="700" fill="#00873A" text-anchor="middle">>150&#215; faster</text>
+  <text x="1021" y="461" font-size="11" fill="#5C6670" text-anchor="middle">283&#215; on the two endpoints</text>
+
+  <text x="24" y="558" font-size="12" fill="#252423"><tspan font-weight="700" fill="#205072">The model, the measures and every visual were left exactly as they were.</tspan> The entire change sits in the query layer beneath them.</text>
+  <text x="24" y="580" font-size="11" fill="#5C6670">The after bar on the filter row is drawn at the same scale as the before bar — forty-five times shorter, it would round to under a pixel wide. The measurement is the number, not the bar.</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="520" fill="#F4F5F7"/>
+
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#205072">Where the time went</text>
+  <text x="24" y="58" font-size="13" fill="#5C6670">The same interaction, before and after. The work that was removed is the work that ran on every single filter change.</text>
+
+  <!-- ============ BEFORE ============ -->
+  <rect x="24" y="86" width="1152" height="160" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="116" font-size="12" font-weight="700" fill="#D64550" letter-spacing="1.2">BEFORE &#183; THE FULL TABLE ON EVERY INTERACTION</text>
+
+  <g>
+    <rect x="48" y="134" width="280" height="84" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+    <text x="64" y="165" font-size="13" font-weight="600" fill="#252423">Read the full table</text>
+    <text x="64" y="185" font-size="11" fill="#5C6670">40-plus columns &#183; every row</text>
+
+    <rect x="352" y="134" width="280" height="84" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+    <text x="368" y="165" font-size="13" font-weight="600" fill="#252423">Join everything</text>
+    <text x="368" y="185" font-size="11" fill="#5C6670">including the hidden inner join</text>
+
+    <rect x="656" y="134" width="280" height="84" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+    <text x="672" y="165" font-size="13" font-weight="600" fill="#252423">Filter at the very end</text>
+    <text x="672" y="185" font-size="11" fill="#5C6670">the WHERE runs after the joins</text>
+
+    <rect x="960" y="134" width="192" height="84" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+    <text x="976" y="165" font-size="13" font-weight="600" fill="#252423">Discard the rest</text>
+    <text x="976" y="185" font-size="11" fill="#5C6670">work already thrown away</text>
+  </g>
+
+  <g fill="#D64550">
+    <path d="M332 166 L350 176 L332 186 Z"/>
+    <path d="M636 166 L654 176 L636 186 Z"/>
+    <path d="M940 166 L958 176 L940 186 Z"/>
+  </g>
+
+  <!-- ============ AFTER ============ -->
+  <rect x="24" y="278" width="1152" height="160" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="308" font-size="12" font-weight="700" fill="#00873A" letter-spacing="1.2">AFTER &#183; ONLY WHAT SURVIVES THE FILTER IS JOINED</text>
+
+  <g>
+    <rect x="48" y="326" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="64" y="357" font-size="13" font-weight="600" fill="#252423">Filter first</text>
+    <text x="64" y="377" font-size="11" fill="#5C6670">reduce before joining</text>
+
+    <rect x="274" y="326" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="290" y="357" font-size="13" font-weight="600" fill="#252423">Project ~20 columns</text>
+    <text x="290" y="377" font-size="11" fill="#5C6670">only what is bound</text>
+
+    <rect x="500" y="326" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="516" y="357" font-size="13" font-weight="600" fill="#252423">Pre-aggregate detail</text>
+    <text x="516" y="377" font-size="11" fill="#5C6670">one row per line</text>
+
+    <rect x="726" y="326" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="742" y="357" font-size="13" font-weight="600" fill="#252423">Join one-to-one</text>
+    <text x="742" y="377" font-size="11" fill="#5C6670">nothing multiplies</text>
+
+    <rect x="952" y="326" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="968" y="357" font-size="13" font-weight="600" fill="#252423">Return the answer</text>
+    <text x="968" y="377" font-size="11" fill="#5C6670">cost tracks the result</text>
+  </g>
+
+  <g fill="#00873A">
+    <path d="M254 358 L270 368 L254 378 Z"/>
+    <path d="M480 358 L496 368 L480 378 Z"/>
+    <path d="M706 358 L722 368 L706 378 Z"/>
+    <path d="M932 358 L948 368 L932 378 Z"/>
+  </g>
+
+  <text x="24" y="474" font-size="12" fill="#252423"><tspan font-weight="700" fill="#205072">Before, cost scaled with the size of the table.</tspan> A slicer change re-ran the whole chain, then subtracted — 454 seconds.</text>
+  <text x="24" y="496" font-size="12" fill="#5C6670">After, the reducing steps run once per refresh and the report reads a small Gold table, so cost scales with the size of the answer — about a second.</text>
+</svg>

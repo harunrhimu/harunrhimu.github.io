@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" width="1200" font-family="Segoe UI, Helvetica, Arial, sans-serif" height="330">
+  <rect x="0" y="0" width="1200" height="330" fill="#F4F5F7"/>
+
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#205072">The stack</text>
+  <text x="24" y="58" font-size="13" fill="#5C6670">Six layers, six tools. Everything below the report layer is plain text, so the whole project is diffable and reviewable.</text>
+
+  <!-- ============ 1 ============ -->
+  <rect x="24" y="82" width="172" height="188" rx="15" fill="#FFFFFF" stroke="#E4E8EB" stroke-width="1"/>
+  <path d="M24 97 a15 15 0 0 1 15 -15 h142 a15 15 0 0 1 15 15 v5 h-172 Z" fill="#205072"/>
+  <circle cx="110" cy="130" r="17" fill="#205072"/>
+  <text x="110" y="136" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="110" y="172" font-size="14" font-weight="700" fill="#205072" text-anchor="middle">Ingest</text>
+  <text x="110" y="190" font-size="14" font-weight="700" fill="#205072" text-anchor="middle">&amp; shape</text>
+  <rect x="40" y="206" width="140" height="28" rx="14" fill="#205072"/>
+  <text x="110" y="225" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">Power Query · M</text>
+  <text x="110" y="254" font-size="11" fill="#5C6670" text-anchor="middle">11 queries</text>
+
+  <!-- ============ 2 ============ -->
+  <rect x="220" y="82" width="172" height="188" rx="15" fill="#FFFFFF" stroke="#E4E8EB" stroke-width="1"/>
+  <path d="M220 97 a15 15 0 0 1 15 -15 h142 a15 15 0 0 1 15 15 v5 h-172 Z" fill="#2A7C8C"/>
+  <circle cx="306" cy="130" r="17" fill="#2A7C8C"/>
+  <text x="306" y="136" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="306" y="181" font-size="14" font-weight="700" fill="#205072" text-anchor="middle">Model</text>
+  <rect x="236" y="206" width="140" height="28" rx="14" fill="#2A7C8C"/>
+  <text x="306" y="225" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">TMDL</text>
+  <text x="306" y="254" font-size="11" fill="#5C6670" text-anchor="middle">11 tables · 17 joins</text>
+
+  <!-- ============ 3 ============ -->
+  <rect x="416" y="82" width="172" height="188" rx="15" fill="#FFFFFF" stroke="#E4E8EB" stroke-width="1"/>
+  <path d="M416 97 a15 15 0 0 1 15 -15 h142 a15 15 0 0 1 15 15 v5 h-172 Z" fill="#329D9C"/>
+  <circle cx="502" cy="130" r="17" fill="#329D9C"/>
+  <text x="502" y="136" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="502" y="181" font-size="14" font-weight="700" fill="#205072" text-anchor="middle">Logic</text>
+  <rect x="432" y="206" width="140" height="28" rx="14" fill="#329D9C"/>
+  <text x="502" y="225" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">DAX</text>
+  <text x="502" y="254" font-size="11" fill="#5C6670" text-anchor="middle">89 measures · 11 items</text>
+
+  <!-- ============ 4 ============ -->
+  <rect x="612" y="82" width="172" height="188" rx="15" fill="#FFFFFF" stroke="#E4E8EB" stroke-width="1"/>
+  <path d="M612 97 a15 15 0 0 1 15 -15 h142 a15 15 0 0 1 15 15 v5 h-172 Z" fill="#56C596"/>
+  <circle cx="698" cy="130" r="17" fill="#56C596"/>
+  <text x="698" y="136" font-size="14" font-weight="700" fill="#0E3B33" text-anchor="middle">4</text>
+  <text x="698" y="181" font-size="14" font-weight="700" fill="#205072" text-anchor="middle">Report</text>
+  <rect x="628" y="206" width="140" height="28" rx="14" fill="#56C596"/>
+  <text x="698" y="225" font-size="12" font-weight="600" fill="#0E3B33" text-anchor="middle">PBIR</text>
+  <text x="698" y="254" font-size="11" fill="#5C6670" text-anchor="middle">4 pages · 60 visuals</text>
+
+  <!-- ============ 5 ============ -->
+  <rect x="808" y="82" width="172" height="188" rx="15" fill="#FFFFFF" stroke="#E4E8EB" stroke-width="1"/>
+  <path d="M808 97 a15 15 0 0 1 15 -15 h142 a15 15 0 0 1 15 15 v5 h-172 Z" fill="#7BE495"/>
+  <circle cx="894" cy="130" r="17" fill="#7BE495"/>
+  <text x="894" y="136" font-size="14" font-weight="700" fill="#0E3B33" text-anchor="middle">5</text>
+  <text x="894" y="181" font-size="14" font-weight="700" fill="#205072" text-anchor="middle">Theme</text>
+  <rect x="824" y="206" width="140" height="28" rx="14" fill="#7BE495"/>
+  <text x="894" y="225" font-size="12" font-weight="600" fill="#0E3B33" text-anchor="middle">JSON</text>
+  <text x="894" y="254" font-size="11" fill="#5C6670" text-anchor="middle">base + custom layer</text>
+
+  <!-- ============ 6 ============ -->
+  <rect x="1004" y="82" width="172" height="188" rx="15" fill="#FFFFFF" stroke="#00B53F" stroke-width="1"/>
+  <path d="M1004 97 a15 15 0 0 1 15 -15 h142 a15 15 0 0 1 15 15 v5 h-172 Z" fill="#00B53F"/>
+  <circle cx="1090" cy="130" r="17" fill="#00B53F"/>
+  <text x="1090" y="136" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+  <text x="1090" y="181" font-size="14" font-weight="700" fill="#205072" text-anchor="middle">Verification</text>
+  <rect x="1020" y="206" width="140" height="28" rx="14" fill="#00B53F"/>
+  <text x="1090" y="225" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">Python</text>
+  <text x="1090" y="254" font-size="11" fill="#5C6670" text-anchor="middle">stdlib only</text>
+
+  <text x="24" y="300" font-size="11" fill="#5C6670">A .pbix is a zip you cannot diff. Stored as PBIP, a measure change is three lines in a pull request instead of &quot;binary file modified&quot;.</text>
+  <text x="24" y="318" font-size="11" fill="#5C6670">The trade: PBIR validates strictly — formatting objects are per-visual-type, so a property applied to the wrong chart type fails outright rather than being ignored.</text>
+</svg>

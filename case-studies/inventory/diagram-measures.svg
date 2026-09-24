@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" font-family="Segoe UI, Helvetica, Arial, sans-serif" height="700">
+  <rect x="0" y="0" width="1200" height="700" fill="#F4F5F7"/>
+
+  <text x="24" y="32" font-size="21" font-weight="700" fill="#205072">The logic layer</text>
+  <text x="24" y="56" font-size="13" fill="#5C6670">One calculation group instead of 24 hand-written time-intelligence measures. Change SAMEPERIODLASTYEAR once and every KPI follows.</text>
+
+  <!-- flow arrows -->
+  <g fill="#329D9C">
+    <path d="M328 178 L354 190 L328 202 Z"/>
+    <path d="M660 178 L686 190 L660 202 Z"/>
+  </g>
+
+  <!-- base measures -->
+  <rect x="24" y="82" width="300" height="216" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <path d="M24 97 a15 15 0 0 1 15 -15 h270 a15 15 0 0 1 15 15 v25 h-300 Z" fill="#205072"/>
+  <text x="44" y="108" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1">38 BASE MEASURES</text>
+  <g font-size="11" fill="#5C6670">
+    <text x="44" y="146" font-size="12" font-weight="600" fill="#252423">1 Sales &amp; Margin</text>
+    <text x="44" y="163">Total Sales $ · Units Sold · COGS · Gross Profit</text>
+    <text x="44" y="178">Gross Margin % · Realised Sales Price</text>
+    <text x="44" y="200" font-size="12" font-weight="600" fill="#252423">3 Inventory Position</text>
+    <text x="44" y="217">Ending / Beginning / Average Inventory Value</text>
+    <text x="44" y="232">Total On Hand · Units Received · Implied Depleted</text>
+    <text x="44" y="254" font-size="12" font-weight="600" fill="#252423">5 Capital at Risk</text>
+    <text x="44" y="271">Dead Stock · Overstock · Stockout SKUs</text>
+    <text x="44" y="286">Capital at Risk · SKU Count</text>
+  </g>
+
+  <!-- calculation group -->
+  <rect x="356" y="82" width="300" height="216" rx="15" fill="#FFFFFF" stroke="#329D9C" stroke-width="2"/>
+  <path d="M356 97 a15 15 0 0 1 15 -15 h270 a15 15 0 0 1 15 15 v25 h-300 Z" fill="#329D9C"/>
+  <text x="376" y="108" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1">1 CALCULATION GROUP · 11 ITEMS</text>
+  <g font-size="11">
+    <text x="376" y="144" font-size="12" font-weight="600" fill="#252423">Live on this dataset</text>
+    <text x="376" y="162" fill="#00873A">Current · PM · MoM Var · MoM Var % ·</text>
+    <text x="376" y="177" fill="#00873A">MoM Var % Label · YTD</text>
+    <text x="376" y="202" font-size="12" font-weight="600" fill="#252423">Built but dormant</text>
+    <text x="376" y="220" fill="#5C6670">PY · PY Var · PY Var % · PY Var % Label · PYTD</text>
+    <text x="376" y="242" fill="#5C6670">The model holds Dec-2015 to Dec-2016, so there</text>
+    <text x="376" y="257" fill="#5C6670">is no prior year. These return BLANK today and</text>
+    <text x="376" y="272" fill="#5C6670">light up the moment a second year lands — with</text>
+    <text x="376" y="287" fill="#5C6670">no report rework at all.</text>
+  </g>
+
+  <!-- wrappers -->
+  <rect x="688" y="82" width="300" height="216" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <path d="M688 97 a15 15 0 0 1 15 -15 h270 a15 15 0 0 1 15 15 v25 h-300 Z" fill="#2A7C8C"/>
+  <text x="708" y="108" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1">51 THIN WRAPPERS</text>
+  <text x="708" y="144" font-size="11" fill="#5C6670">A card reference label binds to a measure, not to a</text>
+  <text x="708" y="159" font-size="11" fill="#5C6670">calculation item — so each KPI gets three one-liners:</text>
+  <rect x="708" y="172" width="260" height="76" rx="8" fill="#F8FAFB" stroke="#E4E8EB" stroke-width="1"/>
+  <text x="720" y="192" font-size="11" font-family="Consolas, Courier New, monospace" fill="#205072">[Dead Stock Value PM] =</text>
+  <text x="732" y="207" font-size="11" font-family="Consolas, Courier New, monospace" fill="#252423">CALCULATE (</text>
+  <text x="744" y="222" font-size="11" font-family="Consolas, Courier New, monospace" fill="#252423">[Dead Stock Value],</text>
+  <text x="744" y="237" font-size="11" font-family="Consolas, Courier New, monospace" fill="#252423">'Time Intelligence'[Comparison] = "PM" )</text>
+  <text x="708" y="270" font-size="11" fill="#252423">17 KPIs × 3 wrappers. All logic still lives in one place;</text>
+  <text x="708" y="285" font-size="11" fill="#252423">the wrappers carry none of their own.</text>
+
+  <!-- consumers -->
+  <rect x="1020" y="82" width="156" height="216" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <path d="M1020 97 a15 15 0 0 1 15 -15 h126 a15 15 0 0 1 15 15 v25 h-156 Z" fill="#56C596"/>
+  <text x="1038" y="108" font-size="12" font-weight="700" fill="#0E3B33" letter-spacing="1">REUSED BY</text>
+  <text x="1038" y="142" font-size="12" font-weight="600" fill="#252423">KPI cards</text>
+  <text x="1038" y="158" font-size="11" fill="#5C6670">reference labels</text>
+  <text x="1038" y="184" font-size="12" font-weight="600" fill="#252423">Matrix columns</text>
+  <text x="1038" y="200" font-size="11" fill="#5C6670">[Comparison] on</text>
+  <text x="1038" y="215" font-size="11" fill="#5C6670">Columns gives any</text>
+  <text x="1038" y="230" font-size="11" fill="#5C6670">measure four views</text>
+  <text x="1038" y="256" font-size="12" font-weight="600" fill="#252423">Slicer</text>
+  <text x="1038" y="272" font-size="11" fill="#5C6670">flip a whole page</text>
+  <text x="1038" y="287" font-size="11" fill="#5C6670">in one click</text>
+
+  <!-- polarity -->
+  <rect x="24" y="324" width="740" height="248" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="44" y="352" font-size="14" font-weight="700" fill="#205072">Badge polarity is a modelling decision, not a formatting one</text>
+  <text x="44" y="372" font-size="11" fill="#5C6670">The reference design tested the base measure (&quot;spend &gt; 0&quot;), so its badge greened whenever spend was positive — regardless of direction.</text>
+  <text x="44" y="388" font-size="11" fill="#5C6670">Here the condition tests the variance, and polarity inverts for the lower-is-better half of the KPI set.</text>
+
+  <rect x="44" y="404" width="700" height="1" fill="#E4E8EB"/>
+
+  <rect x="44" y="416" width="16" height="16" rx="4" fill="#00B53F"/>
+  <text x="70" y="429" font-size="12" font-weight="600" fill="#252423">Rising is good — badge greens</text>
+  <text x="70" y="447" font-size="11" fill="#5C6670">Inventory Turnover · Gross Margin % · Sell-Through % · Units Sold · Gross Profit · Total Sales $</text>
+
+  <rect x="44" y="466" width="16" height="16" rx="4" fill="#D64550"/>
+  <text x="70" y="479" font-size="12" font-weight="600" fill="#252423">Rising is bad — badge reds (polarity inverted)</text>
+  <text x="70" y="497" font-size="11" fill="#5C6670">Days of Supply · Dead Stock Value · Overstock Value · Stockout SKUs · Capital at Risk · Freight % of Spend</text>
+
+  <rect x="44" y="516" width="16" height="16" rx="4" fill="#8A8580"/>
+  <text x="70" y="529" font-size="12" font-weight="600" fill="#252423">No claim — badge stays grey</text>
+  <text x="70" y="547" font-size="11" fill="#5C6670">Ending Inventory Value · Total On Hand · Total Purchases $ · COGS — buying more is neither good nor bad on its own</text>
+
+  <!-- guards -->
+  <rect x="784" y="324" width="392" height="248" rx="15" fill="#FFFFFF" stroke="#205072" stroke-width="2"/>
+  <text x="804" y="352" font-size="14" font-weight="700" fill="#205072">Two guards that stop silent errors</text>
+
+  <text x="804" y="382" font-size="12" font-weight="600" fill="#252423">Ratios move in percentage points</text>
+  <text x="804" y="400" font-size="11" fill="#5C6670">Gross Margin %, Sell-Through %, Freight % of Spend</text>
+  <text x="804" y="415" font-size="11" fill="#5C6670">and Days of Supply are ratios. Their variance is a</text>
+  <text x="804" y="430" font-size="11" fill="#5C6670">pp difference, not a percent change, so those cards</text>
+  <text x="804" y="445" font-size="11" fill="#5C6670">are titled &quot;MoM Var (pp)&quot;.</text>
+
+  <text x="804" y="478" font-size="12" font-weight="600" fill="#252423">Turnover is a ratio, not a percentage</text>
+  <text x="804" y="496" font-size="11" fill="#5C6670">[Inventory Turnover] had drifted to a percent format</text>
+  <text x="804" y="511" font-size="11" fill="#5C6670">string and was rendering 8.95% on the card. It is</text>
+  <text x="804" y="526" font-size="11" fill="#5C6670">4.20 turns per year. Restored to 0.00&quot;x&quot; and the</text>
+  <text x="804" y="541" font-size="11" fill="#5C6670">measure description now says so in capitals, so the</text>
+  <text x="804" y="556" font-size="11" fill="#5C6670">next person to touch it cannot repeat the mistake.</text>
+
+  <text x="24" y="606" font-size="12" fill="#252423"><tspan font-weight="700" fill="#205072">What this costs:</tspan> a calculation group applies to every measure in the model, including ones it cannot help. Nine measures come from Fact_StockItem, which has no date</text>
+  <text x="24" y="626" font-size="12" fill="#252423">relationship, so the PM item has nothing to shift — those KPIs are whole-year positions and are read as single values.</text>
+  <text x="24" y="654" font-size="11" fill="#5C6670">Every one of the 89 measures carries a description. They are not decoration — several encode the trap that was hit while building the measure, in the place the next</text>
+  <text x="24" y="672" font-size="11" fill="#5C6670">person will actually read it: &quot;Ranks over [Store Name], NOT [City]&quot;, &quot;JANUARY 2016 ONLY&quot;, &quot;this is a RATIO — do not let it drift back to a percent format string&quot;.</text>
+</svg>

@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 830" width="1200" font-family="Segoe UI, Helvetica, Arial, sans-serif" height="830">
+  <rect x="0" y="0" width="1200" height="830" fill="#F4F5F7"/>
+
+  <text x="24" y="32" font-size="21" font-weight="700" fill="#205072">Six transformations that decide every number downstream</text>
+  <text x="24" y="56" font-size="13" fill="#5C6670">Each card carries the value before the step and the value after it. All figures recomputed from the raw CSVs.</text>
+
+  <!-- ============ CARD 1 ============ -->
+  <rect x="24" y="80" width="372" height="330" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <circle cx="56" cy="112" r="17" fill="#205072"/>
+  <text x="56" y="118" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="84" y="110" font-size="14" font-weight="700" fill="#205072">Two snapshots, one dated fact</text>
+  <text x="84" y="128" font-size="11" fill="#5C6670">InventorySource — a shared query</text>
+
+  <rect x="44" y="148" width="332" height="62" rx="10" fill="#F8FAFB" stroke="#E4E8EB" stroke-width="1"/>
+  <text x="60" y="170" font-size="11" fill="#D64550" font-weight="600">BEFORE</text>
+  <text x="60" y="188" font-size="12" fill="#252423">two CSVs, joined on a text column</text>
+  <text x="60" y="204" font-size="11" fill="#5C6670">that concatenated startDate and endDate</text>
+
+  <text x="200" y="228" font-size="14" fill="#329D9C" text-anchor="middle">▼</text>
+
+  <rect x="44" y="236" width="332" height="52" rx="10" fill="#F1FAF6" stroke="#CFF4D2" stroke-width="1"/>
+  <text x="60" y="258" font-size="11" fill="#00873A" font-weight="600">AFTER</text>
+  <text x="60" y="276" font-size="12" fill="#252423">431,018 rows · SnapshotDate + SnapshotType</text>
+
+  <text x="44" y="314" font-size="12" font-weight="600" fill="#205072">Why</text>
+  <text x="44" y="333" font-size="11" fill="#5C6670">A text date cannot join a date dimension. The</text>
+  <text x="44" y="349" font-size="11" fill="#5C6670">original report had a slicer bound to that text</text>
+  <text x="44" y="365" font-size="11" fill="#5C6670">column, so it filtered strings, not time. One</text>
+  <text x="44" y="381" font-size="11" fill="#5C6670">shared query now feeds Inventory, Store and</text>
+  <text x="44" y="397" font-size="11" fill="#5C6670">StockItem — the files are read once, not thrice.</text>
+
+  <!-- ============ CARD 2 ============ -->
+  <rect x="418" y="80" width="372" height="330" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <circle cx="450" cy="112" r="17" fill="#205072"/>
+  <text x="450" y="118" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="478" y="110" font-size="14" font-weight="700" fill="#205072">Purchases: header to line</text>
+  <text x="478" y="128" font-size="11" fill="#5C6670">Fact_Purchases replaces Fact_InvoiceHeader</text>
+
+  <rect x="438" y="148" width="332" height="62" rx="10" fill="#F8FAFB" stroke="#E4E8EB" stroke-width="1"/>
+  <text x="454" y="170" font-size="11" fill="#D64550" font-weight="600">BEFORE</text>
+  <text x="454" y="188" font-size="12" fill="#252423">5,543 invoice headers · $321,900,766</text>
+  <text x="454" y="204" font-size="11" fill="#5C6670">no product, no store — spend attributes to nothing</text>
+
+  <text x="594" y="228" font-size="14" fill="#329D9C" text-anchor="middle">▼</text>
+
+  <rect x="438" y="236" width="332" height="52" rx="10" fill="#F1FAF6" stroke="#CFF4D2" stroke-width="1"/>
+  <text x="454" y="258" font-size="11" fill="#00873A" font-weight="600">AFTER</text>
+  <text x="454" y="276" font-size="12" fill="#252423">2,372,474 purchase lines · $321,900,766</text>
+
+  <text x="438" y="314" font-size="12" font-weight="600" fill="#205072">Why</text>
+  <text x="438" y="333" font-size="11" fill="#5C6670">Identical dollars — they reconcile to the cent —</text>
+  <text x="438" y="349" font-size="11" fill="#5C6670">but now sliceable by store, brand and vendor.</text>
+  <text x="438" y="365" font-size="11" fill="#5C6670">The headers are kept for exactly one column:</text>
+  <text x="438" y="381" font-size="11" fill="#5C6670">Freight, which has no line-level equivalent, so</text>
+  <text x="438" y="397" font-size="11" fill="#5C6670">freight can never be split by product or store.</text>
+
+  <!-- ============ CARD 3 ============ -->
+  <rect x="812" y="80" width="372" height="330" rx="15" fill="#FFFFFF" stroke="#205072" stroke-width="2"/>
+  <circle cx="844" cy="112" r="17" fill="#205072"/>
+  <text x="844" y="118" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="872" y="110" font-size="14" font-weight="700" fill="#205072">The key spine is a union</text>
+  <text x="872" y="128" font-size="11" fill="#5C6670">the single most consequential decision</text>
+
+  <rect x="832" y="148" width="332" height="62" rx="10" fill="#F8FAFB" stroke="#E4E8EB" stroke-width="1"/>
+  <text x="848" y="170" font-size="11" fill="#D64550" font-weight="600">BEFORE</text>
+  <text x="848" y="188" font-size="12" fill="#252423">224,489 SKU-stores</text>
+  <text x="848" y="204" font-size="11" fill="#5C6670">keyed off the closing snapshot alone</text>
+
+  <text x="988" y="228" font-size="14" fill="#329D9C" text-anchor="middle">▼</text>
+
+  <rect x="832" y="236" width="332" height="52" rx="10" fill="#F1FAF6" stroke="#CFF4D2" stroke-width="1"/>
+  <text x="848" y="258" font-size="11" fill="#00873A" font-weight="600">AFTER</text>
+  <text x="848" y="276" font-size="12" fill="#252423">276,389 SKU-stores · closing ∪ opening ∪ purchases</text>
+
+  <text x="832" y="314" font-size="12" font-weight="600" fill="#205072">Why</text>
+  <text x="832" y="333" font-size="11" fill="#5C6670">A SKU that sells out entirely has no closing row</text>
+  <text x="832" y="349" font-size="11" fill="#5C6670">at all — not a closing row of zero. 32,906 were</text>
+  <text x="832" y="365" font-size="11" fill="#5C6670">bought and fully depleted during 2016.</text>
+  <text x="832" y="386" font-size="11" fill="#252423" font-weight="600">Recovered: 51,900 rows · $21.1M of COGS ·</text>
+  <text x="832" y="402" font-size="11" fill="#252423" font-weight="600">50,368 stockouts that were invisible.</text>
+
+  <!-- ============ CARD 4 ============ -->
+  <rect x="24" y="432" width="372" height="330" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <circle cx="56" cy="464" r="17" fill="#D64550"/>
+  <text x="56" y="470" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="84" y="462" font-size="14" font-weight="700" fill="#205072">Truncation quarantined, not patched</text>
+  <text x="84" y="480" font-size="11" fill="#5C6670">Fact_Sales partition filter</text>
+
+  <rect x="44" y="500" width="332" height="62" rx="10" fill="#F8FAFB" stroke="#E4E8EB" stroke-width="1"/>
+  <text x="60" y="522" font-size="11" fill="#D64550" font-weight="600">BEFORE</text>
+  <text x="60" y="540" font-size="12" fill="#252423">1,048,575 rows, labelled &quot;2016&quot;</text>
+  <text x="60" y="556" font-size="11" fill="#5C6670">exactly the Excel row ceiling — someone re-saved it</text>
+
+  <text x="200" y="580" font-size="14" fill="#329D9C" text-anchor="middle">▼</text>
+
+  <rect x="44" y="588" width="332" height="52" rx="10" fill="#F1FAF6" stroke="#CFF4D2" stroke-width="1"/>
+  <text x="60" y="610" font-size="11" fill="#00873A" font-weight="600">AFTER</text>
+  <text x="60" y="628" font-size="12" fill="#252423">937,596 January rows kept · 110,979 dropped</text>
+
+  <text x="44" y="666" font-size="12" font-weight="600" fill="#205072">Why</text>
+  <text x="44" y="685" font-size="11" fill="#5C6670">January is complete — 31 of 31 days, 79 of 79</text>
+  <text x="44" y="701" font-size="11" fill="#5C6670">stores. February holds 11 stores of 79. Keeping</text>
+  <text x="44" y="717" font-size="11" fill="#5C6670">that fragment would have biased every store and</text>
+  <text x="44" y="733" font-size="11" fill="#5C6670">vendor comparison in the report by a factor of</text>
+  <text x="44" y="749" font-size="11" fill="#5C6670">seven, silently. One clean month beats two dirty.</text>
+
+  <!-- ============ CARD 5 ============ -->
+  <rect x="418" y="432" width="372" height="330" rx="15" fill="#FFFFFF" stroke="#205072" stroke-width="2"/>
+  <circle cx="450" cy="464" r="17" fill="#205072"/>
+  <text x="450" y="470" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="478" y="462" font-size="14" font-weight="700" fill="#205072">Movement from the identity</text>
+  <text x="478" y="480" font-size="11" fill="#5C6670">ImpliedUnitsDepleted · ImpliedCOGS</text>
+
+  <rect x="438" y="500" width="332" height="62" rx="10" fill="#F8FAFB" stroke="#E4E8EB" stroke-width="1"/>
+  <text x="454" y="522" font-size="11" fill="#D64550" font-weight="600">BEFORE</text>
+  <text x="454" y="540" font-size="12" fill="#252423">2,194,959 units — one month of sales</text>
+  <text x="454" y="556" font-size="11" fill="#5C6670">divided into a twelve-month average inventory</text>
+
+  <text x="594" y="580" font-size="14" fill="#329D9C" text-anchor="middle">▼</text>
+
+  <rect x="438" y="588" width="332" height="52" rx="10" fill="#F1FAF6" stroke="#CFF4D2" stroke-width="1"/>
+  <text x="454" y="610" font-size="11" fill="#00873A" font-weight="600">AFTER</text>
+  <text x="454" y="628" font-size="12" fill="#252423">32,917,876 units depleted across all 12 months</text>
+
+  <text x="438" y="666" font-size="12" font-weight="600" fill="#205072">The identity</text>
+  <text x="438" y="686" font-size="12" fill="#252423">4,219,275 + 33,584,377 − 4,885,776</text>
+  <text x="438" y="704" font-size="11" fill="#5C6670">opening + received − closing, at SKU-store grain</text>
+  <text x="438" y="726" font-size="12" font-weight="600" fill="#D64550">What it costs</text>
+  <text x="438" y="745" font-size="11" fill="#5C6670">This is depletion, not sales. It absorbs shrinkage,</text>
+  <text x="438" y="761" font-size="11" fill="#5C6670">wastage and adjustments. That is stated on the measure.</text>
+
+  <!-- ============ CARD 6 ============ -->
+  <rect x="812" y="432" width="372" height="330" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <circle cx="844" cy="464" r="17" fill="#205072"/>
+  <text x="844" y="470" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+  <text x="872" y="462" font-size="14" font-weight="700" fill="#205072">A fallback chain for price</text>
+  <text x="872" y="480" font-size="11" fill="#5C6670">Fact_StockItem[Price]</text>
+
+  <rect x="832" y="500" width="332" height="62" rx="10" fill="#F8FAFB" stroke="#E4E8EB" stroke-width="1"/>
+  <text x="848" y="522" font-size="11" fill="#D64550" font-weight="600">BEFORE</text>
+  <text x="848" y="540" font-size="12" fill="#252423">closing price only</text>
+  <text x="848" y="556" font-size="11" fill="#5C6670">so a depleted SKU's opening stock valued at $0</text>
+
+  <text x="988" y="580" font-size="14" fill="#329D9C" text-anchor="middle">▼</text>
+
+  <rect x="832" y="588" width="332" height="52" rx="10" fill="#F1FAF6" stroke="#CFF4D2" stroke-width="1"/>
+  <text x="848" y="610" font-size="11" fill="#00873A" font-weight="600">AFTER</text>
+  <text x="848" y="628" font-size="12" fill="#252423">closing → opening → list price · 0 rows unvalued</text>
+
+  <text x="832" y="666" font-size="12" font-weight="600" fill="#205072">Why</text>
+  <text x="832" y="685" font-size="11" fill="#5C6670">The 32,906 SKU-stores recovered in step 3 have</text>
+  <text x="832" y="701" font-size="11" fill="#5C6670">no closing row, therefore no closing price. Without</text>
+  <text x="832" y="717" font-size="11" fill="#5C6670">the chain their opening value and their COGS both</text>
+  <text x="832" y="733" font-size="11" fill="#5C6670">collapse to zero and step 3 recovers rows but not</text>
+  <text x="832" y="749" font-size="11" fill="#5C6670">dollars. Verified: all 276,389 rows carry a price.</text>
+
+  <text x="24" y="800" font-size="11" fill="#5C6670">Steps 3, 5 and 6 are load-bearing for each other: the union recovers the rows, the identity gives them movement, the fallback gives them value. Remove any one and turnover changes.</text>
+  <text x="24" y="820" font-size="11" fill="#5C6670">Keying off the closing snapshot alone would have reported 4.20x turnover on a base that quietly omitted $21.1M of cost of goods.</text>
+</svg>

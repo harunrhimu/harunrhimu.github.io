@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" font-family="Segoe UI, Helvetica, Arial, sans-serif" height="660">
+  <rect x="0" y="0" width="1200" height="660" fill="#F4F5F7"/>
+
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#205072">Pipeline architecture</text>
+  <text x="24" y="58" font-size="13" fill="#5C6670">Six flat files to a four-page report. Every count below was recomputed from the source CSVs.</text>
+
+  <!-- arrows -->
+  <g fill="#329D9C">
+    <path d="M282 300 L308 312 L282 324 Z"/>
+    <path d="M578 300 L604 312 L578 324 Z"/>
+    <path d="M874 300 L900 312 L874 324 Z"/>
+  </g>
+
+  <!-- ============ COLUMN 1 : SOURCE ============ -->
+  <rect x="24" y="86" width="252" height="500" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <path d="M24 101 a15 15 0 0 1 15 -15 h222 a15 15 0 0 1 15 15 v29 h-252 Z" fill="#205072"/>
+  <text x="40" y="112" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.2">1 · SOURCE</text>
+  <text x="40" y="126" font-size="11" fill="#CFF4D2">6 CSV files · 3,869,871 rows · 570 MB</text>
+
+  <g font-size="12" fill="#252423">
+    <text x="40" y="158" font-weight="600">PurchasesFINAL12312016</text>
+    <text x="40" y="175" font-size="11" fill="#5C6670">2,372,474 purchase lines</text>
+
+    <text x="40" y="205" font-weight="600">SalesFINAL12312016</text>
+    <text x="40" y="222" font-size="11" fill="#D64550">1,048,575 rows — truncated</text>
+
+    <text x="40" y="252" font-weight="600">EndInvFINAL12312016</text>
+    <text x="40" y="269" font-size="11" fill="#5C6670">224,489 rows · 31 Dec 2016</text>
+
+    <text x="40" y="299" font-weight="600">BegInvFINAL12312016</text>
+    <text x="40" y="316" font-size="11" fill="#5C6670">206,529 rows · 1 Jan 2016</text>
+
+    <text x="40" y="346" font-weight="600">2017PurchasePricesDec</text>
+    <text x="40" y="363" font-size="11" fill="#5C6670">12,261 brands · price list</text>
+
+    <text x="40" y="393" font-weight="600">InvoicePurchases12312016</text>
+    <text x="40" y="410" font-size="11" fill="#5C6670">5,543 headers · freight only</text>
+  </g>
+
+  <rect x="40" y="432" width="220" height="1" fill="#E4E8EB"/>
+  <text x="40" y="456" font-size="11" font-weight="700" fill="#205072">Coverage is uneven</text>
+  <text x="40" y="474" font-size="11" fill="#5C6670">Purchases + snapshots: all 12</text>
+  <text x="40" y="490" font-size="11" fill="#5C6670">months. Sales: January only.</text>
+  <text x="40" y="506" font-size="11" fill="#5C6670">The whole model is shaped</text>
+  <text x="40" y="522" font-size="11" fill="#5C6670">around that one asymmetry.</text>
+
+  <!-- ============ COLUMN 2 : TRANSFORM ============ -->
+  <rect x="320" y="86" width="252" height="500" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <path d="M320 101 a15 15 0 0 1 15 -15 h222 a15 15 0 0 1 15 15 v29 h-252 Z" fill="#2A7C8C"/>
+  <text x="336" y="112" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.2">2 · TRANSFORM</text>
+  <text x="336" y="126" font-size="11" fill="#CFF4D2">Power Query (M) · 11 queries</text>
+
+  <g font-size="12" fill="#252423">
+    <text x="336" y="158" font-weight="600">SourceFolder</text>
+    <text x="336" y="175" font-size="11" fill="#5C6670">Text parameter — the one path</text>
+    <text x="336" y="190" font-size="11" fill="#5C6670">a cloner has to change.</text>
+
+    <text x="336" y="220" font-weight="600">InventorySource</text>
+    <text x="336" y="237" font-size="11" fill="#5C6670">Beg + End appended into one</text>
+    <text x="336" y="252" font-size="11" fill="#5C6670">table with a real SnapshotDate.</text>
+
+    <text x="336" y="282" font-weight="600">Key spine = union of 3</text>
+    <text x="336" y="299" font-size="11" fill="#5C6670">End + Beg + purchase ledger,</text>
+    <text x="336" y="314" font-size="11" fill="#5C6670">not the closing snapshot alone.</text>
+
+    <text x="336" y="344" font-weight="600">Inventory identity</text>
+    <text x="336" y="361" font-size="11" fill="#5C6670">open + received − close, at</text>
+    <text x="336" y="376" font-size="11" fill="#5C6670">SKU-store grain, floored at 0.</text>
+
+    <text x="336" y="406" font-weight="600">Price fallback chain</text>
+    <text x="336" y="423" font-size="11" fill="#5C6670">closing → opening → list price.</text>
+    <text x="336" y="438" font-size="11" fill="#5C6670">0 rows left unvalued.</text>
+  </g>
+
+  <rect x="336" y="458" width="220" height="1" fill="#E4E8EB"/>
+  <text x="336" y="482" font-size="11" font-weight="700" fill="#205072">Output of this layer</text>
+  <text x="336" y="500" font-size="11" fill="#5C6670">Fact_StockItem — 276,389</text>
+  <text x="336" y="516" font-size="11" fill="#5C6670">pre-aggregated SKU-stores,</text>
+  <text x="336" y="532" font-size="11" fill="#5C6670">one row per InventoryId.</text>
+
+  <!-- ============ COLUMN 3 : MODEL ============ -->
+  <rect x="616" y="86" width="252" height="500" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <path d="M616 101 a15 15 0 0 1 15 -15 h222 a15 15 0 0 1 15 15 v29 h-252 Z" fill="#329D9C"/>
+  <text x="632" y="112" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.2">3 · MODEL</text>
+  <text x="632" y="126" font-size="11" fill="#CFF4D2">Star schema · import mode</text>
+
+  <g font-size="12">
+    <text x="632" y="158" font-weight="600" fill="#252423">4 dimensions</text>
+    <text x="632" y="175" font-size="11" fill="#5C6670">Date · Product · Store · Vendor</text>
+
+    <text x="632" y="205" font-weight="600" fill="#252423">5 fact tables</text>
+    <text x="632" y="222" font-size="11" fill="#5C6670">Sales · Purchases · Inventory ·</text>
+    <text x="632" y="237" font-size="11" fill="#5C6670">InvoiceHeader · StockItem</text>
+
+    <text x="632" y="267" font-weight="600" fill="#252423">17 relationships</text>
+    <text x="632" y="284" font-size="11" fill="#5C6670">16 active, 1 inactive (InvoiceDate</text>
+    <text x="632" y="299" font-size="11" fill="#5C6670">— receiving is the live path).</text>
+
+    <text x="632" y="329" font-weight="600" fill="#252423">89 measures</text>
+    <text x="632" y="346" font-size="11" fill="#5C6670">38 base + 51 thin wrappers that</text>
+    <text x="632" y="361" font-size="11" fill="#5C6670">delegate to the calculation group.</text>
+
+    <text x="632" y="391" font-weight="600" fill="#252423">11 calculation items</text>
+    <text x="632" y="408" font-size="11" fill="#5C6670">Current · PY · PM · YTD and the</text>
+    <text x="632" y="423" font-size="11" fill="#5C6670">variance / badge variants.</text>
+  </g>
+
+  <rect x="632" y="443" width="220" height="1" fill="#E4E8EB"/>
+  <text x="632" y="467" font-size="11" font-weight="700" fill="#205072">The deliberate omission</text>
+  <text x="632" y="485" font-size="11" fill="#5C6670">Fact_StockItem has no Date</text>
+  <text x="632" y="501" font-size="11" fill="#5C6670">relationship. Its facts are annual</text>
+  <text x="632" y="517" font-size="11" fill="#5C6670">by construction, so a date filter</text>
+  <text x="632" y="533" font-size="11" fill="#5C6670">would only ever mislead.</text>
+
+  <!-- ============ COLUMN 4 : REPORT ============ -->
+  <rect x="912" y="86" width="252" height="500" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <path d="M912 101 a15 15 0 0 1 15 -15 h222 a15 15 0 0 1 15 15 v29 h-252 Z" fill="#56C596"/>
+  <text x="928" y="112" font-size="12" font-weight="700" fill="#0E3B33" letter-spacing="1.2">4 · REPORT</text>
+  <text x="928" y="126" font-size="11" fill="#14453C">PBIR · 4 pages · 60 visuals</text>
+
+  <g font-size="12" fill="#252423">
+    <text x="928" y="158" font-weight="600">Inventory Health</text>
+    <text x="928" y="175" font-size="11" fill="#5C6670">5 KPI cards · flow · supply bands</text>
+
+    <text x="928" y="205" font-weight="600">Where Capital Is Trapped</text>
+    <text x="928" y="222" font-size="11" fill="#5C6670">dead · overstock · stockouts</text>
+
+    <text x="928" y="252" font-weight="600">Store &amp; Vendor Scorecard</text>
+    <text x="928" y="269" font-size="11" fill="#5C6670">rank · turnover · margin · freight</text>
+
+    <text x="928" y="299" font-weight="600">Product Detail</text>
+    <text x="928" y="316" font-size="11" fill="#5C6670">SKU profile · flow · price vs cost</text>
+  </g>
+
+  <rect x="928" y="340" width="220" height="1" fill="#E4E8EB"/>
+  <text x="928" y="364" font-size="11" font-weight="700" fill="#205072">Chassis</text>
+  <text x="928" y="382" font-size="11" fill="#5C6670">1920 × 1080, FitToPage. Base</text>
+  <text x="928" y="398" font-size="11" fill="#5C6670">theme CY26SU05 with a custom</text>
+  <text x="928" y="414" font-size="11" fill="#5C6670">Inventory-Palette.json layered</text>
+  <text x="928" y="430" font-size="11" fill="#5C6670">on top so legend-driven series</text>
+  <text x="928" y="446" font-size="11" fill="#5C6670">cycle the project palette.</text>
+
+  <rect x="928" y="470" width="220" height="1" fill="#E4E8EB"/>
+  <text x="928" y="494" font-size="11" font-weight="700" fill="#205072">Every container</text>
+  <text x="928" y="512" font-size="11" fill="#5C6670">radius 15, 1px hairline, centred</text>
+  <text x="928" y="528" font-size="11" fill="#5C6670">title on a #F1F1F1 bar.</text>
+
+  <text x="24" y="622" font-size="11" fill="#5C6670">Refresh loads 2,372,474 purchase lines and 937,596 January sales rows; the 276,389-row StockItem fact is folded in Power Query, not DAX, so it aggregates correctly by store, vendor, product and class.</text>
+  <text x="24" y="642" font-size="11" fill="#5C6670">Row counts, dollar totals and ratios in this diagram were recomputed from the raw CSVs in a standalone script — not copied from the model.</text>
+</svg>

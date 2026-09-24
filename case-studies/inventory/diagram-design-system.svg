@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" font-family="Segoe UI, Helvetica, Arial, sans-serif" height="760">
+  <rect x="0" y="0" width="1200" height="760" fill="#F4F5F7"/>
+
+  <text x="24" y="32" font-size="21" font-weight="700" fill="#205072">The design system</text>
+  <text x="24" y="56" font-size="13" fill="#5C6670">One 1920 × 1080 chassis, one container rule, one palette. Every page is the same skeleton with different content in it.</text>
+
+  <!-- ================= LEFT : page skeleton ================= -->
+  <rect x="24" y="76" width="586" height="404" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="44" y="102" font-size="14" font-weight="700" fill="#205072">Page skeleton · 1920 × 1080, FitToPage</text>
+  <text x="44" y="120" font-size="11" fill="#5C6670">Drawn to scale from the shipped PBIR coordinates.</text>
+
+  <g transform="translate(44,134) scale(0.2802)">
+    <rect x="0" y="0" width="1920" height="1080" fill="#F4F5F7" stroke="#C9D0D6" stroke-width="4"/>
+
+    <!-- header band -->
+    <path d="M0 0 h1920 v120 a30 30 0 0 1 -30 30 h-1860 a30 30 0 0 1 -30 -30 Z" fill="#2C8C93"/>
+    <rect x="99" y="18" width="895" height="56" fill="#FFFFFF" fill-opacity="0.22"/>
+    <text x="118" y="58" font-size="40" fill="#FFFFFF" font-weight="600">Page title · 24pt</text>
+    <rect x="99" y="76" width="895" height="36" fill="#FFFFFF" fill-opacity="0.14"/>
+    <text x="118" y="102" font-size="40" fill="#E8F6F4">Subtitle · 10pt · carries the caveats</text>
+    <g fill="#FFFFFF" fill-opacity="0.3">
+      <rect x="1213" y="30" width="221" height="88" rx="8"/>
+      <rect x="1446" y="30" width="221" height="88" rx="8"/>
+      <rect x="1679" y="30" width="221" height="88" rx="8"/>
+    </g>
+    <text x="1240" y="88" font-size="40" fill="#FFFFFF">slicer</text>
+    <text x="1473" y="88" font-size="40" fill="#FFFFFF">slicer</text>
+    <text x="1706" y="88" font-size="40" fill="#FFFFFF">slicer</text>
+
+    <!-- KPI band -->
+    <g fill="#FFFFFF" stroke="#8FC4C3" stroke-width="3">
+      <rect x="20" y="161" width="366" height="156" rx="15"/>
+      <rect x="398" y="161" width="366" height="156" rx="15"/>
+      <rect x="777" y="161" width="366" height="156" rx="15"/>
+      <rect x="1155" y="161" width="366" height="156" rx="15"/>
+      <rect x="1534" y="161" width="366" height="156" rx="15"/>
+    </g>
+    <g font-size="40" fill="#5C6670">
+      <text x="42" y="200">KPI label</text><text x="420" y="200">KPI label</text><text x="799" y="200">KPI label</text>
+      <text x="1177" y="200">KPI label</text><text x="1556" y="200">KPI label</text>
+    </g>
+    <g font-size="52" font-weight="700" fill="#252423">
+      <text x="42" y="248">$80M</text><text x="420" y="248">4.20x</text><text x="799" y="248">54.2</text>
+      <text x="1177" y="248">32.8%</text><text x="1556" y="248">$3M</text>
+    </g>
+    <g stroke="#E4E8EB" stroke-width="3">
+      <line x1="42" y1="266" x2="364" y2="266"/><line x1="420" y1="266" x2="742" y2="266"/>
+      <line x1="799" y1="266" x2="1121" y2="266"/><line x1="1177" y1="266" x2="1499" y2="266"/>
+      <line x1="1556" y1="266" x2="1878" y2="266"/>
+    </g>
+    <g font-size="40" fill="#5C6670">
+      <text x="42" y="300">PM · MoM Var</text><text x="420" y="300">PM · MoM Var</text>
+      <text x="799" y="300">PM · MoM Var</text><text x="1177" y="300">PM · MoM Var</text>
+      <text x="1556" y="300">PM · MoM Var</text>
+    </g>
+
+    <!-- chart rows -->
+    <g fill="#FFFFFF" stroke="#8FC4C3" stroke-width="3">
+      <rect x="20" y="329" width="618" height="370" rx="15"/>
+      <rect x="651" y="329" width="618" height="370" rx="15"/>
+      <rect x="1281" y="329" width="618" height="370" rx="15"/>
+      <rect x="20" y="711" width="618" height="349" rx="15"/>
+      <rect x="651" y="711" width="618" height="349" rx="15"/>
+      <rect x="1281" y="711" width="618" height="349" rx="15"/>
+    </g>
+    <g fill="#F1F1F1">
+      <rect x="23" y="332" width="612" height="46"/><rect x="654" y="332" width="612" height="46"/>
+      <rect x="1284" y="332" width="612" height="46"/><rect x="23" y="714" width="612" height="46"/>
+      <rect x="654" y="714" width="612" height="46"/><rect x="1284" y="714" width="612" height="46"/>
+    </g>
+    <g font-size="40" fill="#5C6670" text-anchor="middle">
+      <text x="329" y="368">centred title bar</text><text x="960" y="368">centred title bar</text>
+      <text x="1590" y="368">centred title bar</text><text x="329" y="750">centred title bar</text>
+      <text x="960" y="750">centred title bar</text><text x="1590" y="750">centred title bar</text>
+    </g>
+    <g font-size="44" fill="#B4BEC6" text-anchor="middle">
+      <text x="329" y="545">chart</text><text x="960" y="545">chart</text><text x="1590" y="545">chart</text>
+      <text x="329" y="915">chart</text><text x="960" y="915">chart</text><text x="1590" y="915">chart</text>
+    </g>
+
+    <!-- grid annotations -->
+    <g stroke="#D64550" stroke-width="3" stroke-dasharray="12 10" opacity="0.55">
+      <line x1="20" y1="0" x2="20" y2="1080"/>
+      <line x1="1899" y1="0" x2="1899" y2="1080"/>
+    </g>
+  </g>
+
+  <text x="44" y="454" font-size="11" fill="#5C6670">Left margin 20 · right edge 1899 · gutter 12 · KPI band y=161 h=156 · chart row 1 y=329 h=370 · chart row 2 y=711 h=349</text>
+  <text x="44" y="470" font-size="11" fill="#5C6670">Textbox height floor: max(18, ceil(pt × 25/16)) + 16 — below it Power BI Desktop draws a scrollbar inside the box.</text>
+
+  <!-- ================= RIGHT : palette ================= -->
+  <rect x="626" y="76" width="550" height="284" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="646" y="102" font-size="14" font-weight="700" fill="#205072">Palette</text>
+  <text x="646" y="120" font-size="11" fill="#5C6670">Series fills are literal hex, never a theme ColorId.</text>
+
+  <g>
+    <rect x="646" y="134" width="34" height="34" rx="6" fill="#329D9C"/>
+    <text x="690" y="148" font-size="12" font-weight="600" fill="#252423">#329D9C · ACCENT</text>
+    <text x="690" y="163" font-size="11" fill="#5C6670">primary series · dataColors[0] · container hairline</text>
+
+    <rect x="646" y="176" width="34" height="34" rx="6" fill="#205072"/>
+    <text x="690" y="190" font-size="12" font-weight="600" fill="#252423">#205072 · ACCENT DARK</text>
+    <text x="690" y="205" font-size="11" fill="#5C6670">secondary series · dead stock · overstock · freight</text>
+
+    <rect x="646" y="218" width="34" height="34" rx="6" fill="#56C596"/>
+    <text x="690" y="232" font-size="12" font-weight="600" fill="#252423">#56C596 · ACCENT LIGHT</text>
+    <text x="690" y="247" font-size="11" fill="#5C6670">tertiary series · gross margin</text>
+
+    <rect x="646" y="260" width="34" height="34" rx="6" fill="#00B53F"/>
+    <rect x="684" y="260" width="34" height="34" rx="6" fill="#D64550"/>
+    <text x="728" y="274" font-size="12" font-weight="600" fill="#252423">#00B53F / #D64550 · POSITIVE / NEGATIVE</text>
+    <text x="728" y="289" font-size="11" fill="#5C6670">variance badge only — never a chart series</text>
+
+    <rect x="646" y="302" width="34" height="34" rx="6" fill="#F4F5F7" stroke="#D9DEE3" stroke-width="1"/>
+    <rect x="684" y="302" width="34" height="34" rx="6" fill="#F1F1F1" stroke="#D9DEE3" stroke-width="1"/>
+    <text x="728" y="316" font-size="12" font-weight="600" fill="#252423">#F4F5F7 body · #FFFFFF container · #F1F1F1 title bar</text>
+    <text x="728" y="331" font-size="11" fill="#5C6670">header gradient #205072 → #329D9C → #56C596 → #7BE495</text>
+  </g>
+
+  <!-- sequential ramp -->
+  <rect x="626" y="376" width="550" height="140" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="646" y="402" font-size="14" font-weight="700" fill="#205072">Severity is carried by depth, not by red</text>
+  <text x="646" y="420" font-size="11" fill="#5C6670">Pale means healthy, dark means trapped. Red would read as an error, not a holding.</text>
+  <g>
+    <rect x="646" y="434" width="72" height="30" fill="#CFF4D2"/>
+    <rect x="718" y="434" width="72" height="30" fill="#7BE495"/>
+    <rect x="790" y="434" width="72" height="30" fill="#56C596"/>
+    <rect x="862" y="434" width="72" height="30" fill="#329D9C"/>
+    <rect x="934" y="434" width="72" height="30" fill="#2A7C8C"/>
+    <rect x="1006" y="434" width="72" height="30" fill="#205072"/>
+    <rect x="1078" y="434" width="72" height="30" fill="#1A3F5C"/>
+  </g>
+  <g font-size="11" fill="#5C6670" text-anchor="middle">
+    <text x="682" y="480">out of</text><text x="682" y="493">stock</text>
+    <text x="754" y="480">0–30</text><text x="754" y="493">days</text>
+    <text x="826" y="480">31–90</text><text x="826" y="493">days</text>
+    <text x="898" y="480">91–180</text><text x="898" y="493">days</text>
+    <text x="970" y="480">181–365</text><text x="970" y="493">days</text>
+    <text x="1042" y="480">365+</text><text x="1042" y="493">days</text>
+    <text x="1114" y="480">no</text><text x="1114" y="493">movement</text>
+  </g>
+
+  <!-- type + container -->
+  <rect x="626" y="532" width="550" height="164" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="646" y="558" font-size="14" font-weight="700" fill="#205072">Type and container</text>
+  <text x="646" y="582" font-size="18" font-weight="600" fill="#252423">Page title · Segoe UI 24pt</text>
+  <text x="646" y="604" font-size="15" font-weight="700" fill="#252423">KPI value · Segoe UI Bold 22pt</text>
+  <text x="646" y="624" font-size="12" fill="#252423">Chart title · 12pt · centred</text>
+  <text x="646" y="642" font-size="11" fill="#5C6670">Body, axis, labels · 10–11pt</text>
+  <rect x="900" y="566" width="256" height="112" rx="15" fill="#FFFFFF" stroke="#295F5E" stroke-width="1"/>
+  <rect x="902" y="568" width="252" height="26" fill="#F1F1F1"/>
+  <text x="1028" y="585" font-size="11" fill="#5C6670" text-anchor="middle">centred title bar</text>
+  <text x="920" y="618" font-size="11" fill="#252423">border: radius 15, width 1</text>
+  <text x="920" y="636" font-size="11" fill="#252423">colour: ThemeDataColor 0 @ −20%</text>
+  <text x="920" y="654" font-size="11" fill="#252423">background: white, transparency 0</text>
+  <text x="920" y="670" font-size="11" fill="#5C6670">applied to every chart, table and card</text>
+
+  <rect x="24" y="494" width="586" height="202" rx="15" fill="#FFFFFF" stroke="#D64550" stroke-width="1"/>
+  <text x="44" y="520" font-size="14" font-weight="700" fill="#205072">Three colour bugs found and fixed while applying this</text>
+  <text x="44" y="546" font-size="12" font-weight="600" fill="#252423">ThemeDataColor on a series</text>
+  <text x="44" y="562" font-size="11" fill="#5C6670">Charts rendered the base theme's blue, not the accent. A theme ColorId</text>
+  <text x="44" y="577" font-size="11" fill="#5C6670">resolves against the base theme. Fix: series fills are literal hex, always.</text>
+  <text x="44" y="602" font-size="12" font-weight="600" fill="#252423">dataViewWildcard on a category scopeId</text>
+  <text x="44" y="618" font-size="11" fill="#5C6670">The band ramp never matched and every slice fell back to the theme</text>
+  <text x="44" y="633" font-size="11" fill="#5C6670">colour. Fix: category selectors take a bare scopeId.</text>
+  <text x="44" y="658" font-size="12" font-weight="600" fill="#252423">metadata selector on a single-measure chart</text>
+  <text x="44" y="674" font-size="11" fill="#5C6670">On a single series the series is the category, so metadata never binds.</text>
+  <text x="44" y="689" font-size="11" fill="#5C6670">Fix: single-measure charts use defaultColor; multi-measure use metadata.</text>
+
+  <text x="24" y="732" font-size="11" fill="#5C6670">Badge polarity is not decorative. Rising turnover, margin and sell-through render green; rising days of supply, dead stock, overstock, stockouts and freight share render red;</text>
+  <text x="24" y="750" font-size="11" fill="#5C6670">rising inventory value, on-hand and purchases stay grey. A card that greens a rising dead-stock number is worse than no card at all.</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="560" fill="#F4F5F7"/>
+
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#205072">The model we left alone</text>
+  <text x="24" y="58" font-size="13" fill="#5C6670">Unchanged this phase — drawn here because it is exactly what Phase 2 targets.</text>
+
+  <rect x="24" y="86" width="1152" height="380" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+
+  <!-- fact-to-fact link -->
+  <path d="M360 180 L560 180" stroke="#D64550" stroke-width="2.5"/>
+  <path d="M368 172 L352 180 L368 188 Z" fill="#D64550"/>
+  <path d="M552 172 L568 180 L552 188 Z" fill="#D64550"/>
+  <text x="460" y="152" font-size="11" font-weight="700" fill="#D64550" text-anchor="middle">fact-to-fact</text>
+  <text x="460" y="167" font-size="11" fill="#D64550" text-anchor="middle">many : many &#183; bidirectional</text>
+  <text x="460" y="203" font-size="10" fill="#5C6670" text-anchor="middle">a filter on either side reaches the other</text>
+
+  <!-- bridge link -->
+  <path d="M685 220 L685 310" stroke="#D64550" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <path d="M677 302 L685 318 L693 302 Z" fill="#D64550"/>
+  <text x="700" y="256" font-size="11" font-weight="700" fill="#D64550">bridge stands in for</text>
+  <text x="700" y="271" font-size="11" fill="#D64550">a relationship</text>
+
+  <!-- working single-direction link -->
+  <path d="M235 220 L235 310" stroke="#329D9C" stroke-width="2"/>
+  <path d="M227 302 L235 318 L243 302 Z" fill="#329D9C"/>
+  <text x="250" y="262" font-size="11" font-weight="700" fill="#2A7C8C">single direction</text>
+  <text x="250" y="277" font-size="11" fill="#5C6670">this one works</text>
+
+  <!-- no-key link -->
+  <path d="M360 350 L560 350" stroke="#D64550" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="460" cy="350" r="11" fill="#FFFFFF" stroke="#D64550" stroke-width="1.5"/>
+  <text x="460" y="354" font-size="11" font-weight="700" fill="#D64550" text-anchor="middle">&#215;</text>
+  <text x="460" y="330" font-size="10" fill="#5C6670" text-anchor="middle">no shared key — the relationship does not exist</text>
+
+  <!-- measure compensation -->
+  <path d="M1035 220 L1035 310" stroke="#D64550" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="1050" y="256" font-size="11" font-weight="700" fill="#D64550">rebuilt per query</text>
+  <text x="1050" y="271" font-size="11" fill="#5C6670">at evaluation time</text>
+
+  <!-- ============ TOP ROW ============ -->
+  <rect x="110" y="140" width="250" height="80" rx="10" fill="#205072"/>
+  <text x="235" y="174" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Fact Purchase Orders</text>
+  <text x="235" y="195" font-size="10" fill="#CFF4D2" text-anchor="middle">the grain the report counts at</text>
+
+  <rect x="560" y="140" width="250" height="80" rx="10" fill="#205072"/>
+  <text x="685" y="174" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Fact Inventory</text>
+  <text x="685" y="195" font-size="10" fill="#CFF4D2" text-anchor="middle">joined straight to the fact on the left</text>
+
+  <rect x="860" y="140" width="292" height="80" rx="10" fill="#FFFFFF" stroke="#D64550" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="1006" y="170" font-size="13" font-weight="700" fill="#D64550" text-anchor="middle">FILTER ( ALL ( &#8230; ) ) measures</text>
+  <text x="1006" y="190" font-size="10" fill="#5C6670" text-anchor="middle">compensate for the paths the model lacks</text>
+
+  <!-- ============ BOTTOM ROW ============ -->
+  <rect x="110" y="310" width="250" height="80" rx="10" fill="#329D9C"/>
+  <text x="235" y="344" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Dim Vendor</text>
+  <text x="235" y="365" font-size="10" fill="#CFF4D2" text-anchor="middle">reached by one clean single-direction path</text>
+
+  <rect x="560" y="310" width="250" height="80" rx="10" fill="#FFFFFF" stroke="#D64550" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="685" y="344" font-size="13" font-weight="700" fill="#D64550" text-anchor="middle">Bridge table</text>
+  <text x="685" y="365" font-size="10" fill="#5C6670" text-anchor="middle">vendor &#215; category, carrying the many-to-many</text>
+
+  <rect x="860" y="310" width="292" height="80" rx="10" fill="#329D9C"/>
+  <text x="1006" y="344" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Dim Category</text>
+  <text x="1006" y="365" font-size="10" fill="#CFF4D2" text-anchor="middle">the table the bridge points at</text>
+
+  <text x="24" y="496" font-size="12" fill="#252423"><tspan font-weight="700" fill="#205072">Navy = facts. Teal = a relationship that works. Red dashed = the patterns this phase did not touch.</tspan></text>
+  <text x="24" y="518" font-size="12" fill="#5C6670">Phase 2 replaces the bridge with a real star-schema relationship and removes the measures that rebuild the path it stands for.</text>
+</svg>

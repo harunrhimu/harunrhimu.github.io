@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="500" fill="#F4F5F7"/>
+
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#205072">The shape of a workaround</text>
+  <text x="24" y="58" font-size="13" fill="#5C6670">Every FILTER(ALL(&#8230;)) measure in the file has the same form — a relationship rebuilt in the measure, once per query.</text>
+
+  <!-- ============ LEFT : AS WRITTEN ============ -->
+  <rect x="24" y="86" width="560" height="320" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="118" font-size="12" font-weight="700" fill="#D64550" letter-spacing="1.2">AS WRITTEN TODAY</text>
+
+  <rect x="104" y="134" width="400" height="60" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+  <text x="304" y="160" font-size="13" font-weight="600" fill="#252423" text-anchor="middle">DimSomething — the whole table</text>
+  <text x="304" y="179" font-size="11" fill="#5C6670" text-anchor="middle">every row of the dimension, every time</text>
+
+  <path d="M304 194 L304 214" stroke="#D64550" stroke-width="2"/>
+  <path d="M296 208 L304 224 L312 208 Z" fill="#D64550"/>
+  <text x="320" y="212" font-size="10" fill="#5C6670">FILTER ( ALL ( &#8230; ) )</text>
+
+  <rect x="104" y="224" width="400" height="60" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+  <text x="304" y="250" font-size="13" font-weight="600" fill="#252423" text-anchor="middle">Collapsed back to the current row</text>
+  <text x="304" y="269" font-size="11" fill="#5C6670" text-anchor="middle">the model&#8217;s own filter path, rebuilt by hand</text>
+
+  <path d="M304 284 L304 304" stroke="#D64550" stroke-width="2"/>
+  <path d="M296 298 L304 314 L312 298 Z" fill="#D64550"/>
+  <text x="320" y="302" font-size="10" fill="#5C6670">CALCULATE</text>
+
+  <rect x="104" y="314" width="400" height="60" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+  <text x="304" y="340" font-size="13" font-weight="600" fill="#252423" text-anchor="middle">[Base Measure] re-scoped</text>
+  <text x="304" y="359" font-size="11" fill="#5C6670" text-anchor="middle">the right number — at the price of a full-table scan</text>
+
+  <text x="48" y="392" font-size="11" fill="#5C6670">This runs on every evaluation, on every visual that binds it.</text>
+
+  <!-- ============ RIGHT : WITH THE RELATIONSHIP ============ -->
+  <rect x="616" y="86" width="560" height="320" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="640" y="118" font-size="12" font-weight="700" fill="#00873A" letter-spacing="1.2">IF THE RELATIONSHIP EXISTED</text>
+
+  <rect x="696" y="134" width="400" height="60" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+  <text x="896" y="160" font-size="13" font-weight="600" fill="#252423" text-anchor="middle">DimSomething</text>
+  <text x="896" y="179" font-size="11" fill="#5C6670" text-anchor="middle">reached the way every other dimension is</text>
+
+  <path d="M896 194 L896 214" stroke="#00873A" stroke-width="2"/>
+  <path d="M888 208 L896 224 L904 208 Z" fill="#00873A"/>
+  <text x="912" y="212" font-size="10" fill="#5C6670">relationship</text>
+
+  <rect x="696" y="224" width="400" height="60" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+  <text x="896" y="250" font-size="13" font-weight="600" fill="#252423" text-anchor="middle">[Base Measure] scoped by the model</text>
+  <text x="896" y="269" font-size="11" fill="#5C6670" text-anchor="middle">the same number, without the scan</text>
+
+  <path d="M896 284 L896 304" stroke="#00873A" stroke-width="2"/>
+  <path d="M888 298 L896 314 L904 298 Z" fill="#00873A"/>
+
+  <rect x="696" y="314" width="400" height="60" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+  <text x="896" y="340" font-size="13" font-weight="600" fill="#252423" text-anchor="middle">No FILTER. No ALL.</text>
+  <text x="896" y="359" font-size="11" fill="#5C6670" text-anchor="middle">the relationship resolves it once, not per query</text>
+
+  <text x="640" y="392" font-size="11" fill="#5C6670">Not built yet — this is the model work Phase 2 owns.</text>
+
+  <text x="24" y="436" font-size="12" fill="#252423"><tspan font-weight="700" fill="#205072">A FILTER(ALL(&#8230;)) in a measure is not a mistake — it is a receipt.</tspan> It says a relationship is missing.</text>
+  <text x="24" y="458" font-size="12" fill="#5C6670">Deleting the receipt does not add the relationship, so none of this layer was touched in Phase 1 — the gain had to belong to the query layer alone.</text>
+</svg>

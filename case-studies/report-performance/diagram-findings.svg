@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="480" fill="#F4F5F7"/>
+
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#205072">The causal chain</text>
+  <text x="24" y="58" font-size="13" fill="#5C6670">One cause, three symptoms, and the boundary that leaves the model for Phase 2.</text>
+
+  <!-- chain -->
+  <rect x="24" y="100" width="250" height="104" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+  <text x="149" y="138" font-size="13" font-weight="700" fill="#D64550" text-anchor="middle">A flat table, filtered last</text>
+  <text x="149" y="160" font-size="11" fill="#5C6670" text-anchor="middle">denormalized, 40-plus columns,</text>
+  <text x="149" y="176" font-size="11" fill="#5C6670" text-anchor="middle">no medallion layers</text>
+
+  <rect x="304" y="100" width="250" height="104" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+  <text x="429" y="138" font-size="13" font-weight="700" fill="#D64550" text-anchor="middle">Every interaction pays</text>
+  <text x="429" y="160" font-size="11" fill="#5C6670" text-anchor="middle">the full scan and join, because</text>
+  <text x="429" y="176" font-size="11" fill="#5C6670" text-anchor="middle">the work is per query, not per load</text>
+
+  <rect x="584" y="100" width="250" height="104" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+  <text x="709" y="132" font-size="13" font-weight="700" fill="#D64550" text-anchor="middle">15.2 s to open</text>
+  <text x="709" y="153" font-size="13" font-weight="700" fill="#D64550" text-anchor="middle">11.9 s worst visual</text>
+  <text x="709" y="174" font-size="13" font-weight="700" fill="#D64550" text-anchor="middle">454 s to re-filter</text>
+
+  <rect x="864" y="100" width="312" height="104" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+  <text x="1020" y="138" font-size="13" font-weight="700" fill="#00873A" text-anchor="middle">Medallion rebuild</text>
+  <text x="1020" y="160" font-size="11" fill="#5C6670" text-anchor="middle">Bronze, Silver and Gold move the</text>
+  <text x="1020" y="176" font-size="11" fill="#5C6670" text-anchor="middle">expensive work to refresh time</text>
+
+  <g fill="#D64550">
+    <path d="M278 144 L296 152 L278 160 Z"/>
+    <path d="M558 144 L576 152 L558 160 Z"/>
+  </g>
+  <path d="M840 144 L858 152 L840 160 Z" fill="#00873A"/>
+
+  <!-- result -->
+  <path d="M1020 204 L1020 250" stroke="#00873A" stroke-width="2"/>
+  <path d="M1012 244 L1020 260 L1028 244 Z" fill="#00873A"/>
+
+  <rect x="864" y="260" width="312" height="104" rx="10" fill="#FFFFFF" stroke="#B7E1C3" stroke-width="1"/>
+  <text x="1020" y="292" font-size="13" font-weight="700" fill="#00873A" text-anchor="middle">5.3 s &#183; 1.6 s &#183; ~1.6 s</text>
+  <text x="1020" y="314" font-size="11" fill="#5C6670" text-anchor="middle">measured on the same report,</text>
+  <text x="1020" y="330" font-size="11" fill="#5C6670" text-anchor="middle">with the model untouched</text>
+
+  <!-- left for phase 2 -->
+  <rect x="24" y="260" width="810" height="104" rx="10" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="290" font-size="12" font-weight="700" fill="#205072" letter-spacing="1.2">LEFT FOR PHASE 2</text>
+
+  <rect x="48" y="304" width="240" height="42" rx="8" fill="#F4F5F7" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="168" y="330" font-size="12" font-weight="600" fill="#252423" text-anchor="middle">Bridge table</text>
+
+  <rect x="300" y="304" width="240" height="42" rx="8" fill="#F4F5F7" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="420" y="330" font-size="12" font-weight="600" fill="#252423" text-anchor="middle">Fact-to-fact joins</text>
+
+  <rect x="552" y="304" width="258" height="42" rx="8" fill="#F4F5F7" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="681" y="330" font-size="12" font-weight="600" fill="#252423" text-anchor="middle">FILTER(ALL(&#8230;)) measures</text>
+
+  <text x="24" y="404" font-size="12" fill="#252423"><tspan font-weight="700" fill="#205072">The whole improvement came from the left three boxes.</tspan> The right-hand panel is unchanged, which is what makes the number attributable.</text>
+  <text x="24" y="426" font-size="11" fill="#5C6670">Figures captured with Performance Analyzer on the same report and the same visuals, before and after the query rewrite.</text>
+</svg>

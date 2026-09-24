@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" width="1200" font-family="Segoe UI, Helvetica, Arial, sans-serif" height="780">
+  <rect x="0" y="0" width="1200" height="780" fill="#F4F5F7"/>
+
+  <text x="24" y="32" font-size="21" font-weight="700" fill="#205072">What the rebuild changed</text>
+  <text x="24" y="56" font-size="13" fill="#5C6670">The &quot;before&quot; column is read from the pre-rebuild project backup and recomputed against the same CSVs — not remembered.</text>
+
+  <rect x="24" y="76" width="1152" height="620" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+
+  <!-- header -->
+  <rect x="24" y="76" width="1152" height="42" rx="15" fill="#205072"/>
+  <rect x="24" y="97" width="1152" height="21" fill="#205072"/>
+  <text x="48" y="103" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="0.8">DIMENSION</text>
+  <text x="320" y="103" font-size="12" font-weight="700" fill="#F0B8BC" letter-spacing="0.8">BEFORE</text>
+  <text x="740" y="103" font-size="12" font-weight="700" fill="#CFF4D2" letter-spacing="0.8">AFTER</text>
+
+  <!-- row separators -->
+  <g stroke="#EDF0F2" stroke-width="1">
+    <line x1="24" y1="170" x2="1176" y2="170"/>
+    <line x1="24" y1="222" x2="1176" y2="222"/>
+    <line x1="24" y1="274" x2="1176" y2="274"/>
+    <line x1="24" y1="326" x2="1176" y2="326"/>
+    <line x1="24" y1="378" x2="1176" y2="378"/>
+    <line x1="24" y1="430" x2="1176" y2="430"/>
+    <line x1="24" y1="482" x2="1176" y2="482"/>
+    <line x1="24" y1="534" x2="1176" y2="534"/>
+    <line x1="24" y1="586" x2="1176" y2="586"/>
+    <line x1="24" y1="638" x2="1176" y2="638"/>
+  </g>
+  <line x1="312" y1="118" x2="312" y2="696" stroke="#EDF0F2" stroke-width="1"/>
+  <line x1="732" y1="118" x2="732" y2="696" stroke="#EDF0F2" stroke-width="1"/>
+
+  <!-- shaded "structure" block -->
+  <rect x="24" y="118" width="1152" height="260" fill="#F8FAFB"/>
+  <line x1="312" y1="118" x2="312" y2="696" stroke="#EDF0F2" stroke-width="1"/>
+  <line x1="732" y1="118" x2="732" y2="696" stroke="#EDF0F2" stroke-width="1"/>
+  <g stroke="#EDF0F2" stroke-width="1">
+    <line x1="24" y1="170" x2="1176" y2="170"/>
+    <line x1="24" y1="222" x2="1176" y2="222"/>
+    <line x1="24" y1="274" x2="1176" y2="274"/>
+    <line x1="24" y1="326" x2="1176" y2="326"/>
+  </g>
+
+  <g font-size="12">
+    <!-- 1 -->
+    <text x="48" y="145" font-weight="600" fill="#252423">Model tables</text>
+    <text x="48" y="161" font-size="11" fill="#5C6670">structure</text>
+    <text x="332" y="145" fill="#252423">7</text>
+    <text x="332" y="161" font-size="11" fill="#5C6670">2 real tables + 4 auto-generated date tables + 1 measure holder</text>
+    <text x="756" y="145" fill="#252423">11</text>
+    <text x="756" y="161" font-size="11" fill="#5C6670">4 dimensions + 5 facts + measure table + calculation group</text>
+
+    <!-- 2 -->
+    <text x="48" y="197" font-weight="600" fill="#252423">Relationships</text>
+    <text x="48" y="213" font-size="11" fill="#5C6670">structure</text>
+    <text x="332" y="197" fill="#252423">3</text>
+    <text x="332" y="213" font-size="11" fill="#5C6670">all three to auto-generated date tables — no conformed dimension</text>
+    <text x="756" y="197" fill="#252423">17</text>
+    <text x="756" y="213" font-size="11" fill="#5C6670">16 active + 1 inactive (Purchases[InvoiceDate], for spend timing)</text>
+
+    <!-- 3 -->
+    <text x="48" y="249" font-weight="600" fill="#252423">Measures</text>
+    <text x="48" y="265" font-size="11" fill="#5C6670">logic</text>
+    <text x="332" y="249" fill="#252423">7</text>
+    <text x="332" y="265" font-size="11" fill="#5C6670">no display folders, no descriptions, no format discipline</text>
+    <text x="756" y="249" fill="#252423">89</text>
+    <text x="756" y="265" font-size="11" fill="#5C6670">38 base + 51 wrappers, in 8 folders, every one documented</text>
+
+    <!-- 4 -->
+    <text x="48" y="301" font-weight="600" fill="#252423">Calculation items</text>
+    <text x="48" y="317" font-size="11" fill="#5C6670">logic</text>
+    <text x="332" y="301" fill="#252423">0</text>
+    <text x="332" y="317" font-size="11" fill="#5C6670">time intelligence would be copy-pasted per measure</text>
+    <text x="756" y="301" fill="#252423">11</text>
+    <text x="756" y="317" font-size="11" fill="#5C6670">one engine — Current, PM, PY, YTD, variance and badge variants</text>
+
+    <!-- 5 -->
+    <text x="48" y="353" font-weight="600" fill="#252423">Report surface</text>
+    <text x="48" y="369" font-size="11" fill="#5C6670">structure</text>
+    <text x="332" y="353" fill="#252423">1 page · 16 visuals</text>
+    <text x="332" y="369" font-size="11" fill="#5C6670">three near-identical bar charts of a 224k-value composite key</text>
+    <text x="756" y="353" fill="#252423">4 pages · 60 visuals</text>
+    <text x="756" y="369" font-size="11" fill="#5C6670">health · trapped capital · store &amp; vendor · product profile</text>
+
+    <!-- 6 -->
+    <text x="48" y="405" font-weight="600" fill="#252423">Purchase grain</text>
+    <text x="48" y="421" font-size="11" fill="#5C6670">data</text>
+    <text x="332" y="405" fill="#252423">invoice header · 5,543 rows</text>
+    <text x="332" y="421" font-size="11" fill="#5C6670">no product, no store — spend could not be attributed to anything</text>
+    <text x="756" y="405" fill="#252423">purchase line · 2,372,474 rows</text>
+    <text x="756" y="421" font-size="11" fill="#5C6670">headers retained only for freight, which has no line-level equivalent</text>
+  </g>
+
+  <!-- numbers block -->
+  <g font-size="12">
+    <!-- 7 -->
+    <text x="48" y="457" font-weight="600" fill="#252423">Inventory Value</text>
+    <text x="48" y="473" font-size="11" fill="#5C6670">was wrong</text>
+    <text x="332" y="457" fill="#D64550" font-weight="600">$147,758,631</text>
+    <text x="332" y="473" font-size="11" fill="#5C6670">SUMX over both snapshots — the opening and closing added together</text>
+    <text x="756" y="457" fill="#00873A" font-weight="600">$79,704,851</text>
+    <text x="756" y="473" font-size="11" fill="#5C6670">the 31 Dec closing position, on its own</text>
+
+    <!-- 8 -->
+    <text x="48" y="509" font-weight="600" fill="#252423">Total On Hand</text>
+    <text x="48" y="525" font-size="11" fill="#5C6670">was wrong</text>
+    <text x="332" y="509" fill="#D64550" font-weight="600">9,105,051 units</text>
+    <text x="332" y="525" font-size="11" fill="#5C6670">same double count: 4,219,275 opening + 4,885,776 closing</text>
+    <text x="756" y="509" fill="#00873A" font-weight="600">4,885,776 units</text>
+    <text x="756" y="525" font-size="11" fill="#5C6670">closing units only</text>
+
+    <!-- 9 -->
+    <text x="48" y="561" font-weight="600" fill="#252423">Inventory Turnover</text>
+    <text x="48" y="577" font-size="11" fill="#5C6670">was not turnover</text>
+    <text x="332" y="561" fill="#D64550" font-weight="600">2.18</text>
+    <text x="332" y="577" font-size="11" fill="#5C6670">purchase spend ÷ stock value — a buy-to-hold ratio, not turns</text>
+    <text x="756" y="561" fill="#00873A" font-weight="600">4.20x</text>
+    <text x="756" y="577" font-size="11" fill="#5C6670">COGS $310,344,546 ÷ average inventory $73,926,741</text>
+
+    <!-- 10 -->
+    <text x="48" y="613" font-weight="600" fill="#252423">Days of stock</text>
+    <text x="48" y="629" font-size="11" fill="#5C6670">was wrong</text>
+    <text x="332" y="613" fill="#D64550" font-weight="600">167.5 days</text>
+    <text x="332" y="629" font-size="11" fill="#5C6670">365 ÷ a ratio that was not turnover, so the answer meant nothing</text>
+    <text x="756" y="613" fill="#00873A" font-weight="600">54.2 days</text>
+    <text x="756" y="629" font-size="11" fill="#5C6670">4,885,776 units × 365 ÷ 32,917,876 depleted</text>
+
+    <!-- 11 -->
+    <text x="48" y="665" font-weight="600" fill="#252423">Total Price</text>
+    <text x="48" y="681" font-size="11" fill="#5C6670">deleted</text>
+    <text x="332" y="665" fill="#D64550" font-weight="600">$9,890,782</text>
+    <text x="332" y="681" font-size="11" fill="#5C6670">SUM of 431,018 unit prices — an addition of things you cannot add</text>
+    <text x="756" y="665" fill="#5C6670" font-weight="600">removed</text>
+    <text x="756" y="681" font-size="11" fill="#5C6670">a card showing a meaningless number is worse than an empty slot</text>
+  </g>
+
+  <text x="24" y="726" font-size="12" fill="#252423"><tspan font-weight="700" fill="#205072">The point of the last five rows:</tspan> the original report was not merely thin — four of its five KPI cards were confidently wrong, and nothing on the page said so.</text>
+  <text x="24" y="748" font-size="12" fill="#5C6670">Turnover read 2.18 because it divided purchase spend by stock value. Once turnover is defined properly it is 4.20x, and days of stock falls from 167.5 to 54.2.</text>
+  <text x="24" y="768" font-size="11" fill="#5C6670">Before-column figures were recomputed from BegInv + EndInv + InvoicePurchases using the pre-rebuild measure definitions found in the project backup.</text>
+</svg>

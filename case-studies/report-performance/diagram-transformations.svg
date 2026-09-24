@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="560" fill="#F4F5F7"/>
+
+  <text x="24" y="34" font-size="21" font-weight="700" fill="#205072">The shape of the work</text>
+  <text x="24" y="58" font-size="13" fill="#5C6670">The rewrites did not make each step faster. They changed the order, so less data reaches every step.</text>
+
+  <!-- ============ BEFORE ============ -->
+  <rect x="24" y="86" width="1152" height="170" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="116" font-size="12" font-weight="700" fill="#D64550" letter-spacing="1.2">BEFORE &#183; FILTER APPLIED LAST</text>
+
+  <g>
+    <rect x="55" y="140" width="250" height="84" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+    <text x="71" y="171" font-size="13" font-weight="600" fill="#252423">Read the whole table</text>
+    <text x="71" y="191" font-size="11" fill="#5C6670">40-plus columns, every row</text>
+
+    <rect x="335" y="140" width="250" height="84" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+    <text x="351" y="171" font-size="13" font-weight="600" fill="#252423">Join everything first</text>
+    <text x="351" y="191" font-size="11" fill="#5C6670">including the hidden inner join</text>
+
+    <rect x="615" y="140" width="250" height="84" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+    <text x="631" y="171" font-size="13" font-weight="600" fill="#252423">Filter at the very end</text>
+    <text x="631" y="191" font-size="11" fill="#5C6670">the WHERE runs after the joins</text>
+
+    <rect x="895" y="140" width="250" height="84" rx="10" fill="#FDF2F3" stroke="#F0B8BC" stroke-width="1"/>
+    <text x="911" y="171" font-size="13" font-weight="600" fill="#252423">Throw the rest away</text>
+    <text x="911" y="191" font-size="11" fill="#5C6670">work already done, discarded</text>
+  </g>
+
+  <g fill="#D64550">
+    <path d="M309 172 L327 182 L309 192 Z"/>
+    <path d="M589 172 L607 182 L589 192 Z"/>
+    <path d="M869 172 L887 182 L869 192 Z"/>
+  </g>
+
+  <!-- ============ AFTER ============ -->
+  <rect x="24" y="286" width="1152" height="170" rx="12" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <text x="48" y="316" font-size="12" font-weight="700" fill="#00873A" letter-spacing="1.2">AFTER &#183; FILTER APPLIED FIRST</text>
+
+  <g>
+    <rect x="50" y="340" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="66" y="371" font-size="13" font-weight="600" fill="#252423">Filter first</text>
+    <text x="66" y="391" font-size="11" fill="#5C6670">reduce before any join</text>
+
+    <rect x="275" y="340" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="291" y="371" font-size="13" font-weight="600" fill="#252423">Project ~20 columns</text>
+    <text x="291" y="391" font-size="11" fill="#5C6670">only what the report binds</text>
+
+    <rect x="500" y="340" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="516" y="371" font-size="13" font-weight="600" fill="#252423">Pre-aggregate detail</text>
+    <text x="516" y="391" font-size="11" fill="#5C6670">one row per line at join time</text>
+
+    <rect x="725" y="340" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="741" y="371" font-size="13" font-weight="600" fill="#252423">Join one-to-one</text>
+    <text x="741" y="391" font-size="11" fill="#5C6670">nothing multiplies silently</text>
+
+    <rect x="950" y="340" width="200" height="84" rx="10" fill="#EFFAF1" stroke="#B7E1C3" stroke-width="1"/>
+    <text x="966" y="371" font-size="13" font-weight="600" fill="#252423">Return the answer</text>
+    <text x="966" y="391" font-size="11" fill="#5C6670">cost tracks the result size</text>
+  </g>
+
+  <g fill="#00873A">
+    <path d="M254 372 L270 382 L254 392 Z"/>
+    <path d="M479 372 L495 382 L479 392 Z"/>
+    <path d="M704 372 L720 382 L704 392 Z"/>
+    <path d="M929 372 L945 382 L929 392 Z"/>
+  </g>
+
+  <text x="24" y="496" font-size="12" fill="#252423"><tspan font-weight="700" fill="#205072">Every step in the top row ran against the full table.</tspan> A slicer change re-ran the whole chain and then subtracted.</text>
+  <text x="24" y="518" font-size="12" fill="#5C6670">In the bottom row the reducing steps run once per refresh, and the report's own query reads a small, pre-shaped Gold table.</text>
+  <text x="24" y="540" font-size="11" fill="#5C6670">The result set is identical in both rows — verified row for row against the same source snapshot before the rewrite was cut over.</text>
+</svg>

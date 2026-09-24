@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 830" width="1200" font-family="Segoe UI, Helvetica, Arial, sans-serif" height="830">
+  <rect x="0" y="0" width="1200" height="830" fill="#F4F5F7"/>
+
+  <text x="24" y="32" font-size="21" font-weight="700" fill="#205072">The chain from broken input to recommendation</text>
+  <text x="24" y="56" font-size="13" fill="#5C6670">Each link is forced by the one above it. Every figure was recomputed from the source CSVs.</text>
+
+  <!-- connectors -->
+  <g fill="#329D9C">
+    <path d="M64 178 L76 196 L52 196 Z"/>
+    <path d="M64 290 L76 308 L52 308 Z"/>
+    <path d="M64 402 L76 420 L52 420 Z"/>
+    <path d="M64 514 L76 532 L52 532 Z"/>
+    <path d="M64 626 L76 644 L52 644 Z"/>
+  </g>
+
+  <!-- ===== 1 ===== -->
+  <rect x="24" y="76" width="1152" height="96" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <rect x="24" y="76" width="6" height="96" rx="3" fill="#D64550"/>
+  <circle cx="64" cy="124" r="18" fill="#D64550"/>
+  <text x="64" y="130" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="100" y="108" font-size="15" font-weight="700" fill="#205072">The sales file is truncated, so sales cannot measure the year</text>
+  <text x="100" y="130" font-size="12" fill="#252423">SalesFINAL12312016.csv holds exactly 1,048,575 data rows — the Excel worksheet ceiling — and stops on 24 February 2016.</text>
+  <text x="100" y="150" font-size="12" fill="#5C6670">January is complete (31 of 31 days, 79 of 79 stores). February holds 11 stores of 79. March to December are absent entirely.</text>
+  <text x="1150" y="118" font-size="20" font-weight="700" fill="#D64550" text-anchor="end">1,048,575</text>
+  <text x="1150" y="138" font-size="11" fill="#5C6670" text-anchor="end">rows · 2 months · 1 usable</text>
+
+  <!-- ===== 2 ===== -->
+  <rect x="24" y="188" width="1152" height="96" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <rect x="24" y="188" width="6" height="96" rx="3" fill="#329D9C"/>
+  <circle cx="64" cy="236" r="18" fill="#329D9C"/>
+  <text x="64" y="242" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="100" y="220" font-size="15" font-weight="700" fill="#205072">So movement is derived from the inventory identity instead</text>
+  <text x="100" y="242" font-size="12" fill="#252423">opening 4,219,275 + received 33,584,377 − closing 4,885,776 = 32,917,876 units depleted, computed at SKU-store grain.</text>
+  <text x="100" y="262" font-size="12" fill="#5C6670">This never touches the truncated file. It is depletion, not sales — it absorbs shrinkage and adjustments — and that is stated on the measure.</text>
+  <text x="1150" y="230" font-size="20" font-weight="700" fill="#329D9C" text-anchor="end">32,917,876</text>
+  <text x="1150" y="250" font-size="11" fill="#5C6670" text-anchor="end">units · complete, all 12 months</text>
+
+  <!-- ===== 3 ===== -->
+  <rect x="24" y="300" width="1152" height="96" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+  <rect x="24" y="300" width="6" height="96" rx="3" fill="#00B53F"/>
+  <circle cx="64" cy="348" r="18" fill="#00B53F"/>
+  <text x="64" y="354" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="100" y="332" font-size="15" font-weight="700" fill="#205072">The headline that produces is healthy</text>
+  <text x="100" y="354" font-size="12" fill="#252423">COGS $310,344,546 ÷ average inventory $73,926,741 = 4.20x turnover. Days of supply 54.2. Sell-through 87.1%.</text>
+  <text x="100" y="374" font-size="12" fill="#5C6670">On these three numbers alone the business turns its stock roughly every eight weeks and moves 87% of everything available to it.</text>
+  <text x="1150" y="342" font-size="20" font-weight="700" fill="#00873A" text-anchor="end">4.20x · 54.2 days</text>
+  <text x="1150" y="362" font-size="11" fill="#5C6670" text-anchor="end">the number a dashboard usually stops at</text>
+
+  <!-- ===== 4 ===== -->
+  <rect x="24" y="412" width="1152" height="96" rx="15" fill="#FFFFFF" stroke="#205072" stroke-width="2"/>
+  <rect x="24" y="412" width="6" height="96" rx="3" fill="#205072"/>
+  <circle cx="64" cy="460" r="18" fill="#205072"/>
+  <text x="64" y="466" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="100" y="444" font-size="15" font-weight="700" fill="#205072">But the average conceals the tail — and the tail is where the money is</text>
+  <text x="100" y="466" font-size="12" fill="#252423">Ranked at SKU-store grain, days of supply runs: median 59 · p90 431 · p99 3,285 · max 43,435. 2,508 SKU-stores hold over ten years of cover.</text>
+  <text x="100" y="486" font-size="12" fill="#5C6670">$26,764,857 (33.6%) sits past 180 days. A further $3,458,493 (4.3%) showed zero depletion across the whole of 2016.</text>
+  <text x="1150" y="454" font-size="20" font-weight="700" fill="#205072" text-anchor="end">$30,223,350</text>
+  <text x="1150" y="474" font-size="11" fill="#5C6670" text-anchor="end">37.9% of closing stock is not turning</text>
+
+  <!-- ===== 5 ===== -->
+  <rect x="24" y="524" width="1152" height="96" rx="15" fill="#FFFFFF" stroke="#205072" stroke-width="2"/>
+  <rect x="24" y="524" width="6" height="96" rx="3" fill="#2A7C8C"/>
+  <circle cx="64" cy="572" r="18" fill="#2A7C8C"/>
+  <text x="64" y="578" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="100" y="556" font-size="15" font-weight="700" fill="#205072">And it is concentrated, which makes it actionable</text>
+  <text x="100" y="578" font-size="12" fill="#252423">Five stores of 80 hold 40.7% of all dead stock. Wine is 42.6% of closing stock value but 65.9% of the stock that never moved.</text>
+  <text x="100" y="598" font-size="12" fill="#5C6670">62,665 SKU-stores are overstocked and 5,788 are dead — out of 276,389. This is a short list, not a portfolio-wide problem.</text>
+  <text x="1150" y="566" font-size="20" font-weight="700" fill="#2A7C8C" text-anchor="end">$2.28M wine · $1.18M spirits</text>
+  <text x="1150" y="586" font-size="11" fill="#5C6670" text-anchor="end">dead stock, by product class</text>
+
+  <!-- ===== RECOMMENDATION ===== -->
+  <rect x="24" y="636" width="1152" height="150" rx="15" fill="#205072"/>
+  <rect x="24" y="636" width="6" height="150" rx="3" fill="#7BE495"/>
+  <text x="52" y="670" font-size="12" font-weight="700" fill="#7BE495" letter-spacing="1.4">RECOMMENDATION</text>
+  <text x="52" y="700" font-size="17" font-weight="700" fill="#FFFFFF">Manage the tail, not the headline. $30.2M — 37.9% of closing stock — is not turning, and the 4.20x average hides it.</text>
+  <text x="52" y="726" font-size="13" fill="#CFF4D2">Start with wine: it is 43% of the money on the shelf and 66% of the money that never moved, so it is the highest-yield place to cut buying.</text>
+  <text x="52" y="748" font-size="13" fill="#CFF4D2">Clearing 20% of the 365+ day band alone releases $2.9M of working capital, against a total 2016 purchase spend of $321.9M.</text>
+  <text x="52" y="772" font-size="12" fill="#8FD9C4">Caveat carried forward: margin figures are January 2016 only and use a Dec-2017 list price. Turnover, days of supply, dead stock and overstock are full-year and complete.</text>
+</svg>

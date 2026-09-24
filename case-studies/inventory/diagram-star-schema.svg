@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" font-family="Segoe UI, Helvetica, Arial, sans-serif" height="800">
+  <rect x="0" y="0" width="1200" height="800" fill="#F4F5F7"/>
+
+  <text x="24" y="32" font-size="21" font-weight="700" fill="#205072">The star schema</text>
+  <text x="24" y="56" font-size="13" fill="#5C6670">Four conformed dimensions, five facts, 17 relationships. Line colour is the dimension the filter flows from.</text>
+
+  <!-- ================= relationship curves (drawn first, behind boxes) ================= -->
+  <!-- Dim_Date : teal -->
+  <g stroke="#329D9C" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M82 208 C82 300, 62 340, 62 424"/>
+    <path d="M124 208 C124 300, 293 340, 293 424"/>
+    <path d="M208 208 C208 300, 548 340, 548 424"/>
+    <path d="M250 208 C250 300, 804 340, 804 424"/>
+  </g>
+  <path d="M166 208 C166 300, 328 340, 328 424" stroke="#329D9C" stroke-width="2" fill="none" stroke-dasharray="6 5" opacity="0.85"/>
+
+  <!-- Dim_Product : navy -->
+  <g stroke="#205072" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M380 208 C380 300, 104 340, 104 424"/>
+    <path d="M430 208 C430 300, 363 340, 363 424"/>
+    <path d="M480 208 C480 300, 601 340, 601 424"/>
+    <path d="M530 208 C530 300, 1024 340, 1024 424"/>
+  </g>
+
+  <!-- Dim_Store : green -->
+  <g stroke="#56C596" stroke-width="2" fill="none" opacity="0.9">
+    <path d="M670 208 C670 300, 146 340, 146 424"/>
+    <path d="M720 208 C720 300, 398 340, 398 424"/>
+    <path d="M770 208 C770 300, 654 340, 654 424"/>
+    <path d="M820 208 C820 300, 1077 340, 1077 424"/>
+  </g>
+
+  <!-- Dim_Vendor : slate teal -->
+  <g stroke="#2A7C8C" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M960 208 C960 300, 188 340, 188 424"/>
+    <path d="M1010 208 C1010 300, 433 340, 433 424"/>
+    <path d="M1060 208 C1060 300, 874 340, 874 424"/>
+    <path d="M1110 208 C1110 300, 1130 340, 1130 424"/>
+  </g>
+
+  <!-- ================= DIMENSIONS ================= -->
+  <g>
+    <rect x="40" y="92" width="250" height="116" rx="15" fill="#FFFFFF" stroke="#329D9C" stroke-width="2"/>
+    <rect x="40" y="92" width="250" height="30" rx="15" fill="#329D9C"/>
+    <rect x="40" y="107" width="250" height="15" fill="#329D9C"/>
+    <text x="56" y="113" font-size="13" font-weight="700" fill="#FFFFFF">Dim_Date</text>
+    <text x="56" y="144" font-size="12" fill="#252423">397 days · 1 Dec 2015 → 31 Dec 2016</text>
+    <text x="56" y="164" font-size="11" fill="#5C6670">Year · Quarter · Month · Half · Year Month</text>
+    <text x="56" y="184" font-size="11" fill="#5C6670">Marked as a date table. Auto date/time</text>
+    <text x="56" y="199" font-size="11" fill="#5C6670">is off — four generated tables removed.</text>
+  </g>
+
+  <g>
+    <rect x="330" y="92" width="250" height="116" rx="15" fill="#FFFFFF" stroke="#205072" stroke-width="2"/>
+    <rect x="330" y="92" width="250" height="30" rx="15" fill="#205072"/>
+    <rect x="330" y="107" width="250" height="15" fill="#205072"/>
+    <text x="346" y="113" font-size="13" font-weight="700" fill="#FFFFFF">Dim_Product</text>
+    <text x="346" y="144" font-size="12" fill="#252423">12,261 brands · keyed on Brand</text>
+    <text x="346" y="164" font-size="11" fill="#5C6670">Brand Name · Size · Volume · Class</text>
+    <text x="346" y="184" font-size="11" fill="#5C6670">Retail Price · Purchase Price</text>
+    <text x="346" y="199" font-size="11" fill="#5C6670">3,568 Spirits · 8,693 Wine</text>
+  </g>
+
+  <g>
+    <rect x="620" y="92" width="250" height="116" rx="15" fill="#FFFFFF" stroke="#56C596" stroke-width="2"/>
+    <rect x="620" y="92" width="250" height="30" rx="15" fill="#56C596"/>
+    <rect x="620" y="107" width="250" height="15" fill="#56C596"/>
+    <text x="636" y="113" font-size="13" font-weight="700" fill="#0E3B33">Dim_Store</text>
+    <text x="636" y="144" font-size="12" fill="#252423">80 stores across 68 cities</text>
+    <text x="636" y="164" font-size="11" fill="#5C6670">Store Name is the safe grain.</text>
+    <text x="636" y="184" font-size="11" fill="#5C6670">7 cities hold 2–4 stores, so grouping</text>
+    <text x="636" y="199" font-size="11" fill="#5C6670">on City silently merges 12 of them.</text>
+  </g>
+
+  <g>
+    <rect x="910" y="92" width="250" height="116" rx="15" fill="#FFFFFF" stroke="#2A7C8C" stroke-width="2"/>
+    <rect x="910" y="92" width="250" height="30" rx="15" fill="#2A7C8C"/>
+    <rect x="910" y="107" width="250" height="15" fill="#2A7C8C"/>
+    <text x="926" y="113" font-size="13" font-weight="700" fill="#FFFFFF">Dim_Vendor</text>
+    <text x="926" y="144" font-size="12" fill="#252423">132 vendors · 126 with activity</text>
+    <text x="926" y="164" font-size="11" fill="#5C6670">Built from the price list and the</text>
+    <text x="926" y="184" font-size="11" fill="#5C6670">invoice headers, then deduplicated.</text>
+    <text x="926" y="199" font-size="11" fill="#5C6670">VendorName trimmed — it is padded.</text>
+  </g>
+
+  <!-- ================= FACTS ================= -->
+  <g>
+    <rect x="20" y="424" width="210" height="152" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+    <rect x="20" y="424" width="210" height="4" rx="2" fill="#D64550"/>
+    <text x="36" y="452" font-size="13" font-weight="700" fill="#205072">Fact_Sales</text>
+    <text x="36" y="472" font-size="12" fill="#252423">937,596 rows</text>
+    <text x="36" y="492" font-size="11" fill="#D64550" font-weight="600">JANUARY 2016 ONLY</text>
+    <text x="36" y="510" font-size="11" fill="#5C6670">Source truncated at the</text>
+    <text x="36" y="525" font-size="11" fill="#5C6670">1,048,575-row Excel ceiling.</text>
+    <text x="36" y="540" font-size="11" fill="#5C6670">February held 11 of 79 stores,</text>
+    <text x="36" y="555" font-size="11" fill="#5C6670">so the partition drops it.</text>
+  </g>
+
+  <g>
+    <rect x="258" y="424" width="210" height="152" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+    <rect x="258" y="424" width="210" height="4" rx="2" fill="#00B53F"/>
+    <text x="274" y="452" font-size="13" font-weight="700" fill="#205072">Fact_Purchases</text>
+    <text x="274" y="472" font-size="12" fill="#252423">2,372,474 rows</text>
+    <text x="274" y="492" font-size="11" fill="#00873A" font-weight="600">COMPLETE · ALL 12 MONTHS</text>
+    <text x="274" y="510" font-size="11" fill="#5C6670">Line level, not invoice header.</text>
+    <text x="274" y="525" font-size="11" fill="#5C6670">ReceivingDate is the active</text>
+    <text x="274" y="540" font-size="11" fill="#5C6670">join; InvoiceDate is wired</text>
+    <text x="274" y="555" font-size="11" fill="#5C6670">inactive for spend timing.</text>
+  </g>
+
+  <g>
+    <rect x="496" y="424" width="210" height="152" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+    <rect x="496" y="424" width="210" height="4" rx="2" fill="#00B53F"/>
+    <text x="512" y="452" font-size="13" font-weight="700" fill="#205072">Fact_Inventory</text>
+    <text x="512" y="472" font-size="12" fill="#252423">431,018 rows</text>
+    <text x="512" y="492" font-size="11" fill="#00873A" font-weight="600">TWO SNAPSHOTS</text>
+    <text x="512" y="510" font-size="11" fill="#5C6670">206,529 opening at 1 Jan and</text>
+    <text x="512" y="525" font-size="11" fill="#5C6670">224,489 closing at 31 Dec,</text>
+    <text x="512" y="540" font-size="11" fill="#5C6670">appended with a real</text>
+    <text x="512" y="555" font-size="11" fill="#5C6670">SnapshotDate + SnapshotType.</text>
+  </g>
+
+  <g>
+    <rect x="734" y="424" width="210" height="152" rx="15" fill="#FFFFFF" stroke="#D9DEE3" stroke-width="1"/>
+    <rect x="734" y="424" width="210" height="4" rx="2" fill="#00B53F"/>
+    <text x="750" y="452" font-size="13" font-weight="700" fill="#205072">Fact_InvoiceHeader</text>
+    <text x="750" y="472" font-size="12" fill="#252423">5,543 rows</text>
+    <text x="750" y="492" font-size="11" fill="#00873A" font-weight="600">FREIGHT ONLY</text>
+    <text x="750" y="510" font-size="11" fill="#5C6670">Kept solely because freight</text>
+    <text x="750" y="525" font-size="11" fill="#5C6670">does not exist at line grain.</text>
+    <text x="750" y="540" font-size="11" fill="#5C6670">Its dollars reconcile to the</text>
+    <text x="750" y="555" font-size="11" fill="#5C6670">purchase lines to the cent.</text>
+  </g>
+
+  <g>
+    <rect x="972" y="424" width="210" height="152" rx="15" fill="#FFFFFF" stroke="#205072" stroke-width="2"/>
+    <rect x="972" y="424" width="210" height="4" rx="2" fill="#205072"/>
+    <text x="988" y="452" font-size="13" font-weight="700" fill="#205072">Fact_StockItem</text>
+    <text x="988" y="472" font-size="12" fill="#252423">276,389 SKU-stores</text>
+    <text x="988" y="492" font-size="11" fill="#205072" font-weight="600">ANNUAL · NO DATE JOIN</text>
+    <text x="988" y="510" font-size="11" fill="#5C6670">One row per InventoryId, folded</text>
+    <text x="988" y="525" font-size="11" fill="#5C6670">in Power Query. Carries the</text>
+    <text x="988" y="540" font-size="11" fill="#5C6670">whole-year position and the</text>
+    <text x="988" y="555" font-size="11" fill="#5C6670">dead / overstock / stockout flags.</text>
+  </g>
+
+  <!-- ================= legend ================= -->
+  <g font-size="11" fill="#5C6670">
+    <rect x="20" y="600" width="640" height="30" rx="8" fill="#FFFFFF" stroke="#E4E8EB" stroke-width="1"/>
+    <line x1="36" y1="615" x2="66" y2="615" stroke="#329D9C" stroke-width="2"/>
+    <text x="72" y="619">Dim_Date · 5</text>
+    <line x1="158" y1="615" x2="188" y2="615" stroke="#205072" stroke-width="2"/>
+    <text x="194" y="619">Dim_Product · 4</text>
+    <line x1="292" y1="615" x2="322" y2="615" stroke="#56C596" stroke-width="2"/>
+    <text x="328" y="619">Dim_Store · 4</text>
+    <line x1="420" y1="615" x2="450" y2="615" stroke="#2A7C8C" stroke-width="2"/>
+    <text x="456" y="619">Dim_Vendor · 4</text>
+    <line x1="556" y1="615" x2="586" y2="615" stroke="#329D9C" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="592" y="619">inactive</text>
+  </g>
+
+  <!-- ================= callout ================= -->
+  <rect x="20" y="652" width="1162" height="126" rx="15" fill="#FFFFFF" stroke="#205072" stroke-width="2"/>
+  <rect x="20" y="652" width="6" height="126" rx="3" fill="#205072"/>
+  <text x="44" y="680" font-size="14" font-weight="700" fill="#205072">Why Fact_StockItem has no line to Dim_Date</text>
+  <text x="44" y="704" font-size="12" fill="#252423">Its columns are whole-year quantities — units received across 2016, units depleted across 2016, the dead and overstock flags. Joining them to a date and letting a slicer</text>
+  <text x="44" y="722" font-size="12" fill="#252423">cut them would return a smaller number that still looks like an annual figure. Leaving the join out makes that mistake impossible rather than merely discouraged.</text>
+  <text x="44" y="748" font-size="12" fill="#D64550" font-weight="600">The cost, stated plainly:</text>
+  <text x="176" y="748" font-size="12" fill="#252423">nine measures sourced from this table cannot carry a period-over-period comparison, because an</text>
+  <text x="44" y="766" font-size="12" fill="#252423">annual fact has no prior month to compare against. They are read as whole-year positions, which is exactly what they are.</text>
+</svg>
